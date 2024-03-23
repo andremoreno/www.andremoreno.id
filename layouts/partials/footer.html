@@ -118,7 +118,7 @@ window.addEventListener("orientationchange", function(event) {
 </script>
 {{ end }}
 
-{{ $whatsapp := resources.Get "js/whatsapp.js" }}
+{{ $whatsapp := resources.Get "js/whatsapp.js" | resources.Fingerprint "sha512" }}
 <script src="{{ $whatsapp.Permalink }}"></script>
 <div id="whatsapp-chat" class="wahide">
       <div class="header-chat">
