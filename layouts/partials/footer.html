@@ -1,0 +1,208 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <div class="h1 text-white"><img src="/images/logo-am-footer.png" width="150" height="50" alt="Andre Moreno Logo" class="img-fluid" loading="lazy"></div>
+		  <p><a href="/why-crediting-is-important" class="small text-white">© Copyright {{ dateFormat "2006" now }}<br>All Rights Reserved</a></p>
+         </div>
+      </div>
+      {{ with .Site.Params.footer.sitemap }}
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <ul class="site-footer-widget-links">
+            {{ range .link }}
+            <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+      {{ with .Site.Params.footer.social }}
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <ul class="site-footer-widget-links">
+            {{ range .link }}
+              <li><a href="{{ .url }}" target="_blank" rel="nofollow noopener">{{ .name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+      {{ with .Site.Params.footer.service }}
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+           <ul class="site-footer-widget-links">
+            {{ range .link }}
+              <li><a href="{{ .url }}" target="_blank" rel="nofollow noopener">{{ .name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+      <div id="topcontrol" class="col-lg-2 col-12">
+        <a href="#top" class="site-footer-widget-top">
+          <img src="{{ "images/to-top.svg" | absURL }}" height="33" width="26" loading="lazy" alt="back-to-top">
+          <p>
+            I want to 
+            <br>
+            visit again
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+   {{/* Load Bootstrap JS. */}}
+   {{ $js := resources.Get "js/index.js" }}
+   {{ $params := dict }}
+   {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+   {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+   {{ $js = $js | js.Build $opts }}
+   {{ if hugo.IsProduction }}
+   {{ $js = $js | fingerprint }}
+   {{ end }}  
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
+
+{{ if isset .Params "form" }}
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})();
+</script>
+{{ end }}
+
+{{ if .Params.lightbox }}
+{{ $masonry := resources.Get "js/masonry.pkgd.min.js" }}
+{{ $fancybox := resources.Get "js/fancybox.umd.min.js" }}
+<script src="{{ $masonry.Permalink }}"></script>
+<script src="{{ $fancybox.Permalink }}"></script>
+{{ $imagesloaded := resources.Get "js/imagesloaded.pkgd.js" | minify }}
+<script src="{{ $imagesloaded.Permalink }}"></script>
+
+<script>
+var grid = document.querySelector('.row .justify-content-center');
+var msnry = new Masonry( grid, {
+  itemSelector: '.col-sm-6',
+  percentPosition: true,
+  horizontalOrder: true
+});
+imagesLoaded( grid ).on( 'progress', function() {
+  // layout Masonry after each image loads
+  msnry.layout();
+});
+window.addEventListener("orientationchange", function(event) {
+	msnry.layout();
+});
+</script>
+{{ end }}
+
+{{ $whatsapp := resources.Get "js/whatsapp.js" }}
+<script src="{{ $whatsapp.Permalink }}"></script>
+<div id="whatsapp-chat" class="wahide">
+      <div class="header-chat">
+        <div class="head-home">
+          <div class="info-avatar"><img src="/images/icon2.png" alt=""></div>
+          <p>
+            <span class="whatsapp-name">Andre Moreno</span><br><small>Typically replies within an hour</small
+            >
+          </p>
+        </div>
+        <div class="get-new wahide">
+          <div id="get-label"></div>
+          <div id="get-nama"></div>
+        </div>
+      </div>
+      <div class="home-chat"></div>
+      <div class="start-chat">
+        <div
+          
+          class="WhatsappChat__Component-sc-1wqac52-0 whatsapp-chat-body"
+        >
+          <div class="WhatsappChat__MessageContainer-sc-1wqac52-1 dAbFpq">
+            <div
+              style="opacity: 0"
+              class="WhatsappDots__Component-pks5bf-0 eJJEeC"
+            >
+              <div class="WhatsappDots__ComponentInner-pks5bf-1 hFENyl">
+                <div
+                  class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotOne-pks5bf-3 ixsrax"
+                ></div>
+                <div
+                  class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotTwo-pks5bf-4 dRvxoz"
+                ></div>
+                <div
+                  class="WhatsappDots__Dot-pks5bf-2 WhatsappDots__DotThree-pks5bf-5 kXBtNt"
+                ></div>
+              </div>
+            </div>
+            <div
+              style="opacity: 1"
+              class="WhatsappChat__Message-sc-1wqac52-4 kAZgZq"
+            >
+              <div class="WhatsappChat__Author-sc-1wqac52-3 bMIBDo">
+                Andre Moreno
+              </div>
+              <div class="WhatsappChat__Text-sc-1wqac52-2 iSpIQi">
+                Hai 👋<br>ada yang bisa saya bantu?
+              </div>
+              <div class="WhatsappChat__Time-sc-1wqac52-5 cqCDVm">(Just Now)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blanter-msg">
+          <textarea
+            id="chat-input"
+            placeholder="Send a message"
+            maxlength="120"
+          ></textarea>
+          <a href="javascript:void(0);" id="send"
+            ><svg viewBox="0 0 448 448">
+              <path
+                d="M.213 32L0 181.333 320 224 0 266.667.213 416 448 224z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+      <div id="get-number"></div>
+      <a class="close-chat" href="javascript:void(0);">×</a>
+    </div>
+    <a class="show-chat" href="javascript:void(0);" title="Show Chat"
+      ><svg width="20" viewBox="0 0 24 24">
+        <defs />
+        <path
+          fill="#eceff1"
+          d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z"
+        />
+        <path
+          fill="#4caf50"
+          d="M12 21.8c-3.1 0-5.2-1.6-5.4-1.6l-3.7 1 1-3.7-.3-.4A9.9 9.9 0 012.1 12a10 10 0 0117-7 9.9 9.9 0 01-7 16.9z"
+        />
+        <path
+          fill="#fafafa"
+          d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"
+        />
+      </svg>
+      Chat with me!</a>

@@ -1,0 +1,37 @@
+{{ with .Site.Params.stories }}
+  {{ if .enable }}
+  <section class="site-story" id="story">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h2>{{ .title }}</h2>
+            <h5>{{ .subtitle }}</h5>
+          </div>
+        </div>
+		{{ range first 4 (where $.Site.RegularPages "Params.category" "intersect" (slice "Martupol" "Funeral")) }}
+        <div class="col-lg-6 col-md-10 mx-auto">
+          <div class="site-story-item">
+            <div class="site-story-item-thumb">
+              {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
+			  {{ $resized := .Fill "640x640 webp" }}
+		 	<img src="{{ $resized.RelPermalink }}" alt="cover" width="640" height="640" class="img-fluid" loading="lazy">
+			{{ end }}
+            </div>
+            <div class="site-story-item-content">
+			{{$mainSection := index (.Params.category) 0 }}
+              <span>{{ $mainSection }}</span>
+              <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+			  <a href="{{ .Permalink }}" class="read-more">view story</a>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+        <div class="col-12 text-center text-lg-left">
+          <a href="/stories" class="site-story-cta">SEE MORE STORIES</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}

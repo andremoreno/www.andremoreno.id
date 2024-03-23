@@ -1,0 +1,5 @@
+<!-- image -->
+{{ with .Get "link" }}<a href="{{ . }}">{{ end }}
+<p><img class="img-fluid" src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} /></p>
+{{ if .Get "link" }}</a>{{ end }}
+<!-- image -->

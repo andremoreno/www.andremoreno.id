@@ -1,0 +1,29 @@
+[build]
+  command = "hugo"
+  publish = "public"
+
+[dev]
+  command = "hugo server --disableFastRender --gc --minify"
+  framework = "hugo"
+  targetPort = 1313
+
+[deploy]
+  command = "netlify deploy --prod --dir=public"
+
+[[redirects]]
+  from = "https://andremoreno.netlify.app/*"
+  to = "https://www.andremoreno.id/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[headers]]
+  for = "/fonts/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+

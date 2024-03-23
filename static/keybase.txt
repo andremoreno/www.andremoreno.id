@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/andremoreno
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.andremoreno.com
+  * I am andremoreno (https://keybase.io/andremoreno) on keybase.
+  * I have a public key with fingerprint 3CC9 27BE 7989 D2FE 0B5D  9547 212F 1745 5712 8A28
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010174022baebde2479091ec26d41402d0630a9cd17663bdd6339da8021b2480be1b0a",
+      "fingerprint": "3cc927be7989d2fe0b5d9547212f174557128a28",
+      "host": "keybase.io",
+      "key_id": "212f174557128a28",
+      "kid": "010174022baebde2479091ec26d41402d0630a9cd17663bdd6339da8021b2480be1b0a",
+      "uid": "7914d68d971bf074001d56b41b6e7b19",
+      "username": "andremoreno"
+    },
+    "service": {
+      "hostname": "www.andremoreno.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1664593937,
+  "expire_in": 157680000,
+  "prev": "c8a0c4573dc7d01f9c605e6e01e7fad104a8d633fc1f3964e89a5e5cc6117777",
+  "seqno": 25,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNFAnicrZJ/TJVVGMcvXOUqS8R+KJOF+m46BgjnvL/fW5sFAoFMTArSuF7eH+de
+3oD7Xu4PfuyGy7HGRsrIFYO0yRXLC9wIcw42M0MQEZJKMCRuOs0iSgIaFwOFei+z
+rT/6s/PP2XnO9/k83+fZ07NGqwkN2pKwITnnyerooIGuk06NyLSvc2GCIpVjehdW
+gJYvVCghu8NYIEuYHgMQQIYEOC7wSJAQTjIc4CAScVoioRqXAE0AnhMlyNA0IUgS
+TRCcxLMAhwJOskBAUAA8FoeZZIsZ2aw22eJQsYQocjgjIIZjOQk3ISBQEkeRDA5x
+k1qPohiIszzOqon5ij2QoZoTeDuKlxU1pj6My/b+Q/8/+3Yu4xgOkhLNShwDBRNQ
+wQBKFC2QUKARI0AuILQjm4UvQqqat0g2VKTYkEXBKuIw9aNEFlFgtoFmHotKS0vj
+/yWMF5UilWK1KQ5FVApVQb7DYbXrAwBHuXU5AwnGxyyjIFskdaJqRgmy2WXFgumh
+qhQdcgAOaZqkOIIjmDgMlVllGzLKAQXF0CxQT6AOKlGRIssDkaQYQhIZCUATJ9KA
+QjQCEDEmXoKA5NnAaEwiNBEcTSKW4ylEiSINIaMeLNBdsdqmHqdUn7xZZdpls4V3
+OG0Iq7jUlbtCExSqCVkZHFg1Tejq8H8W0PHr2r9SXbVccJY7rWTDWJ3r7J2GBLDS
+EPq9YaIm/HhMv2e1k/G9+oV3NMnwKfHZ+sXTe4P9qRp2ZrHSZcp4Lk/Y6jnie/ne
+iDOi4FRZAmjL80bVJG4OE/3+pd6gjSkp4weWgufNQ9rImw3+QsJJeGYm/TnwoySt
++8Qflm0Hxl0zaVlLnusb72e//YHgS/y2eZXeUN/Y5THWX1zMPjQwGBsxk97+cMbS
+buoFN2M83ddnq2p/3x2dfs4mF1UvFZ26dXiQx9PnOox1pSOHDRMf3shUmsb//GU0
+UVcQuynp2pW90W1127wn+0pnB0IXHmgvX0serngzp3u6V3cukipzYzE93Vcycu9f
+XTcR1ZD0oO9gdH7xw9er2up17zSnujuOuh2VxQNr7K3uEOabFUdYb+WeMJ9/rni+
+JKmleq28JbPK7O0MGdG/0Hpp4eDHKed/6Cn/KuuR1Hi7b18eOTk85g576fLdZ3ZG
+3krfv+vR59qy6akpMnlsRxhOTs7ldj67fXOvITK5f1cXuADea5GahbeOZaJVNWMR
++2z5C+Sh9W11w09dfaPz6Xfbz/y8Z17XyJt1OzsyvvTdafLFtr742t0prX7U+35/
++Mjxof2/ZUyn3bZWfxdV2/6T2DI6Prv166Nnnyi4KE7u+PH0J/mLuvPZTdp7g5u2
+Pz90Jrf5giboWO10DJf2ijh9429+A8mC
+=Pekw
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/andremoreno
+
+==================================================================

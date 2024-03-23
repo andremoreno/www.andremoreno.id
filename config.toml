@@ -1,0 +1,214 @@
+baseURL       = "https://www.andremoreno.id/"
+languageCode  = "en-us"
+title         = "Andre Moreno"
+
+disableHugoGeneratorInject = true
+
+paginate = 6
+
+enableRobotsTXT = true
+
+summarylength = 25
+
+timeout = 60000
+
+disableKinds = ['taxonomy', 'term']
+
+
+# Site Menus
+[menu]
+  # Navbar Menus
+  [[menu.nav]]
+    name    = "Home"
+    url     = "https://bit.ly/andremoreno"
+    weight  = 1
+  [[menu.nav]]
+    name    = "Stories"
+    url     = "https://bit.ly/4bZS62G"
+    weight  = 2
+  [[menu.nav]]
+    name    = "Blog"
+    url     = "blog"
+    weight  = 3
+#  [[menu.nav]]
+#    name    = "Article"
+#    url     = "article"
+#    weight  = 4
+  [[menu.nav]]
+    name    = "Instagram"
+    url     = "https://bit.ly/am-ig"
+    weight  = 5
+  [[menu.nav]]
+    name    = "About Me"
+    url     = "about"
+    weight  = 6  
+  [[menu.nav]]
+    name    = "Get in touch"
+    url     = "contact"
+    weight  = 7
+
+# Site Params
+[params]
+  logo = "images/logo-am-header.png"
+  dateFormat = "14 FEB 2019"
+  # Meta data
+  description = "Andre Moreno Photography"
+  author = "Andre Moreno"
+  # Google Analitycs
+  googleAnalitycsID = ""
+  # We're using formspree.io for form handling, paste your formspree url below
+  formspreeFormUrl  = "https://formspree.io/f/xjvlqgqz"
+  images = ['https://www.andremoreno.id/images/default-image.png']
+
+  # Contact Form
+  [params.contactForm]
+    placeholder_first_name        = "First Name"
+    placeholder_last_name         = "Last Name"
+    placeholder_email             = "Email"
+    placeholder_phone             = "Phone"
+    placeholder_project_type      = "Project Type"
+    placeholder_about_the_project = "Tell me everything about you! The more I know you, the better I can capture you and your story."
+    send_message                  = "Send Message"
+
+    [[params.contactForm.projectType]]
+      value = "pg"
+      title  = "Photography"
+    [[params.contactForm.projectType]]
+      value = "pb"
+      title  = "Photobooth"
+    [[params.contactForm.projectType]]
+      value = "wd"
+      title  = "Web Development"
+  
+  # Navbar Action Button
+  [params.navAction]
+    status  = true
+    name    = "Get in touch"
+    url     = "contact"
+
+
+  # 404 Pages
+  [params.notFound]
+    title   = "404: Page Not Found"
+    heading = "Whatever you're looking for doesn't seem to exist. Which begs the question: How certain are you that what you're looking for is actually what you need?"
+
+
+  # Thank You Pages
+  [params.thankYou]
+    title   = "Thanks for reaching out!"
+    heading = """I read every message and typically respond within 48 hours if a reply is required. Want to stay in touch? Follow me on [Instagram](https://www.instagram.com/andremoreno)!"""
+
+  
+
+  # Banner Section
+  [params.banner]
+    enable                = true
+    background_image      = "/images/hero-main-bg6.webp"
+    primary_button        = "View Story"
+    primary_button_url    = "/stories/perayaan-natal-wijk-kampung-ambon-2023/"
+    secondary_button      = "Get In Touch"
+    secondary_button_url  = "contact"
+
+  [params.stories]
+    enable    = true
+    title     = "Recent Stories"
+    subtitle  = "A GREAT STORY IS IMPOSSIBLE TO FORGET"
+    # background_image    = "/images/cta-bg.webp"
+
+  [params.call_to_action]
+    enable              = true
+    background_image    = "/images/cta-bg.webp"
+    title               = "GET IN TOUCH"
+    primary_button      = "Send Me Message"
+    primary_button_url  = "contact"
+    secondary_button    = "Not Convinced ?"
+    secondary_button_url = "stories"
+
+  [params.footer]
+      # Footer Sitemap
+      [params.footer.sitemap]
+        title   = "Sitemap"
+        [[params.footer.sitemap.link]]
+          name = "Stories"
+          url  = "stories"
+        [[params.footer.sitemap.link]]
+          name = "Blog"
+          url  = "blog"
+        [[params.footer.sitemap.link]]
+          name = "About Me"
+          url  = "about"
+      # Footer Social Media
+      [params.footer.social]
+        title   = "Social Media"
+        [[params.footer.social.link]]
+          name = "Instagram"
+          url  = "https://www.instagram.com/andremoreno"
+        [[params.footer.social.link]]
+          name = "Github"
+          url  = "https://github.com/andremoreno"
+        [[params.footer.social.link]]
+          name = "Twitter"
+          url  = "https://twitter.com/writelonger"
+      # Footer Social Media
+      [params.footer.service]
+        title   = "More"
+        [[params.footer.service.link]]
+          name = "RockBooth"
+          url  = "https://rockbooth.andremoreno.id"
+        [[params.footer.service.link]]
+          name = "Journey"
+          url  = "https://journey.andremoreno.id"
+        [[params.footer.service.link]]
+          name = "</source>"
+          url  = "https://github.com/andremoreno/www.andremoreno.id"
+      # Footer Service
+
+
+[related]
+  includeNewer = true
+  threshold = 40
+  toLower = false
+
+  [[related.indices]]
+    name = "title"
+    weight = 50
+
+  [[related.indices]]
+    name = "description"
+    weight = 50
+
+  [[related.indices]]
+    name = "categories"
+    weight = 50
+
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
+
+
+[social]
+  facebook_profile_id = "andreas.rikardo"
+  facebook_admin = "1059136786"
+  facebook_app_id = "116794761711713"
+  twitter = "Writelonger"
+
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.123.8"
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+
+
