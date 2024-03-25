@@ -9,7 +9,7 @@
 	</div>
 	<div class="row justify-content-center">
 
-	{{ range sort ((.Page.Resources.ByType "image").Match "photo*") ".Name" "asc" }}
+	{{ range sort ((.Page.Resources.ByType "image").Match "photo*") ".Name" "desc" }}
 		{{ $small := .Fit "360x540 webp" }}
 		<div class="col-sm-6 col-lg-4 mb-4">
 		<div class="card">

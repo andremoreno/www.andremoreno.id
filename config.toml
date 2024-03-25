@@ -132,11 +132,11 @@ disableKinds = ['taxonomy', 'term']
           name = "Stories"
           url  = "stories"
         [[params.footer.sitemap.link]]
-          name = "Blog"
-          url  = "blog"
-        [[params.footer.sitemap.link]]
           name = "About Me"
           url  = "about"
+        [[params.footer.sitemap.link]]
+          name = "Contact"
+          url  = "contact"
       # Footer Social Media
       [params.footer.social]
         title   = "Social Media"
@@ -152,12 +152,12 @@ disableKinds = ['taxonomy', 'term']
       # Footer Social Media
       [params.footer.service]
         title   = "More"
+	[[params.footer.service.link]]
+          name = "TikTok"
+          url  = "https://www.tiktok.com/@fypye"
         [[params.footer.service.link]]
           name = "RockBooth"
-          url  = "https://rockbooth.andremoreno.id"
-        [[params.footer.service.link]]
-          name = "Journey"
-          url  = "https://journey.andremoreno.id"
+          url  = "/rockbooth"
         [[params.footer.service.link]]
           name = "</source>"
           url  = "https://github.com/andremoreno/www.andremoreno.id"

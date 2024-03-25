@@ -1,5 +1,6 @@
 .DS_Store
 # Local Netlify folder
+_RAW
 .netlify
 .words
 .draft

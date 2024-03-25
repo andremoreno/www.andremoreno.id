@@ -38,7 +38,7 @@
 		  {{$mainSection := index (.Params.category) 0 }}
 
             <span>{{ $mainSection }}</span>
-            <h3><a href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
+            <h3><a href="{{ .Permalink }}" class="stretched-link">{{ .Params.title }}</a></h3>
 			<a href="{{ .Permalink }}" class="read-more">view story</a>
           </div>
         </div>
