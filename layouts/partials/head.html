@@ -50,7 +50,9 @@
   <noscript><link rel="stylesheet" href="{{ "css/fancybox.min.css" | absURL }}"></noscript>
   {{ end }}
 
+  {{ if .IsHome }}
   <link rel="preload" as="image" href="{{ .Site.Params.banner.background_image }}">
+  {{ end }}
 
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" type="image/x-icon">
