@@ -2,6 +2,8 @@ baseURL       = "https://www.andremoreno.id/"
 languageCode  = "en-us"
 title         = "Andre Moreno"
 
+relativeURLs = true
+
 disableHugoGeneratorInject = true
 
 paginate = 6

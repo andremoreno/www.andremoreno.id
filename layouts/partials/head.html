@@ -31,20 +31,11 @@
   <meta name="google-site-verification" content="1n0eAdCQ65L2FKZCbeR1MtY6LJ1fNGBNH0pfoGM3kJI">
 
 
-  {{ partial "critical.html" . }}
-
-
   {{ "<!-- Bootstrap -->" | safeHTML }}
   {{ $bootstrap := resources.Get "scss/custom.scss" | resources.ToCSS | minify | resources.Fingerprint "sha512" }}
   <link rel="preload" href="{{ $bootstrap.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ $bootstrap.Permalink }}"></noscript>
   
-
-  {{ "<!-- Main Stylesheets -->" | safeHTML }}
-  {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha512" }}
-  <link rel="preload" href="{{ $style.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ $style.Permalink }}"></noscript>
-
   {{ if .Params.lightbox }}
   <link rel="preload" href="{{ "css/fancybox.min.css" | absURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ "css/fancybox.min.css" | absURL }}"></noscript>
