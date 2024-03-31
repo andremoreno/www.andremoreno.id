@@ -69,27 +69,40 @@
     <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
 
 {{ if isset .Params "form" }}
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
+<script type="text/javascript">
+var form = document.getElementById("contact-form");
+form.addEventListener('submit', function(event) {
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
+    if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+    }
+    if (form.checkValidity()) {
+        handleSubmit(event)
+    }
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
+    form.classList.add('was-validated')
+}, false)
+
+// Handling contact form through https://formspree.io/
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("contact-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
         }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})();
+    }).then(response => {
+        status.innerHTML = '<div class="alert alert-success" role="alert">Thank you for contacting me. I will reach out to you shortly!</div>';
+        //form.reset()
+    }).catch(error => {
+        status.innerHTML = '<div class="alert alert-danger" role="alert">Oops! There was a problem submitting your form!</div>'
+    });
+}
 </script>
 {{ end }}
 

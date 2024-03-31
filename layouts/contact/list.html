@@ -10,7 +10,7 @@
       <div class="col-lg-6 ml-auto">
         <div class="site-contact-form">
           <h4>{{ .Params.form_heading }}</h4>
-          <form id="contact-form" class="needs-validation" method="POST" action="/thanks" netlify-honeypot="hpfield" data-netlify="true" novalidate=true>
+          <form id="contact-form" class="needs-validation" method="POST" action="https://formspree.io/f/xjvlqgqz" novalidate=true>
 		  <input class="d-none" name="hpfield">
             <div class="row">
               <div class="col-lg-6">
@@ -48,7 +48,7 @@
                   </span>
                 </button>
               </div>
-              <p id="contact-form-status"></p>
+              <div id="contact-form-status"></div>
             </div>
           </form>
         </div>
