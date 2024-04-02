@@ -1,6 +1,6 @@
 [build]
-  command = "hugo"
-  publish = "public --gc --minify"
+  command = "hugo --gc --minify"
+  publish = "public"
 
 [dev]
   command = "hugo server --disableFastRender --gc --minify"
@@ -25,5 +25,4 @@
   for = "/fonts/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
-
 
