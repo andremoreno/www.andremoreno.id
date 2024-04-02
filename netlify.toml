@@ -1,6 +1,6 @@
 [build]
   command = "hugo"
-  publish = "public"
+  publish = "public --gc --minify"
 
 [dev]
   command = "hugo server --disableFastRender --gc --minify"

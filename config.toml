@@ -58,9 +58,7 @@ disableKinds = ['taxonomy', 'term']
   author = "Andre Moreno"
   # Google Analitycs
   googleAnalitycsID = ""
-  # We're using formspree.io for form handling, paste your formspree url below
-  formspreeFormUrl  = "https://formspree.io/f/xjvlqgqz"
-  images = ['https://www.andremoreno.id/images/default-image.png']
+  images = ['/images/default-image.png']
 
   # Contact Form
   [params.contactForm]
@@ -71,6 +69,8 @@ disableKinds = ['taxonomy', 'term']
     placeholder_project_type      = "Project Type"
     placeholder_about_the_project = "Tell me everything about you! The more I know you, the better I can capture you and your story."
     send_message                  = "Send Message"
+    # We're using formspree.io for form handling, paste your formspree url below
+    FormUrl  = "https://formspree.io/f/xjvlqgqz"
 
     [[params.contactForm.projectType]]
       value = "pg"
@@ -158,8 +158,8 @@ disableKinds = ['taxonomy', 'term']
           name = "TikTok"
           url  = "https://www.tiktok.com/@fypye"
         [[params.footer.service.link]]
-          name = "RockBooth"
-          url  = "/rockbooth"
+          name = "Mastodon"
+          url  = "https://mastodon.social/@andremoreno"
         [[params.footer.service.link]]
           name = "</source>"
           url  = "https://github.com/andremoreno/www.andremoreno.id"
