@@ -3,18 +3,18 @@
   publish = "public"
 
 [dev]
-  command = "hugo server --disableFastRender --gc --minify"
+  command = "hugo server --disableFastRender"
   framework = "hugo"
   targetPort = 1313
 
 [deploy]
   command = "netlify deploy --prod --dir=public"
 
-[[redirects]]
-  from = "https://andremoreno.netlify.app/*"
-  to = "https://www.andremoreno.id/:splat"
-  status = 301
-  force = true
+#[[redirects]]
+#  from = "https://andremoreno.netlify.app/*"
+#  to = "https://www.andremoreno.id/:splat"
+#  status = 301
+#  force = true
 
 [[redirects]]
   from = "/*"
