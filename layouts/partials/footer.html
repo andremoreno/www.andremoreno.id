@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-3 col-md-6">
         <div class="site-footer-widget">
-          <div class="h1 text-white"><img src="/images/logo-am-footer.png" width="150" height="50" alt="Andre Moreno Logo" class="img-fluid" loading="lazy"></div>
+          <div class="h1 text-white"><img src="{{ "/images/logo-am-footer.png" | absURL }}" width="150" height="50" alt="Andre Moreno Logo" class="img-fluid" loading="lazy"></div>
 		  <p><a href="/why-crediting-is-important" class="small text-white">© Copyright {{ dateFormat "2006" now }}<br>All Rights Reserved</a></p>
          </div>
       </div>
@@ -136,7 +136,7 @@ window.addEventListener("orientationchange", function(event) {
 <div id="whatsapp-chat" class="wahide">
       <div class="header-chat">
         <div class="head-home">
-          <div class="info-avatar"><img src="{{ "/images/icon2.png" | absURL }}" alt=""></div>
+          <div class="info-avatar"><img src="{{ "/images/icon2.png" | absURL }}" alt="" loading="lazy"></div>
           <p>
             <span class="whatsapp-name">Andre Moreno</span><br><small>Typically replies within an hour</small
             >

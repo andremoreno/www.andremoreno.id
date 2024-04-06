@@ -14,8 +14,8 @@
           <div class="site-story-item">
             <div class="site-story-item-thumb">
               {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
-			  {{ $resized := .Fill "640x640" }}
-		 	<img src="/.netlify/images?url={{ .RelPermalink | safeURL | absURL }}&fit=cover&w=640&h=640&fm=webp" alt="cover" width="640" height="640" class="img-fluid" loading="lazy">
+			  {{ $resized := .Fill "640x640 webp" }}
+		 	<img src="{{ $resized.RelPermalink | absURL }}" alt="cover" width="640" height="640" class="img-fluid" loading="lazy">
 			{{ end }}
             </div>
             <div class="site-story-item-content">
