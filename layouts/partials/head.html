@@ -43,7 +43,7 @@
   {{ end }}
 
   {{ if .IsHome }}
-  <link rel="preload" as="image" href="/.netlify/images?url={{ .Site.Params.banner.background_image | absURL | safeURL }}">
+  <link rel="preload" as="image" href="{{ .Site.Params.banner.background_image | safeURL | absURL }}">
   {{ end }}
 
   <!--Favicon-->
