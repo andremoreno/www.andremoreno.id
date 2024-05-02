@@ -5,6 +5,7 @@ author: Andre Moreno
 excerpt: Pagi ini saya membuka WhatsApp dan mendapat kabar yang mengejutkan, Pendeta A. Simanjuntak telah berpulang ke Rumah Bapa.
 lightbox: true
 layout: post
+oldurl: https://www.andremoreno.com/2014/10/04/selamat-jalan-pendeta-a-simanjuntak/
 ---
 
 Pagi ini saya membuka WhatsApp dan mendapat kabar yang mengejutkan, Pendeta A. Simanjuntak telah berpulang ke Rumah Bapa.

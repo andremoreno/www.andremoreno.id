@@ -1,7 +1,11 @@
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+{{ if .Params.oldurl }}
+<meta property="og:url" content="{{ .Params.oldurl }}">
+{{ else }}
 <meta property="og:url" content="{{ .Permalink }}">
+{{ end }}
 
 {{- with $.Params.images -}}
 {{- range first 6 . }}<meta property="og:image" content="{{ . | absURL }}">{{ end -}}
