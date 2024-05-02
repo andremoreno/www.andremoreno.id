@@ -2,6 +2,11 @@
   command = "hugo --gc --minify"
   publish = "public"
 
+[build.environment]
+  HUGO_VERSION = "0.125.4"
+  GO_VERSION = "1.22.2"
+  HUGO_ENABLEGITINFO = "true"
+
 [dev]
   command = "hugo server --disableFastRender"
   framework = "hugo"
