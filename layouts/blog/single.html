@@ -12,7 +12,11 @@
 
 				<strong>Thanks for reading!</strong> If you'd like to share your thoughts you can <a href="#comments">leave a comment</a>, <a href="{{ "contact" | relURL }}">send me an email</a>, or hit me up on <a href="https://www.instagram.com/andremoreno">Instagram</a>.
 
+				{{ if .Params.oldurl }}
+				<div class="fb-comments" data-href="{{ .Params.oldurl }}" data-width="100%" data-numposts="5"></div>
+				{{ else }}
 				<div class="fb-comments" data-href="{{ .Permalink }}" data-width="100%" data-numposts="5"></div>
+				{{ end }}
 				<hr>
 			</div>
 		</div>
