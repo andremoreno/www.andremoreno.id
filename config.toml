@@ -105,9 +105,9 @@ disableKinds = ['taxonomy', 'term']
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "/images/hero-main-bg6.webp"
+    background_image      = "/images/hero-main-bg4.webp"
     primary_button        = "View Story"
-    primary_button_url    = "/stories/perayaan-natal-wijk-kampung-ambon-2023/"
+    primary_button_url    = "/stories/pesta-gotilon-hkbp-rawamangun-2023/"
     secondary_button      = "Get In Touch"
     secondary_button_url  = "contact"
 
