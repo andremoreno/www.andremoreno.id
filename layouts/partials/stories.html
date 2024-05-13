@@ -14,7 +14,7 @@
           <div class="site-story-item">
             <div class="site-story-item-thumb">
               {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
-			  {{ $resized := .Fill "640x640 webp" }}
+			  {{ $resized := .Fill "640x640" }}
 		 	<img src="//wsrv.nl/?url={{ $resized.RelPermalink | absURL }}&il" alt="cover" width="640" height="640" class="img-fluid" loading="lazy">
 			{{ end }}
             </div>
