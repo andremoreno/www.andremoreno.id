@@ -105,7 +105,7 @@ disableKinds = ['taxonomy', 'term']
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "https://wsrv.nl/?url=andremoreno.id/images/hero-main-bg6.jpg"
+    background_image      = "https://wsrv.nl/?url=andremoreno.id/images/hero-main-bg6.jpg&il"
     primary_button        = "View Story"
     primary_button_url    = "/stories/perayaan-natal-wijk-kampung-ambon-2023/"
     secondary_button      = "Get In Touch"
@@ -119,7 +119,7 @@ disableKinds = ['taxonomy', 'term']
 
   [params.call_to_action]
     enable              = true
-    background_image    = "https://wsrv.nl/?url=andremoreno.id/images/cta-bg.jpg"
+    background_image    = "https://wsrv.nl/?url=andremoreno.id/images/cta-bg.jpg&il"
     title               = "GET IN TOUCH"
     primary_button      = "Send Me Message"
     primary_button_url  = "contact"
