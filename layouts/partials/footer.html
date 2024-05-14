@@ -10,7 +10,7 @@
       {{ with .Site.Params.footer.sitemap }}
       <div class="col-lg-2 col-md-6">
         <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <p class="h5 site-footer-widget-title">{{ .title }}</p>
           <ul class="site-footer-widget-links">
             {{ range .link }}
             <li><a class="link-light" href="{{ .url | absURL }}">{{ .name }}</a></li>
@@ -22,7 +22,7 @@
       {{ with .Site.Params.footer.social }}
       <div class="col-lg-2 col-md-6">
         <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <p class="h5 site-footer-widget-title">{{ .title }}</p>
           <ul class="site-footer-widget-links">
             {{ range .link }}
               <li><a rel="me" href="{{ .url }}" class="link-light" target="_blank" rel="nofollow noopener">{{ .name }}</a></li>
@@ -34,7 +34,7 @@
       {{ with .Site.Params.footer.service }}
       <div class="col-lg-3 col-md-6">
         <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <p class="h5 site-footer-widget-title">{{ .title }}</p>
            <ul class="site-footer-widget-links">
             {{ range .link }}
               <li><a rel="me" href="{{ .url }}" class="link-light" target="_blank" rel="nofollow noopener">{{ .name }}</a></li>
