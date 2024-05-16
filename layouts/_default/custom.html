@@ -11,7 +11,7 @@
 
 	{{ range sort ((.Page.Resources.ByType "image").Match "IMG_*") ".Name" "asc" }}
 		{{ $small := .Fit "360x540 webp" }}
-		<div class="col-sm-6 col-lg-4 mb-4">
+		<div class="col-lg-4 col-md-4 col-sm-4 mb-4">
 		<div class="card">
 		<a href="{{.RelPermalink}}" data-fancybox="gallery">
 		<img src="{{ $small.RelPermalink }}" class="card-img-top img-fluid rounded" alt="{{ .Title }}" loading="lazy"></a>
