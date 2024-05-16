@@ -23,11 +23,16 @@
     img {
       max-width: 80px;
     }
+    @include desktop{
+    img {
+      max-width: 60px;
+    }
+    }
     @include mobile{
     img {
       max-width: 40px;
     }
-  }
+    }
   }
   .nav-item{
     @include desktop{
