@@ -62,13 +62,14 @@ disableKinds = ['taxonomy', 'term']
 
   # Contact Form
   [params.contactForm]
+    placeholder_your_name         = "Your Name"
     placeholder_first_name        = "First Name"
     placeholder_last_name         = "Last Name"
     placeholder_email             = "Email"
     placeholder_phone             = "Phone"
     placeholder_project_type      = "Project Type"
     placeholder_about_the_project = "Tell me everything about you! The more I know you, the better I can capture you and your story."
-    send_message                  = "Send Message"
+    send_message                  = "Send via WhatsApp"
     # We're using formspree.io for form handling, paste your formspree url below
     FormUrl  = "https://formspree.io/f/xjvlqgqz"
 

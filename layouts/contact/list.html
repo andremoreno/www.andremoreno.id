@@ -10,23 +10,14 @@
       <div class="col-lg-6 ml-auto">
         <div class="site-contact-form">
           <h4>{{ .Params.form_heading }}</h4>
-          <form id="contact-form" class="needs-validation" method="POST" action="{{ .Site.Params.contactForm.FormUrl }}" novalidate=true>
+          <form id="contact-form" class="needs-validation" method="POST" novalidate=true>
 
 		  <div class="messages" id="contact-form-status"></div>
 
 		  <input class="d-none" name="hpfield">
             <div class="row">
-              <div class="col-lg-6">
-                <input type="text" class="form-control" name="first-name" id="first-name" placeholder="{{ .Site.Params.contactForm.placeholder_first_name }}" required>
-              </div>
-              <div class="col-lg-6">
-                <input type="text" class="form-control" name="last-name" id="last-name" placeholder="{{ .Site.Params.contactForm.placeholder_last_name }}" required>
-              </div>
-              <div class="col-lg-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="{{ .Site.Params.contactForm.placeholder_email }}" required>
-              </div>
-			   <div class="col-lg-6">
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="{{ .Site.Params.contactForm.placeholder_phone }}" required>
+              <div class="col-12">
+                <input type="text" class="form-control" name="name" id="yname" placeholder="{{ .Site.Params.contactForm.placeholder_your_name }}" required>
               </div>
               <!-- <div class="col-lg-12">
                 <div class="select-wrapper">

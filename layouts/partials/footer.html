@@ -78,31 +78,29 @@ form.addEventListener('submit', function(event) {
         event.stopPropagation()
     }
     if (form.checkValidity()) {
-        handleSubmit(event)
+        //handleSubmit(event)
+		var yname = document.getElementById("yname").value;
+		var pesan = document.getElementById("aboutProject").value;
+		var message = "Hello, I'm " + yname + "\n\n *Message:* " + pesan + "";
+		var encodedMessage = encodeURIComponent(message);
+
+		var phoneNumber = "628561575475"; // Assuming this is the default number
+		var whatsappUrl = "https://web.whatsapp.com/send";
+		var phoneParam = "?phone=" + phoneNumber;
+		var textParam = "&text=" + encodedMessage;
+
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+		whatsappUrl = "whatsapp://send";
+
+		var finalUrl = whatsappUrl + phoneParam + textParam;
+		window.open(finalUrl, "_blank");
+	
     }
 
     form.classList.add('was-validated')
 }, false)
 
 // Handling contact form through https://formspree.io/
-
-async function handleSubmit(event) {
-    event.preventDefault();
-    var status = document.getElementById("contact-form-status");
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        status.innerHTML = '<div class="alert alert-success" role="alert">Thank you for contacting me. I will reach out to you shortly!</div>';
-        form.reset()
-    }).catch(error => {
-        status.innerHTML = '<div class="alert alert-danger" role="alert">Oops! There was a problem submitting your form!</div>'
-    });
-}
 </script>
 {{ end }}
 
