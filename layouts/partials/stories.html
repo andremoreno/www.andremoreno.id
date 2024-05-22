@@ -9,13 +9,13 @@
             <p class="fs-6 fw-bold text-dark">{{ .subtitle }}</p>
           </div>
         </div>
-		{{ range first 4 (where $.Site.RegularPages "Params.category" "intersect" (slice "Martupol" "Funeral")) }}
+		{{ range first 4 (where $.Site.RegularPages "Params.category" "intersect" (slice "Martupol")) }}
         <div class="col-lg-6 col-md-10 mx-auto">
           <div class="site-story-item">
             <div class="site-story-item-thumb">
               {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
-			  {{ $resized := .Fill "640x640 webp" }}
-		 	<img src="{{ $resized.RelPermalink | absURL }}" alt="cover" width="640" height="640" class="img-fluid" loading="lazy">
+			  {{ $resized := .Fill "640x640" }}
+		 	<img src="https://wsrv.nl/?url=andremoreno.id{{ $resized.RelPermalink | safeURL }}&output=webp" alt="cover" width="640" height="640" class="img-fluid" loading="lazy">
 			{{ end }}
             </div>
             <div class="site-story-item-content">
