@@ -106,9 +106,9 @@ disableKinds = ['taxonomy', 'term']
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "/images/hero-main-bg6.jpg"
+    background_image      = "https://wsrv.nl/?url=andremoreno.id/images/hero-main-bg5.jpg&output=webp"
     primary_button        = "View Story"
-    primary_button_url    = "/stories/perayaan-natal-wijk-kampung-ambon-2023/"
+    primary_button_url    = "/stories/pesta-koor-hkbp-rawamangun-2023/"
     secondary_button      = "Get In Touch"
     secondary_button_url  = "contact"
 
@@ -116,11 +116,10 @@ disableKinds = ['taxonomy', 'term']
     enable    = true
     title     = "Recent Stories"
     subtitle  = "A GREAT STORY IS IMPOSSIBLE TO FORGET"
-    # background_image    = "/images/cta-bg.jpg"
 
   [params.call_to_action]
     enable              = true
-    background_image    = "/images/cta-bg.jpg"
+    background_image    = "https://wsrv.nl/?url=andremoreno.id/images/cta-bg.jpg&output=webp"
     title               = "GET IN TOUCH"
     primary_button      = "Send Me Message"
     primary_button_url  = "contact"
