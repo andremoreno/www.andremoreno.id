@@ -23,6 +23,14 @@
 
 
 [[redirects]]
+  # Get a width and file name value from the URL
+  from = "/static/:width/:file"
+  # ...and pass them along as the correct request parameters
+  to = "/.netlify/images?url=/images/:file&width=:width"
+  status = 200
+
+
+[[redirects]]
   # Serve a full size version
   from = "/static/*"
   to = "/.netlify/images?url=/:splat"
@@ -63,7 +71,7 @@
 
 
 [[headers]]
-  for = "/static/*"
+  for = "/stories/*.jpg"
     [headers.values]
      "Cache-Control" = "public, max-age=31536000, immutable"
     Access-Control-Allow-Origin = "*"
