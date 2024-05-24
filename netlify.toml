@@ -24,8 +24,8 @@
 
 [[redirects]]
   # Serve a full size version
-  from = "/static/:file"
-  to = "/.netlify/images?url=/:file"
+  from = "/static/*"
+  to = "/.netlify/images?url=/:splat"
   status = 200
 
 
