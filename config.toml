@@ -158,8 +158,8 @@ disableKinds = ['taxonomy', 'term']
           name = "TikTok"
           url  = "https://www.tiktok.com/@fypye"
         [[params.footer.service.link]]
-          name = "Mastodon"
-          url  = "https://mastodon.social/@andremoreno"
+          name = "Steam"
+          url  = "https://steamcommunity.com/id/andremoreno/"
         [[params.footer.service.link]]
           name = "</source>"
           url  = "https://github.com/andremoreno/www.andremoreno.id"
