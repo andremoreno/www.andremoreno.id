@@ -199,7 +199,7 @@ disableKinds = ['taxonomy', 'term']
     disable = true
 
 
-[social]
+[params.social]
   facebook_profile_id = "andreas.rikardo"
   facebook_admin = "1059136786"
   facebook_app_id = "116794761711713"
