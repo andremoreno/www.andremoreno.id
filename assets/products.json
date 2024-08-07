@@ -1,10 +1,24 @@
 [{
     "id": "1",
-    "name": "Apple MacBook Air 2022 M2 Chip 13",
-    "price": "18.249.000",
-    "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2024/7/23/25917aff-83d8-475a-901c-cc13ffa4aded.png",
-    "description": "Apple MacBook Air 2022 M2 Chip 13 - iBox, 512GB SILVER",
-    "tokpedlink": "https://tokopedia.link/7NsjPxltLLb"
+    "name": "TWS Anker SoundCore R50i",
+    "price": "199.000",
+    "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2024/5/10/a76d0c1f-f2ac-4184-827d-2d23957de95c.jpg",
+    "description": "True Wireless Earbuds Anker Soundcore R50i",
+    "tokpedlink": "https://tokopedia.link/3uPLHQR9RLb"
+}, {
+    "id": "1",
+    "name": "TWS Anker SoundCore R50i NC",
+    "price": "299.000",
+    "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2024/7/3/ce1a3012-f3c9-46fe-acf9-f66346dc06a8.jpg",
+    "description": "(NEW LAUNCH) Soundcore Anker R50i NC Earbuds Adaptive Noise Canceling Headset Earphone Bluetooth 5.4 TWS Low Latency for Game Long Battery 4 Mics IP54 -A3959 - Hitam",
+    "tokpedlink": "https://tokopedia.link/hUuIcC19RLb"
+}, {
+    "id": "1",
+    "name": "TWS Anker SoundCore A30i NC",
+    "price": "349.000",
+    "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2024/5/17/3501c613-d8c0-4cf6-8739-dca899027be1.jpg",
+    "description": "(NEW LAUNCH) Soundcore Anker A30i NC Earbuds Adaptive Noise Canceling Headset Wireless Earphone Bluetooth 5.4 TWS Low Latency for Game Long Battery 4 Mics IP54 -A3958",
+    "tokpedlink": "https://tokopedia.link/eiH1PpraSLb"
 }, {
     "id": "2",
     "name": "Samsung Galaxy Z Flip6 - 12/256GB",
@@ -26,4 +40,11 @@
     "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2024/8/3/d737aace-50e6-446a-b91c-9158e10487c6.jpg",
     "description": "",
     "tokpedlink": "https://tokopedia.link/jbjjezgsLLb"
+}, {
+    "id": "1",
+    "name": "Apple MacBook Air 2022 M2 Chip 13",
+    "price": "18.249.000",
+    "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2024/7/23/25917aff-83d8-475a-901c-cc13ffa4aded.png",
+    "description": "Apple MacBook Air 2022 M2 Chip 13 - iBox, 512GB SILVER",
+    "tokpedlink": "https://tokopedia.link/7NsjPxltLLb"
 }]

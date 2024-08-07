@@ -36,9 +36,13 @@ disableKinds = ['taxonomy', 'term']
 #    name    = "Article"
 #    url     = "article"
 #    weight  = 4
+#  [[menu.nav]]
+#    name    = "Instagram"
+#    url     = "https://bit.ly/am-ig"
+#    weight  = 5
   [[menu.nav]]
-    name    = "Instagram"
-    url     = "https://bit.ly/am-ig"
+    name    = "Store"
+    url     = "store"
     weight  = 5
   [[menu.nav]]
     name    = "About Me"
