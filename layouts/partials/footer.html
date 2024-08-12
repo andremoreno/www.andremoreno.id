@@ -25,7 +25,7 @@
           <p class="h5 site-footer-widget-title">{{ .title }}</p>
           <ul class="site-footer-widget-links">
             {{ range .link }}
-              <li><a rel="me" href="{{ .url }}" class="link-light" target="_blank" rel="nofollow noopener">{{ .name }}</a></li>
+              <li><a href="{{ .url }}" class="link-light" target="_blank" rel="me nofollow noopener">{{ .name }}</a></li>
             {{ end }}
           </ul>
         </div>
@@ -37,7 +37,7 @@
           <p class="h5 site-footer-widget-title">{{ .title }}</p>
            <ul class="site-footer-widget-links">
             {{ range .link }}
-              <li><a rel="me" href="{{ .url }}" class="link-light" target="_blank" rel="nofollow noopener">{{ .name }}</a></li>
+              <li><a href="{{ .url }}" class="link-light" target="_blank" rel="me nofollow noopener">{{ .name }}</a></li>
             {{ end }}
           </ul>
         </div>

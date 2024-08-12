@@ -19,21 +19,21 @@
   </div>
 </section>
 
-<section class="site-dblog">
+<div class="site-dblog">
 <div class="container">
     
-	 <article class="site-blog-post">
-<a href="https://tokopedia.link/BOEBU6pQYLb"><img src="https://images.tokopedia.net/img/QBrNqa/2024/8/8/024070dc-f3c8-4593-86ea-fbf4164f6053.png" alt="" class="css-11u4aza loaded" width="100%" height="auto"></a>
-</article><div class="row">
+	 <div class="site-blog-post text-center">
+<a href="https://tokopedia.link/BOEBU6pQYLb"><img src="https://images.tokopedia.net/img/QBrNqa/2024/8/8/024070dc-f3c8-4593-86ea-fbf4164f6053.png" alt="Nantikan Kejutan, Promo Guncang 9.9" class="img-fluid w-100" loading="lazy"></a>
+</div><div class="row">
         {{ range $products }}
             <div class="col-lg-6">
         <article class="site-blog-post">
-          <div class="site-blog-post-thumb" class="img-fluid" loading="lazy" />
-		  <img src="{{ .image }}">
+          <div class="site-blog-post-thumb">
+		  <img src="{{ .image }}" alt="{{ .name }}" class="img-fluid" loading="lazy">
           </div>
           <div class="site-blog-post-content">
             <h5><a href="{{ .tokpedlink }}">{{ .name }}</a></h5>
-			<span><p>Rp {{ .price }}</p></span>
+			<span>Rp {{ .price }}</span>
             
             <a href="{{ .tokpedlink }}" class="read-more">read more</a>
           </div>
@@ -47,6 +47,6 @@
       </div>
     </div>
 </div>
-</section>
+</div>
 
 {{ end }}
