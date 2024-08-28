@@ -110,7 +110,7 @@ disableKinds = ['taxonomy', 'term']
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "/static/images/hero-main-bg9.jpg"
+    background_image      = "/images/hero-main-bg9.jpg"
     primary_button        = "View Story"
     primary_button_url    = "/stories/hut-60-hkbp-rawamangun/"
     secondary_button      = "Get In Touch"
@@ -123,7 +123,7 @@ disableKinds = ['taxonomy', 'term']
 
   [params.call_to_action]
     enable              = true
-    background_image    = "/static/images/cta-bg.jpg"
+    background_image    = "/images/cta-bg.jpg"
     title               = "GET IN TOUCH"
     primary_button      = "Send Me Message"
     primary_button_url  = "contact"
