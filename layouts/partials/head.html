@@ -33,7 +33,8 @@
   {{ partial "critical.html" . }}
 
   {{ "<!-- Bootstrap -->" | safeHTML }}
-  {{ $bootstrap := resources.Get "scss/custom.scss" | resources.ToCSS | minify | resources.Fingerprint "sha512" }}
+  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/custom.css" }}
+  {{ $bootstrap := resources.Get "scss/custom.scss" | toCSS $opts | minify | resources.Fingerprint "sha512" }}
   <link rel="preload" href="{{ $bootstrap.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ $bootstrap.Permalink }}"></noscript>
   

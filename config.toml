@@ -6,7 +6,12 @@ relativeURLs = true
 
 disableHugoGeneratorInject = true
 
-paginate = 6
+# paginate = 6
+
+[pagination]
+  disableAliases = false
+  pagerSize = 6
+  path = 'page'
 
 enableRobotsTXT = true
 
