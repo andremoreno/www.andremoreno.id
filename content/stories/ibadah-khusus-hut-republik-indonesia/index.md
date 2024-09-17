@@ -5,7 +5,7 @@ description: Ibadah Khusus HKBP Rawamangun Edisi HUT Kemerdekaan RI.
 lightbox: true
 author: Andre Moreno
 type: stories
-category: ["HKBP Rawamangun"]
+category: ["Event", "HKBP Rawamangun"]
 ---
 
 

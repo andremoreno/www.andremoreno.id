@@ -115,7 +115,7 @@ disableKinds = ['taxonomy', 'term']
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "/images/hero-main-bg9.jpg"
+    background_image      = "/images/hero-main-bg10.webp"
     primary_button        = "View Story"
     primary_button_url    = "/stories/hut-60-hkbp-rawamangun/"
     secondary_button      = "Get In Touch"
