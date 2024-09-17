@@ -117,7 +117,7 @@ disableKinds = ['taxonomy', 'term']
     enable                = true
     background_image      = "/images/hero-main-bg10.webp"
     primary_button        = "View Story"
-    primary_button_url    = "/stories/hut-60-hkbp-rawamangun/"
+    primary_button_url    = "/stories/batak-night-show-2024/"
     secondary_button      = "Get In Touch"
     secondary_button_url  = "contact"
 
