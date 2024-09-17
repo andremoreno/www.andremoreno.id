@@ -30,7 +30,7 @@
 
   <meta name="google-site-verification" content="1n0eAdCQ65L2FKZCbeR1MtY6LJ1fNGBNH0pfoGM3kJI">
 
-  {{ partial "critical.html" . }}
+  {{ partialCached "critical.html" . }}
 
   {{ "<!-- Bootstrap -->" | safeHTML }}
   {{ $opts := dict "transpiler" "libsass" "targetPath" "css/custom.css" }}

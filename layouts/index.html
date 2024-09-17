@@ -1,11 +1,11 @@
 {{ define "main" }}
 
-{{ partial "hero.html" . }}
+{{ partialCached "hero.html" . }}
 
-{{ partial "intro.html" . }}
+{{ partialCached "intro.html" . }}
 
 {{ partial "stories.html" . }}
 
-{{ partial "call-to-action.html" . }}
+{{ partialCached "call-to-action.html" . }}
 
 {{ end }}
