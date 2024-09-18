@@ -10,7 +10,7 @@
 	<div class="row justify-content-center">
 
 	{{ range sort ((.Page.Resources.ByType "image").Match "IMG_*") ".Name" "asc" }}
-		{{ $small := .Fill "640x640 webp" }}
+		{{ $small := .Fit "360x540 webp" }}
 		<div class="col-xxl-3 col-lg-4 col-md-4 col-sm-4 col-6 mb-4">
 		<div class="card">
 		<a href="{{.RelPermalink}}" data-fancybox="gallery">

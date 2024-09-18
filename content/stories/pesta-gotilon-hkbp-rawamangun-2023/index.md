@@ -9,6 +9,6 @@ category: [Event, Gotilon, HKBP Rawamangun]
 ---
 Untuk hasil dokumentasi selengkapnya, silahkan klik https://bit.ly/3Qw6Kqj
 
-Untuk hasil Photobooth, silahkan klik [Photobooth Pesta Gotilon HKBP Rawamangun Tahun 2023]({{< ref "/pbgotilon" >}} "Photobooth Pesta Gotilon HKBP Rawamangun Tahun 2023")
+Untuk hasil Photobooth, silahkan klik https://bit.ly/43UvOdG
 
 {{< gallery name="20230723-*.jpg" />}}
