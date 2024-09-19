@@ -11,6 +11,8 @@ CNAME
 public
 node_modules
 .hugo_build.lock
+package.json
+package-lock.json
 fleek.config.json
 jsconfig.json
 resources

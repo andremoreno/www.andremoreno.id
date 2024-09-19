@@ -1,4 +1,4 @@
-module andremoreno
+module github.com/andremoreno/www.andremoreno.id
 
 go 1.22.2
 
