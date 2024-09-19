@@ -9,7 +9,7 @@
   HUGO_ENV = "production"
 
 [dev]
-  command = "hugo server --disableFastRender"
+  command = "hugo server"
   framework = "hugo"
   targetPort = 1313
 
