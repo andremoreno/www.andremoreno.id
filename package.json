@@ -15,7 +15,6 @@
         "hugo-bin": "^0.115.0"
     },
     "dependencies": {
-        "serve": "^14.2.1",
-	"netlify-cli": "^17.23.8"
+        "serve": "^14.2.1"
     }
 }
