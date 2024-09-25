@@ -128,7 +128,7 @@ disableKinds = ['taxonomy', 'term']
 
   [params.call_to_action]
     enable              = true
-    background_image    = "/images/cta-bg.jpg"
+    background_image    = "/images/cta-bg.webp"
     title               = "GET IN TOUCH"
     primary_button      = "Send Me Message"
     primary_button_url  = "contact"
