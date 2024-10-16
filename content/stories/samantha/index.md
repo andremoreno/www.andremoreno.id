@@ -5,7 +5,7 @@ description: "Partumpolon of Samantha"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Martupol, HKBP Rawamangun]
+category: [HKBP Rawamangun]
 ---
 
 {{< gallery name="20211016*.jpg" />}}
