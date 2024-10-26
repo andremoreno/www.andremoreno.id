@@ -115,9 +115,9 @@ disableKinds = ['taxonomy', 'term']
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "/images/hero-main-bg10.webp"
+    background_image      = "/images/hero-main-mkp.webp"
     primary_button        = "View Story"
-    primary_button_url    = "/stories/batak-night-show-2024/"
+    primary_button_url    = "https://bulanmusik.andremoreno.id"
     secondary_button      = "Get In Touch"
     secondary_button_url  = "contact"
 
