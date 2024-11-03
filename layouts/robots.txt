@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://www.andremoreno.com/sitemap.xml
+Sitemap: https://www.andremoreno.id/sitemap.xml
