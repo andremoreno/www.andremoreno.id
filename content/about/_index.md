@@ -13,7 +13,7 @@ about : >
 
   &nbsp; \
 
-  Photography is a passion that I am working on for some time. It all started 11 years ago when I first got in touch with photography. I received a [Nikon D5200](https://en.wikipedia.org/wiki/Nikon_D5200) digital camera from my sister and a new interest was born. Passionate as I was I mostly learned by just taking and analyzing photos without lots of knowledge from books. The self-learning and exploring way still makes it just more interesting for me.\
+  Photography is a passion that I am working on for some time. It all started 11 years ago when I first got in touch with photography. I received a [Nikon D5100](https://en.wikipedia.org/wiki/Nikon_D5100) digital camera from my sister and a new interest was born. Passionate as I was I mostly learned by just taking and analyzing photos without lots of knowledge from books. The self-learning and exploring way still makes it just more interesting for me.\
 
   &nbsp; \
 
