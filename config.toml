@@ -27,11 +27,11 @@ disableKinds = ['taxonomy', 'term']
   # Navbar Menus
   [[menu.nav]]
     name    = "Home"
-    url     = "https://ndre.web.id/home"
+    url     = "https://dre.web.id/home"
     weight  = 1
   [[menu.nav]]
     name    = "Stories"
-    url     = "https://ndre.web.id/stories"
+    url     = "https://dre.web.id/stories"
     weight  = 2
   [[menu.nav]]
     name    = "Blog"
