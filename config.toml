@@ -43,7 +43,7 @@ disableKinds = ['taxonomy', 'term']
 #    weight  = 4
 #  [[menu.nav]]
 #    name    = "Instagram"
-#    url     = "https://ndre.web.id/ig"
+#    url     = "https://dre.web.id/ig"
 #    weight  = 5
   [[menu.nav]]
     name    = "Store"
@@ -223,3 +223,7 @@ disableKinds = ['taxonomy', 'term']
     path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
 
 
+[markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xhtml = true
