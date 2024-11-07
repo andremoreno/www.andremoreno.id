@@ -3,7 +3,11 @@
 {{ if gt $pag.TotalPages 1 }}
 {{ $.Scratch.Set "dot_rendered" false }}
 <nav aria-label="page navigation pagination-sm">
-    <ul class="pagination ">
+    <ul class="pagination pagination-sm">
+        <!-- Don't show on 1st and 2nd page -->
+        {{ if and (ne $pag.PageNumber 1) (ne $pag.PageNumber 2) }}
+        <li class="page-item"><a href="{{ $pag.First.URL }}" rel="first" class="page-link">&laquo;</a></li>
+        {{ end }}
 
         {{ if $pag.HasPrev  }}
         <li class="page-item"><a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link">&lsaquo;</a></li>
@@ -16,7 +20,7 @@
             {{ $.Scratch.Set "dot_rendered" false }} <!-- Render prev 2 page and next 2 pages -->
             <li class="page-item"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
             {{ else if eq ($.Scratch.Get "dot_rendered") false }} <!-- render skip pages -->
-            
+
             {{ end }}
         {{ end }}
 
@@ -24,8 +28,10 @@
         <li class="page-item"><a href="{{ $pag.Next.URL }}" rel="next" class="page-link">&rsaquo;</a></li>
         {{ end }}
 
-
+        <!-- Don't show on last and 2nd last page -->
+        {{ if and (ne $pag.PageNumber $pag.TotalPages) ((ne $pag.PageNumber (sub $pag.TotalPages 1))) }}
+        <li class="page-item"><a href="{{ $pag.Last.URL }}" rel="last" class="page-link">&raquo;</a></li>
+        {{ end }}
     </ul>
 </nav>
 {{ end }}
-<!-- Code ends here -->
