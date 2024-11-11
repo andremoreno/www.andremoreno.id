@@ -2,8 +2,8 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
 {{ $.Scratch.Set "dot_rendered" false }}
-<nav aria-label="page navigation pagination-sm">
-    <ul class="pagination pagination-sm">
+<nav aria-label="page navigation pagination">
+    <ul class="pagination pagination">
         <!-- Don't show on 1st and 2nd page -->
         {{ if and (ne $pag.PageNumber 1) (ne $pag.PageNumber 2) }}
         <li class="page-item"><a href="{{ $pag.First.URL }}" rel="first" class="page-link">&laquo;</a></li>
