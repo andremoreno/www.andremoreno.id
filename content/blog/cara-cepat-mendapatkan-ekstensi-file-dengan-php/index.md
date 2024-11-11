@@ -3,12 +3,8 @@ layout: post
 title: "Cara Cepat Mendapatkan Extensi File Dengan Menggunakan PHP"
 date: 2016-10-09
 summary: Mungkin kita perlu untuk mendapatkan ekstensi dari file-file yang diunggah atau untuk memeriksa ekstensi dari berkas-berkas yang ada di website kita dengan menggunakan PHP.
-image: images/blog/post_php_thumb.jpg
-feature_image: images/blog/post_php_details.jpg
 author: Andre Moreno
 ---
-
-<a href="{{site.staticurl}}/photos/misc/extension.jpg" class="swipebox" title=""><img src="{{site.staticurl}}/static/wait.svg" class="resize js_show loading_image" data-href="/misc/extension.jpg" /></a>
 
 Mendapatkan ekstensi sebuah file / berkas bisa sangat penting dalam memvalidasi berkas. Mungkin kita perlu untuk mendapatkan ekstensi dari file-file yang diunggah atau untuk memeriksa ekstensi dari berkas-berkas yang ada di website kita dengan menggunakan PHP.
 
