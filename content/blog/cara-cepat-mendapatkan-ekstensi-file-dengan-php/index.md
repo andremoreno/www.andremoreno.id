@@ -18,11 +18,11 @@ Yang bila dijalankan akan menghasilkan:
 {{< gist andremoreno 5b2ae768c802cae636cf3d77128229db "2.php" >}}
 
 Seperti yang kita bisa lihat, bagian "extension" berisi ekstensi dari file tersebut.
-Bisa dilihat di tautan berikut ini: <a href="http://codepad.org/NeCvCPkB">http://codepad.org/NeCvCPkB</a>
+
 
 Sekarang kita bisa menyingkat fungsi diatas tadi ini dengan menambahkan **PATHINFO_EXTENSION** dengan tujuan hanya mengambil ekstensi berkas tanpa informasi tambahan.
 
 {{< gist andremoreno 5b2ae768c802cae636cf3d77128229db "3.php" >}}
 
-Kode bisa dilihat ditautan berikut: <a href="http://codepad.org/AN9ZnolN">http://codepad.org/AN9ZnolN</a>
+
 

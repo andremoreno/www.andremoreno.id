@@ -10,11 +10,34 @@
 				{{ .Content }}
 				</div>
 
+				<br><br><br><br>
+
+				<div class="site-story-single-action d-flex justify-content-between">
+                {{ if .NextInSection }}
+                <a href="{{.NextInSection.Permalink}}">
+                  <img class="img-prev" src="{{ "images/to-top.svg" | absURL }}" alt="prev story" loading="lazy" />
+                  <span class="link-area">
+                    <span data-text="Prev Story">
+                      Prev
+                    </span>
+                  </span>
+                </a>
+                {{ end }}
+                {{ if .PrevInSection }}
+                <a href="{{.PrevInSection.Permalink}}">
+                  <span class="link-area">
+                    <span data-text="Next Story">
+                      Next
+                    </span>
+                  </span>
+                  <img class="img-next" src="{{ "images/to-top.svg" | absURL }}" alt="next story" loading="lazy" />
+                </a> 
+                {{ end }}
+              </div>
+
 				<hr>
 
 				<strong>Thanks for reading!</strong> If you'd like to share your thoughts you can <a href="{{ "contact" | relURL }}">contact me</a>, or hit me up on <a href="https://www.instagram.com/andremoreno">Instagram</a>.
-
-				<hr>
 			</div>
 		</div>
 	</div>
