@@ -60,6 +60,9 @@ disableKinds = ['taxonomy', 'term']
 
 # Site Params
 [params]
+  [params.owner]
+    name = "Andre Moreno"
+  
   logo = "images/logo-am-header.png"
   dateFormat = "14 FEB 2019"
   # Meta data

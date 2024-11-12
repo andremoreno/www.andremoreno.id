@@ -1,10 +1,19 @@
 <div class="row justify-content-center">
 {{ range sort ((.Page.Resources.ByType "image").Match (printf "%s*" (.Get "name"))) ".Name" "asc" }}
 {{ $small := .Fill "640x640 webp" }}
+{{ $color := index $small.Colors 0 | default "transparent" }}
 	<div class="col-lg-4 col-md-4 col-sm-4 col-6 mb-4">
 	<div class="card">
-	<a href="{{.RelPermalink}}" data-fancybox="gallery">
-	<img src="{{ $small.RelPermalink }}" class="card-img-top img-fluid rounded" alt="" loading="lazy" /></a>
+	<a href="{{.RelPermalink}}" data-fancybox="gallery"><figure style="background-color: {{ $color }};">
+	<img src="{{ $small.RelPermalink }}" class="card-img-top img-fluid rounded" alt="" loading="lazy" />
+	</figure>	
+	</a>
+	<meta itemprop="contentUrl" content="{{ .RelPermalink }}" />
+         {{ with site.Params.Owner.Name }}
+          <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
+            <meta itemprop="name" content="{{ . }}" />
+          </span>
+		  {{ end }}
 	</div></div>
 {{ end }}
 </div>
