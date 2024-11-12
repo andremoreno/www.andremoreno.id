@@ -1,12 +1,12 @@
-<div class="row justify-content-center">
+<div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
 {{ range sort ((.Page.Resources.ByType "image").Match (printf "%s*" (.Get "name"))) ".Name" "asc" }}
-{{ $small := .Fill "640x640 webp" }}
+{{ $small := .Fit "720x720 webp" }}
 {{ $color := index $small.Colors 0 | default "transparent" }}
-	<div class="col-lg-4 col-md-4 col-sm-4 col-6 mb-4">
-	<div class="card">
-	<a href="{{.RelPermalink}}" data-fancybox="gallery"><figure style="background-color: {{ $color }};">
-	<img src="{{ $small.RelPermalink }}" class="card-img-top img-fluid rounded" alt="" loading="lazy" />
-	</figure>	
+
+	<a class="gallery-item" href="{{ .RelPermalink }}" data-pswp-src="{{ .RelPermalink }}" data-pswp-width="{{ .Width }}" data-pswp-height="{{ .Height }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
+	<figure style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
+          <img class="lazyload" width="{{ $small.Width }}" height="{{ $small.Height }}" data-src="{{ $small.RelPermalink }}" alt="" />
+        </figure>
 	</a>
 	<meta itemprop="contentUrl" content="{{ .RelPermalink }}" />
          {{ with site.Params.Owner.Name }}
@@ -14,8 +14,9 @@
             <meta itemprop="name" content="{{ . }}" />
           </span>
 		  {{ end }}
-	</div></div>
+
 {{ end }}
-</div>
+  </div>
+
 
 {{ .Inner }}

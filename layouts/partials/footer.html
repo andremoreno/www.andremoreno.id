@@ -104,27 +104,4 @@ form.addEventListener('submit', function(event) {
 </script>
 {{ end }}
 
-{{ if .Params.lightbox }}
-{{ $masonry := resources.Get "js/masonry.pkgd.min.js" }}
-{{ $fancybox := resources.Get "js/fancybox.umd.min.js" }}
-<script src="{{ $masonry.Permalink }}"></script>
-<script src="{{ $fancybox.Permalink }}"></script>
-{{ $imagesloaded := resources.Get "js/imagesloaded.pkgd.js" | minify }}
-<script src="{{ $imagesloaded.Permalink }}"></script>
 
-<script>
-var grid = document.querySelector('.row .justify-content-center');
-var msnry = new Masonry( grid, {
-  itemSelector: '.col-sm-4',
-  percentPosition: true,
-  horizontalOrder: true
-});
-imagesLoaded( grid ).on( 'progress', function() {
-  // layout Masonry after each image loads
-  msnry.layout();
-});
-window.addEventListener("orientationchange", function(event) {
-	msnry.layout();
-});
-</script>
-{{ end }}

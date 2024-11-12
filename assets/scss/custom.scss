@@ -111,3 +111,31 @@ figure { margin: 0rem; }
 @import "components/syntax";
 
 //@import "components/whatsapp";
+
+@import "photoswipe/photoswipe";
+@import "photoswipe/photoswipe-dynamic-caption-plugin";
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+section.gallery {
+  padding-right: 0;
+  padding-left: 0;
+  max-width: 1536px;
+
+  @media (min-width: 640px) {
+    padding-right: 1.5rem /* 24px */;
+    padding-left: 1.5rem /* 24px */;
+  }
+}
