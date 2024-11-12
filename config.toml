@@ -207,8 +207,7 @@ disableKinds = ['taxonomy', 'term']
     disable = true
   [privacy.vimeo]
     disable = true
-  [privacy.youtube]
-    disable = true
+
 
 
 [params.social]
