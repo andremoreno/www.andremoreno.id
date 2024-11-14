@@ -79,19 +79,7 @@ disableKinds  = ['taxonomy', 'term']
     placeholder_project_type      = "Project Type"
     placeholder_about_the_project = "Tell me everything about you! The more I know you, the better I can capture you and your story."
     send_message                  = "Send via WhatsApp"
-    # We're using formspree.io for form handling, paste your formspree url below
-    FormUrl  = "https://formspree.io/f/xjvlqgqz"
 
-    [[params.contactForm.projectType]]
-      value = "pg"
-      title  = "Photography"
-    [[params.contactForm.projectType]]
-      value = "pb"
-      title  = "Photobooth"
-    [[params.contactForm.projectType]]
-      value = "wd"
-      title  = "Web Development"
-  
   # Navbar Action Button
   [params.navAction]
     status  = true

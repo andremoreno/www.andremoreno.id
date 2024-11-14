@@ -1,4 +1,3 @@
 :)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/31551bc7-1ff1-4ec4-bd25-b09e53840a7b/deploy-status)](https://app.netlify.com/sites/andremoreno/deploys)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1ca89ddb-820b-4ce9-a067-96f77e6937f5/deploy-status)](https://app.netlify.com/sites/ndrmrn/deploys)

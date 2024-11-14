@@ -8,13 +8,8 @@
 	</div>
 	<br><br>
 
-
 	<div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
 {{ range sort ((.Page.Resources.ByType "image").Match "*") "Exif.Date" "desc" }}
-
-	
-
-
 {{ $small := .Filter (slice images.AutoOrient (images.Process "fit 640x640")) }}
 {{ $full := .Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
 
@@ -51,7 +46,6 @@
     {{ $full = $full.Filter (images.Overlay $watermark $x $y ) }}
   {{ end }}
 {{ end }}
-
 
 {{ $color := index $small.Colors 0 | default "transparent" }}
 	<a class="gallery-item" href="{{ $full.RelPermalink }}" data-pswp-src="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">

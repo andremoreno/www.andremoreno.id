@@ -22,7 +22,7 @@
           {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
 		 {{ $resized := .Fill "640x640 webp" }}
           <div class="site-blog-post-thumb">
-            <img src="{{ $resized.RelPermalink }}" alt="cover" width="640" height="640" class="img-fluid" loading="lazy" />
+            <img src="{{ $resized.RelPermalink }}" alt="cover" width="640" height="640" class="img-fluid" class="lazyload">
           </div>
           {{ end }}
           <div class="site-blog-post-content">
