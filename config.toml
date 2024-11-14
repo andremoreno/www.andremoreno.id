@@ -37,10 +37,10 @@ disableKinds = ['taxonomy', 'term']
     name    = "Blog"
     url     = "blog"
     weight  = 3
-#  [[menu.nav]]
-#    name    = "Article"
-#    url     = "article"
-#    weight  = 4
+  [[menu.nav]]
+    name    = "Gallery"
+    url     = "gallery"
+    weight  = 4
 #  [[menu.nav]]
 #    name    = "Instagram"
 #    url     = "https://dre.web.id/ig"
@@ -62,9 +62,14 @@ disableKinds = ['taxonomy', 'term']
 [params]
   [params.owner]
     name = "Andre Moreno"
-  
+
+  [params.watermark]
+    image = "images/am-wm.png" # relative to /assets
+    posx  = "right"                    # one of "left", "center", "right"
+    posy  = "bottom"                  # one of "top", "center", "bottom"
+
   logo = "images/logo-am-header.png"
-  dateFormat = "14 FEB 2019"
+  dateFormat = "11 JAN 2019"
   # Meta data
   description = "Andre Moreno Photography"
   author = "Andre Moreno"

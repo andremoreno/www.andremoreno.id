@@ -2,27 +2,75 @@
 
 <section class="site-blog-header">
 	<div class="container">
-	<div class="row">
-	<div class="col-lg-12 mx-auto">
 	<div class="site-story-single text-center">
 	<h1 class="h5">{{ .Title }}</h1>
 	</div>
-	<div class="row justify-content-center">
 
-	{{ range sort ((.Page.Resources.ByType "image").Match "IMG_*") ".Name" "asc" }}
-		{{ $small := .Fit "360x540 webp" }}
-		<div class="col-xxl-3 col-lg-4 col-md-4 col-sm-4 col-6 mb-4">
-		<div class="card">
-		<a href="{{.RelPermalink}}" data-fancybox="gallery">
-		<img src="{{ $small.RelPermalink }}" class="card-img-top img-fluid rounded" alt="{{ .Title }}" loading="lazy"></a>
-		</div></div>
-	{{ end }}
-	</div>
-	</div>
-	</div>
+
+	<div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
+{{ range sort ((.Page.Resources.ByType "image").Match "*") "Exif.Date" "desc" }}
+
+{{ $small := .Filter (slice images.AutoOrient (images.Process "fit 640x640")) }}
+{{ $full := .Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
+
+{{ with site.Params.watermark }}
+  {{ $opts := . }}
+  {{ with resources.Get .image }}
+    {{ $watermark := . }}
+    {{ $fullWidth := $full.Width }}
+    {{ $watermarkMaxWidth := div $fullWidth 5 }}
+    {{ if gt $watermark.Width $watermarkMaxWidth }}
+      {{ $watermark = $watermark.Resize (printf "%dx" $watermarkMaxWidth) }}
+    {{ end }}
+    {{ $watermarkWidth := $watermark.Width }}
+    {{ $watermarkHeight := $watermark.Height }}
+    {{ $posx :=  $opts.posx | default "right" }}
+    {{ $posy := $opts.posy | default "bottom" }}
+    {{ $padding := 20 }}
+    {{ $x := $padding }}
+    {{ $y := $padding }}
+    {{ if eq $posx "center" }}
+      {{ $x = div $fullWidth 2 }}
+      {{ $x = sub $x (div $watermarkWidth 2) }}
+    {{ end }}
+    {{ if eq $posy "center" }}
+      {{ $y = div $full.Height 2 }}
+      {{ $y = sub $y (div $watermarkHeight 2) }}
+    {{ end }}
+    {{ if eq $posx "right" }}
+      {{ $x = sub $fullWidth  (add $watermarkWidth $padding) }}
+    {{ end }}
+    {{ if eq $posy "bottom" }}
+      {{ $y = sub  $full.Height (add $watermarkHeight $padding) }}
+    {{ end }}
+    {{ $full = $full.Filter (images.Overlay $watermark $x $y ) }}
+  {{ end }}
+{{ end }}
+
+
+{{ $color := index $small.Colors 0 | default "transparent" }}
+
+	<a class="gallery-item" href="{{ $full.RelPermalink }}" data-pswp-src="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
+	<figure style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
+          <img class="lazyload" width="{{ $small.Width }}" height="{{ $small.Height }}" data-src="{{ $small.RelPermalink }}" alt="" />
+        </figure>
+	</a>
+	<meta itemprop="contentUrl" content="{{ $full.RelPermalink }}" />
+         {{ with site.Params.Owner.Name }}
+          <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
+            <meta itemprop="name" content="{{ . }}" />
+          </span>
+		  {{ end }}
+
+{{ end }}
+  </div>
+
+
+
+
 	</div>
 </section>
-
+<br><br>
 {{ partial "call-to-action.html" . }}
 
 {{ end }}
