@@ -4,11 +4,16 @@
 	<div class="container">
 	<div class="site-story-single text-center">
 	<h1 class="h5">{{ .Title }}</h1>
+	<p>{{ .Params.stitle }}</p>
 	</div>
+	<br><br>
 
 
 	<div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
 {{ range sort ((.Page.Resources.ByType "image").Match "*") "Exif.Date" "desc" }}
+
+	
+
 
 {{ $small := .Filter (slice images.AutoOrient (images.Process "fit 640x640")) }}
 {{ $full := .Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
@@ -49,10 +54,9 @@
 
 
 {{ $color := index $small.Colors 0 | default "transparent" }}
-
 	<a class="gallery-item" href="{{ $full.RelPermalink }}" data-pswp-src="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
 	<figure style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
-          <img class="lazyload" width="{{ $small.Width }}" height="{{ $small.Height }}" data-src="{{ $small.RelPermalink }}" alt="" />
+          <img class="lazyload" width="{{ $small.Width }}" height="{{ $small.Height }}" data-src="{{ $small.RelPermalink }}" alt="{{ with .Exif.Tags.Make }}{{ . }}{{ end }} {{ with .Exif.Tags.Model }}{{ . }}{{ end }} {{ with .Exif.Tags.ImageDescription }}<br>{{ . }}{{ end }}" />
         </figure>
 	</a>
 	<meta itemprop="contentUrl" content="{{ $full.RelPermalink }}" />

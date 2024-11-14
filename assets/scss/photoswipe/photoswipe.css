@@ -328,7 +328,7 @@ div.pswp__img--placeholder,
 
 /* hide arrows on touch screens */
 .pswp--touch .pswp__button--arrow {
-  visibility: hidden;
+  visibility: visible;
 }
 
 /* show arrows only after mouse was used */
