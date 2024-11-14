@@ -1,25 +1,17 @@
 baseURL       = "https://www.andremoreno.id"
 languageCode  = "en-us"
 title         = "Andre Moreno"
-
-relativeURLs = true
-
+relativeURLs  = true
 disableHugoGeneratorInject = true
-
-# paginate = 6
+enableRobotsTXT = true
+summarylength = 25
+timeout       = "120s"
+disableKinds  = ['taxonomy', 'term']
 
 [pagination]
   disableAliases = false
   pagerSize = 6
-  path = 'page'
-
-enableRobotsTXT = true
-
-summarylength = 25
-
-timeout = 600000
-
-disableKinds = ['taxonomy', 'term']
+  path = "page"
 
 
 # Site Menus
