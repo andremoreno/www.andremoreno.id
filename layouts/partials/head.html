@@ -14,7 +14,7 @@
 </title>
 
 {{- if .IsHome -}}
-  <meta name="description" content="{{ site.Params.Description }}">
+  <meta name="description" content="{{ .Site.Params.Description }}">
 {{- else -}}
   <meta name="description" content="{{ .Params.Description }}">
 {{- end }}

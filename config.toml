@@ -48,6 +48,12 @@ disableKinds  = ['taxonomy', 'term']
 
 # Site Params
 [params]
+  # Meta data
+  description = "Andre Moreno Photography"
+  author = "Andre Moreno"
+  logo = "images/logo-am-header.png"
+  dateFormat = "11 JAN 2019"
+
   [params.owner]
     name = "Andre Moreno"
 
@@ -55,15 +61,6 @@ disableKinds  = ['taxonomy', 'term']
     image = "images/am-wm.png" # relative to /assets
     posx  = "right"                    # one of "left", "center", "right"
     posy  = "bottom"                  # one of "top", "center", "bottom"
-
-  logo = "images/logo-am-header.png"
-  dateFormat = "11 JAN 2019"
-  # Meta data
-  description = "Andre Moreno Photography"
-  author = "Andre Moreno"
-  # Google Analitycs
-  googleAnalitycsID = ""
-  images = ['/images/default-image.png']
 
   # Contact Form
   [params.contactForm]
