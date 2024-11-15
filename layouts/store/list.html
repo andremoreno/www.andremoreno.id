@@ -23,13 +23,13 @@
 <div class="container">
     
 	 <div class="site-blog-post text-center">
-<a href="https://tokopedia.link/zCqGjbvdYMb"><img src="https://images.tokopedia.net/img/QBrNqa/2024/8/6/3e40a7fe-87d9-4450-aaf7-664f9a5f17fb.png" alt="" class="img-fluid w-100" class="lazyload"></a>
+<a href="https://tokopedia.link/zCqGjbvdYMb"><img src="https://images.tokopedia.net/img/QBrNqa/2024/8/6/3e40a7fe-87d9-4450-aaf7-664f9a5f17fb.png" alt="" class="img-fluid w-100 lazyload"></a>
 </div><div class="row">
         {{ range $products }}
             <div class="col-lg-6">
         <article class="site-blog-post">
           <div class="site-blog-post-thumb">
-		  <img src="{{ .image }}" alt="{{ .name }}" class="img-fluid" class="lazyload">
+		  <img src="{{ .image }}" alt="{{ .name }}" class="img-fluid lazyload">
           </div>
           <div class="site-blog-post-content">
             <h5><a href="{{ .tokpedlink }}">{{ .name }}</a></h5>
