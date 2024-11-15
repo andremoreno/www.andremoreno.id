@@ -5,7 +5,7 @@ relativeURLs  = true
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 summarylength = 25
-timeout       = "120s"
+timeout       = "300s"
 disableKinds  = ['taxonomy', 'term']
 
 [pagination]
