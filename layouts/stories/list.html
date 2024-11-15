@@ -26,14 +26,16 @@
       {{ range .Paginator.Pages }}
       <div class="col-lg-6 col-md-10 mx-auto">
         <div class="site-story-item">
-          <div class="site-story-item-thumb">
+          
 		 {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
 		 {{ $resized := .Fill "640x640 webp" }}
-             
+		 {{ $color := index $resized.Colors 0 | default "transparent" }}
+		 <div class="site-story-item-thumb" style="background-color: {{ $color }};">
 		 	<img src="{{ $resized.RelPermalink | absURL }}" alt="cover" width="640" height="640" class="img-fluid lazyload">
+          </div>
 			{{ end }}
 
-          </div>
+
           <div class="site-story-item-content">
 		  {{$mainSection := index (.Params.category) 0 }}
 

@@ -63,11 +63,11 @@
    {{ $params := dict }}
    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
-   {{ $js = $js | js.Build $opts }}
+   {{ $js = $js | js.Build (dict "minify" true "params" $params) | resources.Fingerprint }}
    {{ if hugo.IsProduction }}
    {{ $js = $js | fingerprint }}
    {{ end }}  
-    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
+    <script src="{{ $js.RelPermalink }}"{{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
 
 {{ if isset .Params "form" }}
 <script type="text/javascript">
@@ -114,4 +114,7 @@ form.addEventListener('submit', function(event) {
     "downloadTitle" (i18n "downloadTitle")
   }}
   {{ $js := resources.Get "js/main.js" | js.Build (dict "minify" true "params" $params) | resources.Fingerprint }}
-  <script src="{{ $js.RelPermalink }}" defer></script>
+  {{ if hugo.IsProduction }}
+   {{ $js = $js | fingerprint }}
+   {{ end }}
+  <script src="{{ $js.RelPermalink }}"{{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
