@@ -33,10 +33,6 @@ disableKinds  = ['taxonomy', 'term']
     name    = "Gallery"
     url     = "gallery"
     weight  = 4
-#  [[menu.nav]]
-#    name    = "Instagram"
-#    url     = "https://dre.web.id/ig"
-#    weight  = 5
   [[menu.nav]]
     name    = "Store"
     url     = "store"
