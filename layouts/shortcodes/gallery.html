@@ -1,6 +1,6 @@
 <div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
 {{ range sort ((.Page.Resources.ByType "image").Match (printf "%s*" (.Get "name"))) ".Name" "asc" }}
-{{ $small := .Fit "720x720 webp" }}
+{{ $small := .Fit "720x720 Lanczos" }}
 {{ $color := index $small.Colors 0 | default "transparent" }}
 
 	<a class="gallery-item" href="{{ .RelPermalink }}" data-pswp-src="{{ .RelPermalink }}" data-pswp-width="{{ .Width }}" data-pswp-height="{{ .Height }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
