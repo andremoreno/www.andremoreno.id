@@ -174,18 +174,9 @@ disableKinds  = ['taxonomy', 'term']
     weight = 50
 
 
-[privacy]
-  [privacy.disqus]
-    disable = true
-  [privacy.googleAnalytics]
-    disable = true
-  [privacy.instagram]
-    disable = true
-  [privacy.twitter]
-    disable = true
-  [privacy.vimeo]
-    disable = true
-
+[services]
+  [services.disqus]
+    shortname = 'andremoreno'
 
 
 [params.social]

@@ -15,6 +15,12 @@
 
 				<br><br><br>
 
+				{{ template "_internal/disqus.html" . }}
+
+				<br><br>
+
+
+
 				<div class="site-story-single-action d-flex justify-content-between">
                 {{ if .NextInSection }}
                 <a href="{{.NextInSection.Permalink}}">
