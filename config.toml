@@ -184,7 +184,6 @@ disableKinds  = ['taxonomy', 'term']
     weight = 50
 
 [imaging]
-  quality = 80
   resamplefilter = 'CatmullRom'
 
 
