@@ -51,8 +51,12 @@ disableKinds  = ['taxonomy', 'term']
   # Meta data
   description = "Andre Moreno Photography"
   author = "Andre Moreno"
+  authors = "Andre Moreno"
   logo = "images/logo-am-header.png"
   dateFormat = "11 JAN 2019"
+  subtitle = "Affordable photographer in Jakarta"
+  repo = "https://github.com/andremoreno/www.andremoreno.id"
+
 
   [params.owner]
     name = "Andre Moreno"
@@ -155,6 +159,12 @@ disableKinds  = ['taxonomy', 'term']
           url  = "https://github.com/andremoreno/www.andremoreno.id"
       # Footer Service
 
+  [params.social]
+    facebook_profile_id = "andreas.rikardo"
+    facebook_admin = "1059136786"
+    facebook_app_id = "116794761711713"
+    twitter = "Writelonger"
+
 
 [related]
   includeNewer = true
@@ -173,17 +183,14 @@ disableKinds  = ['taxonomy', 'term']
     name = "categories"
     weight = 50
 
+[imaging]
+  quality = 80
+  resamplefilter = 'CatmullRom'
+
 
 [services]
   [services.disqus]
     shortname = 'andremoreno'
-
-
-[params.social]
-  facebook_profile_id = "andreas.rikardo"
-  facebook_admin = "1059136786"
-  facebook_app_id = "116794761711713"
-  twitter = "Writelonger"
 
 
 [module]
