@@ -23,7 +23,7 @@
 		 {{ $resized := .Fill "640x640"}}
 		 {{ $resized2 := .Fill "1280x1280"}}
           <div class="site-blog-post-thumb">
-            <img data-src="{{ $resized.RelPermalink | safeURL }}" alt="cover" width="640" height="640" class="img-fluid lazyload" data-srcset="{{ $resized.RelPermalink | safeURL }} 1x, {{ $resized2.RelPermalink | safeURL }} 2x">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ $resized.RelPermalink | safeURL }}" alt="cover" width="640" height="640" class="img-fluid lazyload" data-srcset="{{ $resized.RelPermalink | safeURL }} 1x, {{ $resized2.RelPermalink | safeURL }} 2x">
           </div>
           {{ end }}
           <div class="site-blog-post-content">

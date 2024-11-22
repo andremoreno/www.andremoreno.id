@@ -32,7 +32,7 @@
 		 {{ $resized2 := .Fill "1280x1280"}}
 		 {{ $color := index $resized.Colors 0 | default "transparent" }}
 		 <div class="site-story-item-thumb" style="background-color: {{ $color }};">
-		 	<img data-src="{{ $resized.RelPermalink | safeURL }}" alt="cover" width="640" height="640" class="img-fluid lazyload" data-srcset="{{ $resized.RelPermalink | safeURL }} 1x, {{ $resized2.RelPermalink | safeURL }} 2x">
+		 	<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ $resized.RelPermalink | safeURL }}" alt="cover" width="640" height="640" class="img-fluid lazyload" data-srcset="{{ $resized.RelPermalink | safeURL }} 1x, {{ $resized2.RelPermalink | safeURL }} 2x">
           </div>
 			{{ end }}
 
