@@ -31,9 +31,9 @@
 
                 <div class="site-story-item-content">
                   {{ $mainSection := index (.Params.category) 0 }}
-                  <span>{{ $mainSection }}</span>
+                  <span><a href="/category/{{ lower $mainSection }}" class="text-dark">{{ $mainSection }}</a></span>
                   <h3>
-                    <a href="{{ .Permalink }}" class="stretched-link">{{ .Title }}</a>
+                    <a href="{{ .Permalink }}" class="">{{ .Title }}</a>
                   </h3>
                   <a href="{{ .Permalink }}" class="read-more">view story</a>
                 </div>

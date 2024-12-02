@@ -5,20 +5,17 @@
     <div class="row align-items-center">
       <div class="col-lg-8">
         <div class="site-story-header-content">
-          <h1>
-            {{ .Params.stitle | safeHTML }}
-          </h1>
+          <h1>{{ .Title }}</h1>
+		  Showing all posts with the category "{{.Title}}"
         </div>
       </div>
       <div class="col-lg-4">
-        <a href="#stories" class="site-story-header-action scroll-to">
-          <span>Scroll Down</span>
-          <img src="{{ "images/arrow-down.svg" | absURL }}" alt="arrow-down">
-        </a>
+
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="site-story" id="stories">
   <div class="container">
@@ -38,10 +35,8 @@
 
 
           <div class="site-story-item-content">
-		  {{$mainSection := index (.Params.category) 0 }}
-
-            <span><a href="/category/{{ lower $mainSection }}" class="text-dark">{{ $mainSection }}</a></span>
-            <h3><a href="{{ .Permalink }}" class="">{{ .Params.title }}</a></h3>
+		  <span class="small">{{ .PublishDate.Format "January 2, 2006" }}</span>
+            <h3><a href="{{ .Permalink }}" class="stretched-link">{{ .Title }}</a></h3>
 			<a href="{{ .Permalink }}" class="read-more">view story</a>
           </div>
         </div>
@@ -59,3 +54,7 @@
 {{ partial "call-to-action.html" . }}
 
 {{ end }}
+
+
+
+

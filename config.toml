@@ -6,13 +6,14 @@ disableHugoGeneratorInject = true
 enableRobotsTXT = true
 summarylength = 25
 timeout       = "300s"
-disableKinds  = ['taxonomy', 'term']
 
 [pagination]
   disableAliases = false
   pagerSize = 6
   path = "page"
 
+[taxonomies]
+  category = 'category'
 
 # Site Menus
 [menu]

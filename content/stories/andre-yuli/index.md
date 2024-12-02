@@ -5,7 +5,7 @@ description: "The Wedding of Andre & Yuli"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Wedding, HKBP Rawamangun]
+category: [Wedding, HKBP Rawamangun, Featured]
 ---
 
 {{< gallery name="20171111*.jpg" />}}
