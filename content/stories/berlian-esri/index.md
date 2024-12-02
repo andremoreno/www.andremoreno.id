@@ -5,7 +5,7 @@ description: Partumpolon of Berlian & Esri
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Martupol, HKBP Rawamangun]
+category: [Martupol, HKBP Rawamangun, Featured]
 ---
 
 

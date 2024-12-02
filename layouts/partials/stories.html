@@ -10,12 +10,12 @@
             </div>
           </div>
 
-          {{ range first 4 (where $.Site.RegularPages "Params.category" "intersect" (slice "Martupol")) }}
+          {{ range first 4 (where $.Site.RegularPages "Params.category" "intersect" (slice "Featured")) }}
             <div class="col-lg-6 col-md-10 mx-auto">
               <div class="site-story-item">
                 {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
-                  {{ $resized := .Fill "640x640" }}
-                  {{ $resized2 := .Fill "1280x1280" }}
+                  {{ $resized := .Fill "640x640 webp" }}
+                  {{ $resized2 := .Fill "960x960 webp" }}
                   {{ $color := index $resized.Colors 0 | default "transparent" }}
                   <div class="site-story-item-thumb" 
                        style="background-color: {{ $color }}; aspect-ratio: {{ $resized.Width }} / {{ $resized.Height }}">

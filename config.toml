@@ -27,7 +27,7 @@ disableKinds  = ['taxonomy', 'term']
     weight  = 2
   [[menu.nav]]
     name    = "Blog"
-    url     = "blog"
+    url     = "https://dre.web.id/blog"
     weight  = 3
   [[menu.nav]]
     name    = "Gallery"
@@ -56,6 +56,10 @@ disableKinds  = ['taxonomy', 'term']
   dateFormat = "11 JAN 2019"
   subtitle = "Affordable photographer in Jakarta"
   repo = "https://github.com/andremoreno/www.andremoreno.id"
+  twitter = "Writelonger"
+  github_org = "https://github.com/andremoreno"
+  blog = "https://dre.web.id/blog"
+
 
 
   [params.owner]
