@@ -5,7 +5,7 @@ description: Pesta Gotilon HKBP Rawamangun Tahun 2023
 lightbox: true
 author: Andre Moreno
 type: stories
-category: [Event, Gotilon, HKBP Rawamangun]
+tags: [Event, Pesta Gotilon, HKBP Rawamangun]
 ---
 Untuk hasil dokumentasi selengkapnya, silahkan klik https://bit.ly/3Qw6Kqj
 

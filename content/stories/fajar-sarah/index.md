@@ -1,7 +1,7 @@
 ---
 title: "Fajar + Sarah"
 date: 2020-10-27
-category: ["Prewedding"]
+tags: ["Prewedding"]
 author: Andre Moreno
 lightbox: true
 type: stories

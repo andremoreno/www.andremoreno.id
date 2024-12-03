@@ -5,7 +5,7 @@ description: Pada tanggal 20 Desember 2014, saya mempunyai kesempatan untuk mend
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Event, HKBP Rawamangun, Christmas]
+tags: [Event, HKBP Rawamangun, Christmas, Naposo HKBP Rawamangun]
 ---
 
 

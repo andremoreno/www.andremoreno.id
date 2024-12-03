@@ -4,7 +4,7 @@ date: 2024-05-05T00:00:00+07:00
 type: stories
 author: Andre Moreno
 description: Adriell Jeconiah Sihombing
-category: ["Baptism", "HKBP Rawamangun"]
+tags: ["Baptism", "HKBP Rawamangun"]
 lightbox: true
 ---
 

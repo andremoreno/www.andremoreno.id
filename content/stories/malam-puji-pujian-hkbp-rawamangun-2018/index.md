@@ -5,7 +5,7 @@ description: "Malam Puji-Pujian HKBP Rawamangun Tahun 2018"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Event, HKBP Rawamangun]
+tags: [Event, HKBP Rawamangun]
 ---
 
 {{< gallery name="20180929*.jpg" />}}

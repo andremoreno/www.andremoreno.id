@@ -5,7 +5,7 @@ description: "Rest In Peace Jhon Erickson Ginting"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Funeral]
+tags: [Funeral]
 ---
 
 {{< gallery name="20240309*.jpg" />}}

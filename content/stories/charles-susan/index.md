@@ -5,7 +5,7 @@ description: "Partumpolon of Charles & Susan"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Martupol, HKBP Rawamangun]
+tags: [Martupol, HKBP Rawamangun]
 ---
 
 Menurut Wikipedia, [Martumpol](http://id.wikipedia.org/wiki/Martumpol) (dibaca martuppol) adalah salah satu tahap yang wajib dilakukan dalam prosesi perkawinan adat batak (beragama Kristen). Dalam acara martumpol ini dilakukan perjanjian untuk melakukan pernikahan antara sepasang calon pengantin di hadapan pendeta gereja.

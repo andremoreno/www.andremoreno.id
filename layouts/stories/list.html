@@ -38,9 +38,9 @@
 
 
           <div class="site-story-item-content">
-		  {{$mainSection := index (.Params.category) 0 }}
+		  {{$mainSection := index (.Params.tags) 0 }}
 
-            <span><a href="/category/{{ lower $mainSection }}" class="text-dark">{{ $mainSection }}</a></span>
+            <span><a href="{{ "/tags/" | relURL }}{{ $mainSection | urlize }}"  class="text-dark">{{ $mainSection }}</a></span>
             <h3><a href="{{ .Permalink }}" class="">{{ .Params.title }}</a></h3>
 			<a href="{{ .Permalink }}" class="read-more">view story</a>
           </div>

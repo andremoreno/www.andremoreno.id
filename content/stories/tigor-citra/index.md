@@ -5,7 +5,7 @@ description: Partumpolon of Tigor & Citra
 author: Andre Moreno
 lightbox: true
 type: stories
-category: ["Martupol"]
+tags: ["Martupol"]
 ---
 
 {{< gallery name="20160702*.jpg" />}}

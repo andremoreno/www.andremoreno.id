@@ -5,7 +5,7 @@ description: Prewedding of Aprizal & Debora
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Prewedding]
+tags: [Prewedding, Featured]
 ---
 
 {{< gallery name="20210404*.jpg" />}}

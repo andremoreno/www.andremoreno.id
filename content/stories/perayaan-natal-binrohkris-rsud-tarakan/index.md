@@ -5,7 +5,7 @@ description: "Perayaan Natal BINROHKRIS RSUD Tarakan Tahun 2021"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Event, RSUD Tarakan, Christmas]
+tags: [Event, Christmas]
 ---
 
 {{< gallery name="20211218*.jpg" />}}

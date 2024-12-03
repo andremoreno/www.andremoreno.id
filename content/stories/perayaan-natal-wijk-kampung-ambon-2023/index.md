@@ -5,7 +5,7 @@ description: "Perayaan Natal Keluarga Besar Wijk Kampung Ambon HKBP Rawamangun"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Event, HKBP Rawamangun]
+tags: [Event, HKBP Rawamangun]
 ---
 
 

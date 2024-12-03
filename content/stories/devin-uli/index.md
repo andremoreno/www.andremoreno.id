@@ -5,7 +5,7 @@ description: "Prewedding of Devin & Uli"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Prewedding, Featured]
+tags: [Prewedding]
 ---
 
 {{< gallery name="20150829*.jpg" />}}

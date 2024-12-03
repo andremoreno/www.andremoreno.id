@@ -4,7 +4,7 @@ date: 2014-03-01
 description: KKR HKBP Rawamangun Tahun 2014 Part I.
 author: Andre Moreno
 lightbox: true
-category: [Event, HKBP Rawamangun, KKR]
+tags: [Event, HKBP Rawamangun, KKR]
 type: stories
 ---
 

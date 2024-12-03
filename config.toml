@@ -13,7 +13,7 @@ timeout       = "300s"
   path = "page"
 
 [taxonomies]
-  category = 'category'
+  tag = 'tags'
 
 # Site Menus
 [menu]

@@ -4,7 +4,7 @@ author: Andre Moreno
 date: 2013-12-27
 lightbox: true
 description: "Masih dalam suasana Natal, kali ini Seksi Sending HKBP Rawamangun mengadakan Ibadah Perayaan Natal Seksi Sending bersama warga outreach CKPR (Cakung, Kampung Melayu, Pulo Gebang, dan Rawadas)."
-category: ["Event", "HKBP Rawamangun"]
+tags: ["Event", "HKBP Rawamangun"]
 type: stories
 ---
 

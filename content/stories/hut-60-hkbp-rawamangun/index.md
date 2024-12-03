@@ -5,7 +5,7 @@ description: Ibadah Ulang Tahun ke 60 HKBP Rawamangun & Jubileum 125 Tahun Zendi
 lightbox: true
 author: Andre Moreno
 type: stories
-category: [Event, HKBP Rawamangun]
+tags: [Event, HKBP Rawamangun, Birthday]
 ---
 
 {{< gallery name="20240623_*.jpg" />}}

@@ -5,7 +5,7 @@ description: "Partumpolon of Jefri & Nathasya"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Martupol, HKBP Rawamangun]
+tags: [Martupol, HKBP Rawamangun]
 ---
 
 {{< gallery name="20211120*.jpg" />}}

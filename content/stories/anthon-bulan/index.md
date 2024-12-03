@@ -5,7 +5,7 @@ description: Prewedding of Anthon & Bulan
 author: Andre Moreno
 lightbox: true
 type: stories
-category: ["Prewedding"]
+tags: ["Prewedding"]
 ---
 
 {{< gallery name="20160704*.jpg" />}}

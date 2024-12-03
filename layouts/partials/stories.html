@@ -10,7 +10,7 @@
             </div>
           </div>
 
-          {{ range first 4 (where $.Site.RegularPages "Params.category" "intersect" (slice "Featured")) }}
+          {{ range first 4 (where $.Site.RegularPages "Params.tags" "intersect" (slice "Featured")) }}
             <div class="col-lg-6 col-md-10 mx-auto">
               <div class="site-story-item">
                 {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
@@ -30,8 +30,8 @@
                 {{ end }}
 
                 <div class="site-story-item-content">
-                  {{ $mainSection := index (.Params.category) 0 }}
-                  <span><a href="/category/{{ lower $mainSection }}" class="text-dark">{{ $mainSection }}</a></span>
+                  {{ $mainSection := index (.Params.tags) 0 }}
+                  <span><a href="{{ "/tags/" | relURL }}{{ $mainSection | urlize }}" class="text-dark">{{ $mainSection }}</a></span>
                   <h3>
                     <a href="{{ .Permalink }}" class="">{{ .Title }}</a>
                   </h3>

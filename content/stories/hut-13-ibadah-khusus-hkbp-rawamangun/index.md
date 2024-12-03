@@ -5,7 +5,7 @@ description: Perayaan Ulang Tahun ke 13 Ibadah Khusus HKBP Rawamangun
 lightbox: true
 author: Andre Moreno
 type: stories
-category: ["Event", "HKBP Rawamangun"]
+tags: [Event, HKBP Rawamangun, Birthday]
 ---
 
 {{< gallery name="20140216*.jpg" />}}

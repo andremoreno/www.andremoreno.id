@@ -5,7 +5,7 @@ description: "Partumpolon of Bernad & Koresy"
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Martupol, HKBP Rawamangun]
+tags: [Martupol, HKBP Rawamangun]
 ---
 
 {{< gallery name="20230204*.jpg" />}}

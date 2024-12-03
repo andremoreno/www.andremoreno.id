@@ -5,7 +5,7 @@ description: Paduan Suara Gabungan HKBP Rawamangun mengadakan Konser Mini untuk 
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Event, HKBP Rawamangun]
+tags: [Event, HKBP Rawamangun]
 ---
 
 Paduan Suara Gabungan HKBP Rawamangun mengadakan Konser Mini untuk persiapan Kompetisi Pesparawi 2014. Acara ini berlangsung di HKBP Rawamangun pada tanggal 18 Oktober 2014 dimulai pukul 19:00 WIB.

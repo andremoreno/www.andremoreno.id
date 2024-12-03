@@ -5,7 +5,7 @@ description: Ibadah Ulang Tahun ke 59 HKBP Rawamangun
 lightbox: true
 author: Andre Moreno
 type: stories
-category: [Event, HKBP Rawamangun]
+tags: [Event, HKBP Rawamangun, Birthday]
 ---
 
 {{< gallery name="20230621_*.jpg" />}}

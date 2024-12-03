@@ -5,7 +5,7 @@ description: Partumpolon of Daniel & Dita
 author: Andre Moreno
 lightbox: true
 type: stories
-category: [Martupol, Syinantam]
+tags: [Martupol, Syinantam]
 ---
 
 {{< gallery name="20201031*.jpg" />}}
