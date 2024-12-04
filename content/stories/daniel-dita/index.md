@@ -1,7 +1,7 @@
 ---
 title: "Daniel + Dita"
 date: 2020-10-31
-description: Partumpolon of Daniel & Dita
+description: Two hearts, one promise, and the blessing of tradition. Martumpol, the start of something beautiful. This is the story of Daniel and Dita.
 author: Andre Moreno
 lightbox: true
 type: stories
