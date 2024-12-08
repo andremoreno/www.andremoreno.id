@@ -20,15 +20,15 @@ timeout       = "300s"
   # Navbar Menus
   [[menu.nav]]
     name    = "Home"
-    url     = "https://dre.web.id/home"
+    url     = "/"
     weight  = 1
   [[menu.nav]]
     name    = "Stories"
-    url     = "https://dre.web.id/stories"
+    url     = "stories"
     weight  = 2
   [[menu.nav]]
     name    = "Blog"
-    url     = "https://dre.web.id/blog"
+    url     = "blog"
     weight  = 3
   [[menu.nav]]
     name    = "Gallery"
@@ -105,9 +105,9 @@ timeout       = "300s"
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "/images/hero-main-mkp.webp"
+    background_image      = "/images/hero-main-bg.webp"
     primary_button        = "View Story"
-    primary_button_url    = "https://dre.web.id/jtehy3"
+    primary_button_url    = "/stories/andre-yuli/"
     secondary_button      = "Get In Touch"
     secondary_button_url  = "contact"
 
@@ -143,13 +143,13 @@ timeout       = "300s"
         title   = "Social Media"
         [[params.footer.social.link]]
           name = "Instagram"
-          url  = "https://www.instagram.com/andremoreno"
+          url  = "https://dre.web.id/ig"
         [[params.footer.social.link]]
           name = "Github"
-          url  = "https://github.com/andremoreno"
+          url  = "https://dre.web.id/gh"
         [[params.footer.social.link]]
-          name = "Twitter"
-          url  = "https://twitter.com/writelonger"
+          name = "X"
+          url  = "https://dre.web.id/x"
       # Footer Social Media
       [params.footer.service]
         title   = "More"
@@ -158,7 +158,7 @@ timeout       = "300s"
           url  = "https://www.tiktok.com/@fypye"
         [[params.footer.service.link]]
           name = "Steam"
-          url  = "https://steamcommunity.com/id/andremoreno/"
+          url  = "https://dre.web.id/steam"
         [[params.footer.service.link]]
           name = "</source>"
           url  = "https://github.com/andremoreno/www.andremoreno.id"

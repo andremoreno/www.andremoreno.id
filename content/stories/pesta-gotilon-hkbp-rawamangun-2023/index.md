@@ -7,8 +7,8 @@ author: Andre Moreno
 type: stories
 tags: [Event, Pesta Gotilon, HKBP Rawamangun]
 ---
-Untuk hasil dokumentasi selengkapnya, silahkan klik https://bit.ly/3Qw6Kqj
+Untuk hasil dokumentasi selengkapnya, silahkan klik https://dre.web.id/hc83v7
 
-Untuk hasil Photobooth, silahkan klik https://bit.ly/43UvOdG
+Untuk hasil Photobooth, silahkan klik https://dre.web.id/rcya79
 
 {{< gallery name="20230723-*.jpg" />}}
