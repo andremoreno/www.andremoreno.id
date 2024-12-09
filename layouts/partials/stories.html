@@ -15,11 +15,10 @@
               <div class="site-story-item">
                 {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
                   {{ $resized := .Fill "640x640 webp" }}
-                  {{ $resized2 := .Fill "960x960 webp" }}
                   {{ $color := index $resized.Colors 0 | default "transparent" }}
                   <div class="site-story-item-thumb" 
                        style="background-color: {{ $color }}; aspect-ratio: {{ $resized.Width }} / {{ $resized.Height }}">
-                    <img src="{{ $resized2.RelPermalink | safeURL }}"
+                    <img src="{{ $resized.RelPermalink | safeURL }}"
                          alt="cover" 
                          width="640" 
                          height="640" 
