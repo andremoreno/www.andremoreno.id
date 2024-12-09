@@ -113,7 +113,7 @@ timeout       = "300s"
 
   [params.stories]
     enable    = true
-    title     = "Recent Stories"
+    title     = "Featured Stories"
     subtitle  = "A GREAT STORY IS IMPOSSIBLE TO FORGET"
 
   [params.call_to_action]
