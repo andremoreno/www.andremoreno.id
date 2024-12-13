@@ -45,6 +45,7 @@
 
   {{ if .IsHome }}
   <link rel="preload" as="image" href="{{ .Site.Params.banner.background_image | safeURL | absURL }}">
+  <link rel="preload" as="image" href="{{ .Site.Params.call_to_action.background_image | safeURL | absURL }}">
   {{ end }}
 
   <!--Favicon-->
