@@ -30,11 +30,11 @@
 
   <meta name="google-site-verification" content="1n0eAdCQ65L2FKZCbeR1MtY6LJ1fNGBNH0pfoGM3kJI">
 
-  {{ partialCached "critical.html" . }}
+  {{/* partialCached "critical.html" . */}}
 
   {{ "<!-- Bootstrap -->" | safeHTML }}
-  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/custom.css" }}
-  {{ $bootstrap := resources.Get "scss/custom.scss" | toCSS $opts | minify | resources.Fingerprint "sha512" }}
+  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/stylesheet.css" }}
+  {{ $bootstrap := resources.Get "scss/stylesheet.scss" | toCSS $opts | minify | resources.Fingerprint "sha512" }}
   <link rel="preload" href="{{ $bootstrap.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ $bootstrap.Permalink }}"></noscript>
   
@@ -53,11 +53,11 @@
   <link rel="icon" href="{{ "images/favicon.ico" | absURL }}" type="image/x-icon">
 
 
-  <link rel="preload" href="/fonts/montserrat/montserrat-v26-latin-300.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/montserrat/montserrat-v26-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/montserrat/montserrat-v26-latin-500.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/montserrat/montserrat-v26-latin-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/montserrat/montserrat-v26-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/montserrat/montserrat-v29-latin-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/montserrat/montserrat-v29-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/montserrat/montserrat-v29-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/montserrat/montserrat-v29-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/montserrat/montserrat-v29-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
 
 </head>
