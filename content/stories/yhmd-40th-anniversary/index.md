@@ -5,7 +5,7 @@ description: Yayasan Harapan Masa Depan 40th Anniversary
 lightbox: true
 author: Andre Moreno
 type: stories
-tags: [Event, YHMD, Anniversary]
+tags: [Event, Anniversary]
 ---
 
 
