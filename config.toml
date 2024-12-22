@@ -105,9 +105,9 @@ timeout       = "300s"
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "/images/hero-main-bg.webp"
+    background_image      = "/images/hero-main-bg-renaps.webp"
     primary_button        = "View Story"
-    primary_button_url    = "/stories/andre-yuli/"
+    primary_button_url    = "https://renaps.andremoreno.id"
     secondary_button      = "Get In Touch"
     secondary_button_url  = "contact"
 
