@@ -29,10 +29,16 @@
                 <div class="site-story-item-content">
                   {{ $mainSection := index (.Params.tags) 0 }}
                   <span><a href="{{ "/tags/" | relURL }}{{ $mainSection | urlize }}" class="text-dark">{{ $mainSection }}</a></span>
+				  {{ $href := .Permalink }}
+      {{ with .Params.relPermalinkOverride }}
+          {{ $href = . }}
+        {{ else }}
+          {{ $href = .Permalink }}
+        {{ end }}
                   <h3>
-                    <a href="{{ .Permalink }}" class="">{{ .Title }}</a>
+                    <a href="{{ $href }}" class="">{{ .Title }}</a>
                   </h3>
-                  <a href="{{ .Permalink }}" class="read-more">view story</a>
+                  <a href="{{ $href }}" class="read-more">view story</a>
                 </div>
               </div>
             </div>

@@ -36,8 +36,14 @@
 
           <div class="site-story-item-content">
 		  <span class="small">{{ .PublishDate.Format "January 2, 2006" }}</span>
-            <h3><a href="{{ .Permalink }}" class="stretched-link">{{ .Title }}</a></h3>
-			<a href="{{ .Permalink }}" class="read-more">view story</a>
+		  {{ $href := .Permalink }}
+      {{ with .Params.relPermalinkOverride }}
+          {{ $href = . }}
+        {{ else }}
+          {{ $href = .Permalink }}
+        {{ end }}
+            <h3><a href="{{ $href }}" class="stretched-link">{{ .Title }}</a></h3>
+			<a href="{{ $href }}" class="read-more">view story</a>
           </div>
         </div>
       </div>
