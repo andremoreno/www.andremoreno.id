@@ -1,5 +1,5 @@
 ---
-title: "Natal Renaps 2024"
+title: "Natal Renaps HKBP Rawamangun"
 date: 2024-12-20
 description: "Ibadah Natal Remaja, Naposo dan Pelajar Sidi HKBP Rawamangun Tahun 2024"
 lightbox: true
@@ -9,4 +9,3 @@ tags: [Christmas, HKBP Rawamangun, Event, Renaps, Naposo HKBP Rawamangun, Remaja
 relPermalinkOverride: 'https://renaps.andremoreno.id'
 ---
 
-{{< gallery name="20241220_*.jpg" />}}
