@@ -5,7 +5,7 @@ description: "Perayaan Natal Remaja, Naposo & Pelajar Sidi HKBP Rawamangun Tahun
 author: Andre Moreno
 lightbox: true
 type: stories
-tags: [Christmas, HKBP Rawamangun, Event, Renaps, Naposo HKBP Rawamangun, Remaja HKBP Rawamangun]
+tags: [Natal, HKBP Rawamangun, Event, Renaps, Naposo HKBP Rawamangun, Remaja HKBP Rawamangun]
 ---
 
 
@@ -15,4 +15,4 @@ Perayaan Natal Remaja, Naposo & Pelajar Sidi HKBP Rawamangun Tahun 2016
 
 <hr />
 
-Untuk melihat hasil dokumentasi nya bisa dilihat di tautan berikut ini: <a href="https://bit.ly/3ReyGN3">https://bit.ly/3ReyGN3</a>
+Untuk melihat hasil dokumentasi nya bisa dilihat di tautan berikut ini: <a href="https://dre.web.id/d2twgt">https://dre.web.id/d2twgt</a>

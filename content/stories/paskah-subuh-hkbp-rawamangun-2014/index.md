@@ -5,7 +5,7 @@ description: Ibadah Paskah Subuh HKBP Rawamangun Tahun 2014
 lightbox: true
 author: Andre Moreno
 type: stories
-tags: [Event, Paskah, HKBP Rawamangun]
+tags: [Paskah,HKBP Rawamangun, Event]
 ---
 
 Ibadah Paskah Subuh HKBP Rawamangun, 20 April 2014 di Gereja HKBP Rawamangun.

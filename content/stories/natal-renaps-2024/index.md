@@ -5,7 +5,7 @@ description: "Ibadah Natal Remaja, Naposo dan Pelajar Sidi HKBP Rawamangun Tahun
 lightbox: true
 author: Andre Moreno
 type: stories
-tags: [Christmas, HKBP Rawamangun, Event, Renaps, Naposo HKBP Rawamangun, Remaja HKBP Rawamangun]
+tags: [Natal, HKBP Rawamangun, Event, Renaps, Naposo HKBP Rawamangun, Remaja HKBP Rawamangun]
 relPermalinkOverride: 'https://renaps.andremoreno.id'
 ---
 
