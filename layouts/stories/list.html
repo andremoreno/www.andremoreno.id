@@ -42,11 +42,9 @@
 
             <span><a href="{{ "/tags/" | relURL }}{{ $mainSection | urlize }}"  class="text-dark">{{ $mainSection }}</a></span>
 			{{ $href := .Permalink }}
-      {{ with .Params.relPermalinkOverride }}
-          {{ $href = . }}
-        {{ else }}
-          {{ $href = .Permalink }}
-        {{ end }}
+			{{ with .Params.relPermalinkOverride }}
+			  {{ $href = . }}
+			{{ end }}
             <h3><a href="{{ $href }}" class="">{{ .Params.title }}</a></h3>
 			<a href="{{ $href }}" class="read-more">view story</a>
           </div>

@@ -10,4 +10,3 @@ tags: [Bulan Musik, HKBP Rawamangun, Event]
 relPermalinkOverride: 'https://bulanmusik.andremoreno.id'
 ---
 
-{{< gallery name="20241019_*.jpg" />}}
