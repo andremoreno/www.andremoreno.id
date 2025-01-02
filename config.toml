@@ -133,8 +133,8 @@ timeout       = "300s"
           name = "Stories"
           url  = "stories"
         [[params.footer.sitemap.link]]
-          name = "About Me"
-          url  = "about"
+          name = "Tag Cloud"
+          url  = "tags"
         [[params.footer.sitemap.link]]
           name = "Contact"
           url  = "contact"
