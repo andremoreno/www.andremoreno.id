@@ -107,7 +107,7 @@ timeout       = "300s"
     enable                = true
     background_image      = "/images/hero-main-bg-renaps.webp"
     primary_button        = "View Story"
-    primary_button_url    = "https://renaps.andremoreno.id"
+    primary_button_url    = "https://renaps.andremoreno.id/2024/"
     secondary_button      = "Get In Touch"
     secondary_button_url  = "contact"
 
