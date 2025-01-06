@@ -1,4 +1,4 @@
-<div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
+<div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden" itemscope itemtype="http://schema.org/ImageGallery">
   {{ range sort ((.Page.Resources.ByType "image").Match (printf "%s*" (.Get "name"))) ".Name" "asc" }}
     {{ $small := .Fit "720x720" }}
     {{ $color := index $small.Colors 0 | default "transparent" }}
@@ -8,24 +8,20 @@
        data-pswp-src="{{ .RelPermalink }}" 
        data-pswp-width="{{ .Width }}" 
        data-pswp-height="{{ .Height }}" 
-       itemscope 
-       itemtype="https://schema.org/ImageObject" 
        style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
-      <figure style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
-        <img class="lazyload" 
+      <figure style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}"  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <img src="{{ $small.RelPermalink }}" class="lazyload" itemprop="thumbnail" 
              width="{{ $small.Width }}" 
              height="{{ $small.Height }}" 
              data-src="{{ $small.RelPermalink }}" 
-             alt="" />
+             alt="">
       </figure>
     </a>
-    <meta itemprop="contentUrl" content="{{ .RelPermalink }}" />
+  {{ end }}
+</div>
     {{ with site.Params.Owner.Name }}
       <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
         <meta itemprop="name" content="{{ . }}" />
       </span>
     {{ end }}
-  {{ end }}
-</div>
-
 {{ .Inner }}

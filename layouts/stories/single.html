@@ -17,7 +17,7 @@
 				<div class="site-story-single-action d-flex justify-content-between">
                 {{ if .NextInSection }}
                 <a href="{{.NextInSection.Permalink}}">
-                  <img class="img-prev" src="{{ "images/to-top.svg" | absURL }}" alt="prev story" class="lazyload">
+                  <img class="img-prev lazyload" src="{{ "images/to-top.svg" | absURL }}" alt="prev story">
                   <span class="link-area">
                     <span data-text="Prev Story">
                       Prev
@@ -32,7 +32,7 @@
                       Next
                     </span>
                   </span>
-                  <img class="img-next" src="{{ "images/to-top.svg" | absURL }}" alt="next story" class="lazyload">
+                  <img class="img-next lazyload" src="{{ "images/to-top.svg" | absURL }}" alt="next story">
                 </a> 
                 {{ end }}
               </div>
