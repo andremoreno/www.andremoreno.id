@@ -50,7 +50,7 @@ timeout       = "300s"
 # Site Params
 [params]
   # Meta data
-  description = "Andre Moreno Photography"
+  description = "Hey, Andre here! Your friendly wedding storyteller and memory keeper. I’m the guy who will capture the love, laughter, and all those unforgettable moments in a candid, documentary style. Let’s connect and create stories you’ll cherish for a lifetime!"
   author = "Andre Moreno"
   authors = "Andre Moreno"
   logo = "images/logo-am-header.png"
