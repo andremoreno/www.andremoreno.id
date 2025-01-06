@@ -19,9 +19,5 @@
     </a>
   {{ end }}
 </div>
-    {{ with site.Params.Owner.Name }}
-      <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
-        <meta itemprop="name" content="{{ . }}" />
-      </span>
-    {{ end }}
+
 {{ .Inner }}
