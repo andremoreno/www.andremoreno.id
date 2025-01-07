@@ -10,7 +10,7 @@
        data-pswp-height="{{ .Height }}" 
        style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
       <figure style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}"  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-        <img src="{{ $small.RelPermalink }}" class="lazyload" itemprop="thumbnail" 
+        <img src="/thumbs/{{ $small.RelPermalink }}" class="lazyload" itemprop="thumbnail" 
              width="{{ $small.Width }}" 
              height="{{ $small.Height }}" 
              data-src="{{ $small.RelPermalink }}" 
