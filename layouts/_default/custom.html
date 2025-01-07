@@ -8,7 +8,13 @@
     </div>
     <br><br>
 
-    <div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
+    <div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden" itemscope itemtype="http://schema.org/ImageGallery">
+	<meta itemprop="Url" content="{{ .Permalink }}">
+        {{ with site.Params.Owner.Name }}
+          <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
+            <meta itemprop="name" content="{{ . }}">
+          </span>
+        {{ end }}
       {{ range sort ((.Page.Resources.ByType "image").Match "*") "Exif.Date" "desc" }}
         {{ $small := .Filter (slice images.AutoOrient (images.Process "fit 640x640")) }}
         {{ $full := .Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
@@ -28,30 +34,25 @@
         {{ end }}
 
         {{ $color := index $small.Colors 0 | default "transparent" }}
+		<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
         <a class="gallery-item" 
-           href="{{ $full.RelPermalink }}" 
+           href="{{ $full.RelPermalink  }}" 
            data-pswp-src="{{ $full.RelPermalink }}" 
            data-pswp-width="{{ $full.Width }}" 
            data-pswp-height="{{ $full.Height }}" 
-           itemscope 
-           itemtype="https://schema.org/ImageObject" 
+           itemprop="Url" 
            style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
-          <figure style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
-            <img class="lazyload" 
+          
+            <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" src="{{ "/thumbs" | absURL }}{{ $small.RelPermalink }}" class="lazyload" 
                  width="{{ $small.Width }}" 
                  height="{{ $small.Height }}" 
-                 data-src="{{ $small.RelPermalink }}" 
-                 alt="{{ .Exif.Tags.Make | default "" }} {{ .Exif.Tags.Model | default "" }} {{ .Exif.Tags.ImageDescription | default "" }}" />
-          </figure>
-        </a>
-        <meta itemprop="contentUrl" content="{{ $full.RelPermalink }}" />
-        {{ with site.Params.Owner.Name }}
-          <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
-            <meta itemprop="name" content="{{ . }}" />
-          </span>
-        {{ end }}
+                 data-src="{{ $small.RelPermalink  }}" 
+                 alt="{{ .Exif.Tags.Make | default "" }} {{ .Exif.Tags.Model | default "" }} {{ .Exif.Tags.ImageDescription | default "" }}" itemprop="thumbnail" >
+          
+        </a></figure>
       {{ end }}
     </div>
+	        
   </div>
 </section>
 <br><br>

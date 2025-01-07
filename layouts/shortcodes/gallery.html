@@ -1,22 +1,29 @@
 <div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden" itemscope itemtype="http://schema.org/ImageGallery">
+<meta itemprop="Url" content="{{ .Page.Permalink }}">
+        {{ with site.Params.Owner.Name }}
+          <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
+            <meta itemprop="name" content="{{ . }}">
+          </span>
+        {{ end }}
   {{ range sort ((.Page.Resources.ByType "image").Match (printf "%s*" (.Get "name"))) ".Name" "asc" }}
     {{ $small := .Fit "720x720" }}
     {{ $color := index $small.Colors 0 | default "transparent" }}
     
-    <a class="gallery-item" 
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	<a class="gallery-item" 
        href="{{ .RelPermalink }}" 
        data-pswp-src="{{ .RelPermalink }}" 
        data-pswp-width="{{ .Width }}" 
        data-pswp-height="{{ .Height }}" 
-       style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
-      <figure style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}"  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-        <img src="/thumbs{{ $small.RelPermalink }}" class="lazyload" itemprop="thumbnail" 
+       style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" itemprop="Url">
+      
+        <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" src="{{ "/thumbs" | absURL }}{{ $small.RelPermalink }}" class="lazyload" itemprop="thumbnail" 
              width="{{ $small.Width }}" 
              height="{{ $small.Height }}" 
              data-src="{{ $small.RelPermalink }}" 
              alt="">
-      </figure>
-    </a>
+      
+    </a></figure>
   {{ end }}
 </div>
 
