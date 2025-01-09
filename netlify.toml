@@ -17,11 +17,11 @@
 [deploy]
   command = "netlify deploy --prod --dir=public"
 
-#[[redirects]]
-#  from = "https://andremoreno.netlify.app/*"
-#  to = "https://www.andremoreno.id/:splat"
-#  status = 301
-#  force = true
+[[redirects]]
+  from = "https://andremoreno.netlify.app/*"
+  to = "https://www.andremoreno.id/:splat"
+  status = 301
+  force = true
 
 [[redirects]]
   # Serve a full size version
