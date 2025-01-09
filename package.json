@@ -12,9 +12,6 @@
     "author": "Andre Moreno",
     "devDependencies": {
         "hugo-bin": "^0.137.2",
-        "netlify-plugin-hugo-cache-resources": "^0.2.1"
-    },
-    "dependencies": {
-        "serve": "^14.2.1"
+        "netlify-plugin-hugo-cache-resources": "github:andremoreno/netlify-plugin-hugo-cache-resources"
     }
 }
