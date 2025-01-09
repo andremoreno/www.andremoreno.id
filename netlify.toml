@@ -71,3 +71,10 @@
     [headers.values]
      "Cache-Control" = "public, max-age=31536000, immutable"
     Access-Control-Allow-Origin = "*"
+
+
+[[plugins]]
+  package = "netlify-plugin-hugo-cache-resources"
+    [plugins.inputs]
+    # If it should show more verbose logs (optional, default = true)
+    debug = true
