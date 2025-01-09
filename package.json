@@ -1,19 +1,15 @@
 {
-    "name": "hello-world-hugo",
+    "name": "andremoreno",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "build": "hugo --gc --minify",
-        "create": "hugo new",
-        "serve": "hugo server",
-        "start": "serve ./public"
     },
     "hugo-bin": {
         "buildTags": "extended"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "Andre Moreno",
     "devDependencies": {
         "hugo-bin": "^0.137.2"
     },
