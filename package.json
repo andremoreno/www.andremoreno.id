@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "hugo --gc --minify",
+        "build": "hugo --gc --minify"
     },
     "hugo-bin": {
         "buildTags": "extended"
