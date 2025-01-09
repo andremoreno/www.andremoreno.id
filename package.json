@@ -9,6 +9,9 @@
         "serve": "hugo server",
         "start": "serve ./public"
     },
+    "hugo-bin": {
+        "buildTags": "extended"
+    },
     "author": "",
     "license": "ISC",
     "devDependencies": {
