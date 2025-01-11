@@ -1,17 +1,5 @@
 {
-    "name": "andremoreno",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "build": "hugo --gc --minify"
-    },
-    "hugo-bin": {
-        "buildTags": "extended"
-    },
-    "author": "Andre Moreno",
-    "devDependencies": {
-        "hugo-bin": "^0.137.2",
-        "netlify-plugin-hugo-cache-resources": "github:andremoreno/netlify-plugin-hugo-cache-resources"
-    }
+  "devDependencies": {
+    "netlify-plugin-hugo-cache-resources": "github:andremoreno/netlify-plugin-hugo-cache-resources"
+  }
 }
