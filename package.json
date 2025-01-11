@@ -1,9 +1,0 @@
-{
-    "name": "andremoreno",
-    "version": "1.0.0",
-    "description": "",
-    "author": "Andre Moreno",
-    "devDependencies": {
-        "netlify-plugin-hugo-cache-resources": "github:andremoreno/netlify-plugin-hugo-cache-resources"
-    }
-}

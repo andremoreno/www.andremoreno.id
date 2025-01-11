@@ -73,8 +73,8 @@
     Access-Control-Allow-Origin = "*"
 
 
-[[plugins]]
-  package = "netlify-plugin-hugo-cache-resources"
-    [plugins.inputs]
-    # If it should show more verbose logs (optional, default = true)
-    debug = false
+#[[plugins]]
+#  package = "netlify-plugin-hugo-cache-resources"
+#    [plugins.inputs]
+#    # If it should show more verbose logs (optional, default = true)
+#    debug = false
