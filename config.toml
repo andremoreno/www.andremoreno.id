@@ -130,14 +130,14 @@ timeout       = "300s"
       [params.footer.sitemap]
         title   = "Sitemap"
         [[params.footer.sitemap.link]]
-          name = "Stories"
-          url  = "stories"
+          name = "Martupol"
+          url  = "tags/martupol"
         [[params.footer.sitemap.link]]
-          name = "Tag Cloud"
-          url  = "tags"
+          name = "Prewedding"
+          url  = "tags/prewedding"
         [[params.footer.sitemap.link]]
-          name = "Contact"
-          url  = "contact"
+          name = "Baptis"
+          url  = "tags/baptism"
       # Footer Social Media
       [params.footer.social]
         title   = "Social Media"
