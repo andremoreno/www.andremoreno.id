@@ -40,10 +40,9 @@
            data-pswp-src="{{ $full.RelPermalink }}" 
            data-pswp-width="{{ $full.Width }}" 
            data-pswp-height="{{ $full.Height }}" 
-           itemprop="Url" 
-           style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}">
+           itemprop="Url">
           
-            <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" src="{{ "/thumbs" | absURL }}{{ $small.RelPermalink }}" class="lazyload" 
+            <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload" 
                  width="{{ $small.Width }}" 
                  height="{{ $small.Height }}" 
                  data-src="{{ $small.RelPermalink  }}" 
@@ -52,6 +51,9 @@
         </a></figure>
       {{ end }}
     </div>
+	<br><br>
+
+	{{ partialCached "thanks.html" . }}
 	        
   </div>
 </section>

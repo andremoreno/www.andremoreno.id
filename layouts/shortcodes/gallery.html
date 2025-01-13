@@ -14,8 +14,7 @@
        href="{{ .RelPermalink }}" 
        data-pswp-src="{{ .RelPermalink }}" 
        data-pswp-width="{{ .Width }}" 
-       data-pswp-height="{{ .Height }}" 
-       style="aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" itemprop="Url">
+       data-pswp-height="{{ .Height }}" itemprop="Url">
       
         <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" src="{{ "/thumbs" | absURL }}{{ $small.RelPermalink }}" class="lazyload" itemprop="thumbnail" 
              width="{{ $small.Width }}" 

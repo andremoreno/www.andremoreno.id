@@ -154,11 +154,11 @@ timeout       = "300s"
       [params.footer.service]
         title   = "More"
 	[[params.footer.service.link]]
-          name = "TikTok"
-          url  = "https://www.tiktok.com/@fypye"
+          name = "Natal Renaps"
+          url  = "https://renaps.andremoreno.id"
         [[params.footer.service.link]]
-          name = "Steam"
-          url  = "https://dre.web.id/steam"
+          name = "Bulan Musik"
+          url  = "https://bulanmusik.andremoreno.id"
         [[params.footer.service.link]]
           name = "</source>"
           url  = "https://github.com/andremoreno/www.andremoreno.id"
