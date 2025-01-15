@@ -9,12 +9,13 @@
     <br><br>
 
     <div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden" itemscope itemtype="http://schema.org/ImageGallery">
-	<meta itemprop="Url" content="{{ .Permalink }}">
-        {{ with site.Params.Owner.Name }}
-          <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
-            <meta itemprop="name" content="{{ . }}">
-          </span>
-        {{ end }}
+      <meta itemprop="url" content="{{ .Permalink }}">
+      {{ with site.Params.Owner.Name }}
+        <span itemprop="creator" itemscope itemtype="https://schema.org/Person">
+          <meta itemprop="name" content="{{ . }}">
+        </span>
+      {{ end }}
+
       {{ range sort ((.Page.Resources.ByType "image").Match "*") "Exif.Date" "desc" }}
         {{ $small := .Filter (slice images.AutoOrient (images.Process "fit 640x640")) }}
         {{ $full := .Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
@@ -34,27 +35,34 @@
         {{ end }}
 
         {{ $color := index $small.Colors 0 | default "transparent" }}
-		<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-        <a class="gallery-item" 
-           href="{{ $full.RelPermalink  }}" 
-           data-pswp-src="{{ $full.RelPermalink }}" 
-           data-pswp-width="{{ $full.Width }}" 
-           data-pswp-height="{{ $full.Height }}" 
-           itemprop="Url">
-          
-            <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload" 
+        
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a class="gallery-item" 
+             href="{{ $full.RelPermalink }}" 
+             data-pswp-src="{{ $full.RelPermalink }}" 
+             data-pswp-width="{{ $full.Width }}" 
+             data-pswp-height="{{ $full.Height }}" 
+             itemprop="contentUrl">
+            <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" 
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                 class="lazyload" 
                  width="{{ $small.Width }}" 
                  height="{{ $small.Height }}" 
-                 data-src="{{ $small.RelPermalink  }}" 
-                 alt="{{ .Exif.Tags.Make | default "" }} {{ .Exif.Tags.Model | default "" }} {{ .Exif.Tags.ImageDescription | default "" }}" itemprop="thumbnail" >
-          
-        </a></figure>
+                 data-src="{{ $small.RelPermalink }}" 
+                 alt="{{ .Exif.Tags.Make | default "" }} {{ .Exif.Tags.Model | default "" }} {{ .Exif.Tags.ImageDescription | default "" }}" 
+                 itemprop="thumbnailUrl">
+          </a>
+          <meta itemprop="width" content="{{ $small.Width }}">
+          <meta itemprop="height" content="{{ $small.Height }}">
+          <meta itemprop="caption" content="{{ .Exif.Tags.ImageDescription | default "" }}">
+        </figure>
+
       {{ end }}
     </div>
-	<br><br>
+    <br><br>
 
-	{{ partialCached "thanks.html" . }}
-	        
+    {{ partialCached "thanks.html" . }}
+
   </div>
 </section>
 <br><br>

@@ -1,28 +1,34 @@
 <div class="gallery" id="gallery" style="visibility: hidden; height: 1px; overflow: hidden" itemscope itemtype="http://schema.org/ImageGallery">
-<meta itemprop="Url" content="{{ .Page.Permalink }}">
-        {{ with site.Params.Owner.Name }}
-          <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
-            <meta itemprop="name" content="{{ . }}">
-          </span>
-        {{ end }}
+  <meta itemprop="url" content="{{ .Page.Permalink }}">
+  {{ with site.Params.Owner.Name }}
+    <span itemprop="creator" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="{{ . }}">
+    </span>
+  {{ end }}
+
   {{ range sort ((.Page.Resources.ByType "image").Match (printf "%s*" (.Get "name"))) ".Name" "asc" }}
     {{ $small := .Fit "720x720" }}
     {{ $color := index $small.Colors 0 | default "transparent" }}
     
     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-	<a class="gallery-item" 
-       href="{{ .RelPermalink }}" 
-       data-pswp-src="{{ .RelPermalink }}" 
-       data-pswp-width="{{ .Width }}" 
-       data-pswp-height="{{ .Height }}" itemprop="Url">
-      
-        <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" src="{{ "/thumbs" | absURL }}{{ $small.RelPermalink }}" class="lazyload" itemprop="thumbnail" 
+      <a class="gallery-item" 
+         href="{{ .RelPermalink }}" 
+         data-pswp-src="{{ .RelPermalink }}" 
+         data-pswp-width="{{ .Width }}" 
+         data-pswp-height="{{ .Height }}" 
+         itemprop="contentUrl">
+        <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" 
+             src="{{ "/thumbs" | absURL }}{{ $small.RelPermalink }}" 
+             class="lazyload" 
+             itemprop="thumbnail" 
              width="{{ $small.Width }}" 
              height="{{ $small.Height }}" 
              data-src="{{ $small.RelPermalink }}" 
              alt="">
-      
-    </a></figure>
+      </a>
+      <meta itemprop="width" content="{{ $small.Width }}">
+      <meta itemprop="height" content="{{ $small.Height }}">
+    </figure>
   {{ end }}
 </div>
 
