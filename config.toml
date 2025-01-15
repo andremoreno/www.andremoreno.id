@@ -24,27 +24,27 @@ timeout       = "300s"
     weight  = 1
   [[menu.nav]]
     name    = "Stories"
-    url     = "stories"
+    url     = "stories/"
     weight  = 2
   [[menu.nav]]
     name    = "Blog"
-    url     = "blog"
+    url     = "blog/"
     weight  = 3
   [[menu.nav]]
     name    = "Gallery"
-    url     = "gallery"
+    url     = "gallery/"
     weight  = 4
   [[menu.nav]]
     name    = "Store"
-    url     = "store"
+    url     = "store/"
     weight  = 5
   [[menu.nav]]
     name    = "About Me"
-    url     = "about"
+    url     = "about/"
     weight  = 6  
   [[menu.nav]]
     name    = "Get in touch"
-    url     = "contact"
+    url     = "contact/"
     weight  = 7
 
 # Site Params
@@ -86,7 +86,7 @@ timeout       = "300s"
   [params.navAction]
     status  = true
     name    = "Get in touch"
-    url     = "contact"
+    url     = "contact/"
 
 
   # 404 Pages
@@ -121,9 +121,9 @@ timeout       = "300s"
     background_image    = "/images/cta-bg.webp"
     title               = "GET IN TOUCH"
     primary_button      = "Send Me Message"
-    primary_button_url  = "contact"
+    primary_button_url  = "contact/"
     secondary_button    = "Not Convinced ?"
-    secondary_button_url = "stories"
+    secondary_button_url = "stories/"
 
   [params.footer]
       # Footer Sitemap
@@ -131,13 +131,13 @@ timeout       = "300s"
         title   = "Sitemap"
         [[params.footer.sitemap.link]]
           name = "Martupol"
-          url  = "tags/martupol"
+          url  = "tags/martupol/"
         [[params.footer.sitemap.link]]
           name = "Prewedding"
-          url  = "tags/prewedding"
+          url  = "tags/prewedding/"
         [[params.footer.sitemap.link]]
           name = "Baptis"
-          url  = "tags/baptism"
+          url  = "tags/baptism/"
       # Footer Social Media
       [params.footer.social]
         title   = "Social Media"

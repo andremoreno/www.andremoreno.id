@@ -23,7 +23,7 @@
         {{ with site.Params.watermark }}
           {{ $watermark := resources.Get .image }}
           {{ if $watermark }}
-            {{ $maxWidth := div $full.Width 5 }}
+            {{ $maxWidth := div $full.Width 6 }}
             {{ $watermark = cond (gt $watermark.Width $maxWidth) ($watermark.Resize (printf "%dx" $maxWidth)) $watermark }}
             {{ $padding := 20 }}
             {{ $x := cond (eq (.posx | default "right") "center") (sub (div $full.Width 2) (div $watermark.Width 2)) 
@@ -44,7 +44,6 @@
              data-pswp-height="{{ $full.Height }}" 
              itemprop="contentUrl">
             <img style="background-color: {{ $color }}; aspect-ratio: {{ $small.Width }} / {{ $small.Height }}" 
-                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
                  class="lazyload" 
                  width="{{ $small.Width }}" 
                  height="{{ $small.Height }}" 
