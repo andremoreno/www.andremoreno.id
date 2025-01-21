@@ -30,10 +30,10 @@ timeout       = "300s"
     name    = "Blog"
     url     = "blog/"
     weight  = 3
-  [[menu.nav]]
-    name    = "Gallery"
-    url     = "gallery/"
-    weight  = 4
+#  [[menu.nav]]
+#    name    = "Gallery"
+#    url     = "gallery/"
+#    weight  = 4
   [[menu.nav]]
     name    = "Store"
     url     = "store/"
@@ -136,8 +136,8 @@ timeout       = "300s"
           name = "Prewedding"
           url  = "tags/prewedding/"
         [[params.footer.sitemap.link]]
-          name = "Baptis"
-          url  = "tags/baptism/"
+          name = "Random Gallery"
+          url  = "random/"
       # Footer Social Media
       [params.footer.social]
         title   = "Social Media"
