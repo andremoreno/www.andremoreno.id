@@ -3,8 +3,8 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.142.0"
-  GO_VERSION = "1.23.5"
+  HUGO_VERSION = "0.143.1"
+  GO_VERSION = "1.23.6"
   HUGO_ENABLEGITINFO = "true"
   HUGO_ENV = "production"
   TZ = "Asia/Jakarta"
