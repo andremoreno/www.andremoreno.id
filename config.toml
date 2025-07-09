@@ -34,10 +34,10 @@ timeout       = "300s"
 #    name    = "Gallery"
 #    url     = "gallery/"
 #    weight  = 4
-  [[menu.nav]]
-    name    = "Store"
-    url     = "store/"
-    weight  = 5
+#  [[menu.nav]]
+#    name    = "Store"
+#    url     = "store/"
+#    weight  = 5
   [[menu.nav]]
     name    = "About Me"
     url     = "about/"
