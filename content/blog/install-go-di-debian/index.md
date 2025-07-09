@@ -10,14 +10,14 @@ Pertama, kita ingin memastikan tidak ada instalasi Go versi sebelumnya. Jalankan
 sudo rm -rf /usr/local/go* && sudo rm -rf /usr/local/go
 {{< / highlight >}}
 
-Kemudian kita perlu mengunduh versi terbaru ~~(saat ini 1.18.3)~~(saat ini 1.23.3).
+Kemudian kita perlu mengunduh versi terbaru (saat ini 1.24.5).
 
 Untuk versi terbaru juga bisa dicek di [https://go.dev/dl](https://go.dev/dl). Kita bisa menjalankan perintah berikut:
 
 {{< highlight bash "linenos=table" >}}
 cd $HOME/src
-wget https://go.dev/dl/go1.23.3.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.3.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.24.5.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.5.linux-amd64.tar.gz
 
 export PATH=$PATH:/usr/local/go/bin
 source $HOME/.profile
