@@ -4,7 +4,7 @@
 
 [build.environment]
   HUGO_VERSION = "0.147.2"
-  GO_VERSION = "1.24.5"
+  GO_VERSION = "1.25.0"
   HUGO_ENABLEGITINFO = "true"
   HUGO_ENV = "production"
   TZ = "Asia/Jakarta"
