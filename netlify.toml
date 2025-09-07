@@ -3,8 +3,8 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.149.0"
-  GO_VERSION = "1.25.0"
+  HUGO_VERSION = "0.149.1"
+  GO_VERSION = "1.25.1"
   HUGO_ENABLEGITINFO = "true"
   HUGO_ENV = "production"
   TZ = "Asia/Jakarta"
@@ -74,7 +74,7 @@
 
 
 [[plugins]]
-  package = "./plugins/netlify-plugin-hugo-cache-resources"
+  package = "netlify-plugin-hugo-cache-resources"
     [plugins.inputs]
     # If it should show more verbose logs (optional, default = true)
     debug = false
