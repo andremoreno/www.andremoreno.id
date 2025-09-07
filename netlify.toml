@@ -74,7 +74,7 @@
 
 
 [[plugins]]
-  package = "netlify-plugin-hugo-cache-resources"
+  package = "./plugins/netlify-plugin-hugo-cache-resources"
     [plugins.inputs]
     # If it should show more verbose logs (optional, default = true)
     debug = false
