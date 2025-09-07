@@ -8,4 +8,4 @@ tags: ["Event", "HKBP Petojo"]
 lightbox: true
 ---
 
-{{< gallery name="2025-09-05*.jpg" />}}
+{{< gallery name="20250905*.jpg" />}}
