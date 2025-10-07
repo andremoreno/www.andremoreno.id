@@ -105,9 +105,9 @@ timeout       = "300s"
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "/images/hero-main-bg5.webp"
+    background_image      = "/images/hero-main-bg-renaps.webp"
     primary_button        = "View Story"
-    primary_button_url    = "/stories/pesta-koor-hkbp-rawamangun-2023/"
+    primary_button_url    = "https://dre.web.id/renaps24"
     secondary_button      = "Get In Touch"
     secondary_button_url  = "contact"
 
