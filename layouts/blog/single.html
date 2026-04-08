@@ -4,9 +4,9 @@
   <div class="max-w-[1400px] mx-auto px-6 md:px-12">
     
     <!-- Blog Header -->
-    <header class="max-w-4xl mx-auto text-center space-y-12 mb-20 md:mb-32">
+    <header class="w-full text-left space-y-12 mb-20 md:mb-32">
       <div class="overflow-hidden">
-        <div class="flex items-center justify-center gap-6 animate-reveal">
+        <div class="flex items-center justify-start gap-6 animate-reveal">
           <span class="h-[1px] w-12 bg-brand-primary/30"></span>
           <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary">
             {{ .PublishDate.Format "January 02, 2006" }}
@@ -19,15 +19,11 @@
         {{ .Title }}
       </h1>
 
-      {{ with .Params.author }}
-      <div class="animate-reveal" style="animation-delay: 400ms;">
-        <span class="text-[10px] uppercase font-bold tracking-[0.4em] text-brand-dark/40 italic">Written by {{ . }}</span>
-      </div>
-      {{ end }}
+
     </header>
 
     <!-- Content Area -->
-    <div class="max-w-3xl mx-auto">
+    <div class="w-full">
       <div class="story-content prose prose-lg md:prose-xl prose-brand-dark max-w-none text-brand-dark/80 leading-relaxed font-sans first-letter:float-left first-letter:text-7xl first-letter:md:text-8xl first-letter:font-serif first-letter:font-black first-letter:mr-4 first-letter:mt-2 first-letter:text-brand-primary first-letter:leading-[0.7]">
         {{ .Content }}
       </div>

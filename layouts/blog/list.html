@@ -24,7 +24,7 @@
                data-delay="{{ $delay }}">
         {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
           {{ $resized := .Fill "1200x800 webp q90" }}
-          <a href="{{ .Permalink }}" class="block relative overflow-hidden aspect-[16/10] rounded-2xl bg-gray-100 mb-8 overflow-hidden group">
+          <a href="{{ $e.RelPermalink }}" class="block relative overflow-hidden aspect-[16/10] rounded-2xl bg-gray-100 mb-8 overflow-hidden group">
             <img src="{{ $resized.RelPermalink | safeURL }}" 
                  alt="{{ $e.Title }}" 
                  loading="lazy" 
@@ -33,7 +33,7 @@
           </a>
         {{ else }}
           <!-- Fallback if no featured image -->
-           <a href="{{ .Permalink }}" class="block relative overflow-hidden aspect-[16/10] rounded-2xl bg-brand-dark/5 mb-8 flex items-center justify-center group overflow-hidden">
+           <a href="{{ $e.RelPermalink }}" class="block relative overflow-hidden aspect-[16/10] rounded-2xl bg-brand-dark/5 mb-8 flex items-center justify-center group overflow-hidden">
               <span class="text-brand-dark/10 font-serif italic text-4xl group-hover:scale-110 transition-transform duration-700">{{ $e.Title }}</span>
            </a>
         {{ end }}
