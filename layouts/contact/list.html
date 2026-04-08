@@ -1,0 +1,143 @@
+{{ define "main" }}
+<section class="site-contact pt-48 pb-32 md:pt-60 md:pb-48 bg-brand-light overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+    <div class="flex flex-col lg:flex-row gap-24 lg:gap-32 items-start justify-between">
+      
+      <!-- Left Column: Vision & Heading -->
+      <div class="space-y-12 max-w-xl group relative">
+        <!-- Decoration -->
+        <div class="absolute -top-12 -left-12 w-32 h-32 bg-brand-primary/5 rounded-full blur-2xl -z-10 animate-pulse"></div>
+        
+        <div class="overflow-hidden">
+          <span class="block text-[10px] md:text-xs font-black uppercase tracking-[0.6em] text-brand-primary animate-reveal">
+            REACH OUT
+          </span>
+        </div>
+        
+        <h1 class="text-6xl md:text-8xl font-serif text-brand-dark tracking-tighter leading-[0.9] italic animate-reveal" style="animation-delay: 0.2s;">
+          {{ .Params.heading | safeHTML }}
+        </h1>
+        
+        <div class="w-32 h-[1px] bg-brand-dark/10 group-hover:w-48 group-hover:bg-brand-primary transition-all duration-1000 ease-in-out animate-line"></div>
+        
+        <p class="text-lg md:text-xl text-gray-500 font-medium leading-[1.8] italic animate-reveal" style="animation-delay: 0.4s;">
+          Every great story starts with a simple hello. I'm currently based in Jakarta, but my bags are always packed for the next adventure. Let's create something timeless.
+        </p>
+
+        <!-- Social Quick Links -->
+        <div class="flex flex-wrap gap-8 pt-6 animate-reveal" style="animation-delay: 0.6s;">
+          {{ range .Site.Params.footer.social.link }}
+          <a href="{{ .url }}" target="_blank" class="text-[10px] font-black uppercase tracking-[0.3em] text-brand-dark/40 hover:text-brand-primary transition-all duration-500 flex items-center gap-3 group/link">
+            <span class="w-6 h-[1px] bg-brand-dark/10 group-hover/link:w-10 group-hover/link:bg-brand-primary transition-all duration-500"></span>
+            {{ .name }}
+          </a>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Right Column: The Form -->
+      <div class="w-full lg:max-w-2xl relative animate-reveal" style="animation-delay: 0.8s;">
+        <!-- Backdrop Glow -->
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-primary/5 rounded-full blur-[100px] -z-10"></div>
+        
+        <div class="glass p-8 md:p-14 lg:p-16 rounded-[2.5rem] shadow-2xl shadow-black/[0.03] relative overflow-hidden ring-1 ring-black/[0.03] backdrop-blur-3xl">
+          <div class="absolute top-0 right-0 p-8">
+            <svg class="w-12 h-12 text-brand-dark/5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0c.815 0 1.583.315 2.161.833L12 7V3z" />
+            </svg>
+          </div>
+
+          <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-dark mb-12 opacity-40">
+            {{ .Params.form_heading }}
+          </h4>
+          
+          <form id="contact-form" class="space-y-12" method="POST" novalidate=true>
+            <input class="hidden" name="hpfield">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <!-- Name Input -->
+              <div class="group relative">
+                <input type="text" 
+                       class="peer w-full bg-transparent border-b border-brand-dark/10 py-5 outline-none focus:border-brand-primary transition-all duration-500 placeholder-transparent text-brand-dark font-medium" 
+                       name="name" 
+                       id="yname" 
+                       placeholder="{{ .Site.Params.contactForm.placeholder_your_name }}" 
+                       required>
+                <label for="yname" 
+                       class="absolute left-0 top-5 text-sm md:text-base font-medium text-brand-dark/40 transition-all duration-500 pointer-events-none peer-focus:-top-6 peer-focus:text-[10px] peer-focus:font-black peer-focus:uppercase peer-focus:tracking-[0.3em] peer-focus:text-brand-primary peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:font-black peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-[0.3em]">
+                  {{ .Site.Params.contactForm.placeholder_your_name }}
+                </label>
+                <div class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-brand-primary transition-all duration-700 peer-focus:w-full"></div>
+              </div>
+
+              <!-- Email Input -->
+              <div class="group relative">
+                <input type="email" 
+                       class="peer w-full bg-transparent border-b border-brand-dark/10 py-5 outline-none focus:border-brand-primary transition-all duration-500 placeholder-transparent text-brand-dark font-medium" 
+                       name="email" 
+                       id="yemail" 
+                       placeholder="{{ .Site.Params.contactForm.placeholder_email }}" 
+                       required>
+                <label for="yemail" 
+                       class="absolute left-0 top-5 text-sm md:text-base font-medium text-brand-dark/40 transition-all duration-500 pointer-events-none peer-focus:-top-6 peer-focus:text-[10px] peer-focus:font-black peer-focus:uppercase peer-focus:tracking-[0.3em] peer-focus:text-brand-primary peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:font-black peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-[0.3em]">
+                  {{ .Site.Params.contactForm.placeholder_email }}
+                </label>
+                <div class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-brand-primary transition-all duration-700 peer-focus:w-full"></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1">
+              <!-- Message Input -->
+              <div class="group relative">
+                <textarea class="peer w-full bg-transparent border-b border-brand-dark/10 py-5 outline-none focus:border-brand-primary transition-all duration-500 placeholder-transparent text-brand-dark font-medium min-h-[180px] resize-none" 
+                          id="aboutProject" 
+                          name="about-project" 
+                          placeholder="{{ .Site.Params.contactForm.placeholder_about_the_project }}" 
+                          required></textarea>
+                <label for="aboutProject" 
+                       class="absolute left-0 top-5 text-sm md:text-base font-medium text-brand-dark/40 transition-all duration-500 pointer-events-none peer-focus:-top-6 peer-focus:text-[10px] peer-focus:font-black peer-focus:uppercase peer-focus:tracking-[0.3em] peer-focus:text-brand-primary peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:font-black peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-[0.3em]">
+                  Tell me your story...
+                </label>
+                <div class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-brand-primary transition-all duration-700 peer-focus:w-full"></div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-8 flex justify-end">
+              <div class="magnetic-wrap">
+                <button type="submit" 
+                        class="group/btn relative px-14 py-6 bg-brand-dark hover:bg-brand-primary text-white text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em] rounded-full transition-all duration-500 overflow-hidden shadow-2xl shadow-black/10 hover:shadow-brand-primary/20 active:scale-95" 
+                        id="contact-form-button">
+                  <span class="relative z-10 flex items-center gap-3">
+                    {{ .Site.Params.contactForm.send_message }}
+                    <svg class="w-4 h-4 transition-transform duration-500 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          
+          <!-- Bottom Info -->
+          <div class="mt-16 pt-12 border-t border-brand-dark/5 flex flex-col sm:flex-row items-center justify-between gap-8">
+            <div class="flex items-center gap-4">
+              <div class="relative">
+                <div class="w-3 h-3 bg-green-500 rounded-full animate-ping absolute inset-0"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full relative"></div>
+              </div>
+              <span class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Available for {{ now.Format "2006" }}–{{ add now.Year 1 }}</span>
+            </div>
+            
+            <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-gray-300">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+              Worldwide Travel
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}

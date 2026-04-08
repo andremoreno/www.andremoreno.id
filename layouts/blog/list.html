@@ -1,0 +1,96 @@
+{{ define "main" }}
+
+<section class="relative pt-32 pb-16 md:pt-48 md:pb-32 bg-brand-light">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+    <div class="max-w-4xl space-y-8 mb-20 md:mb-32">
+      <div class="overflow-hidden">
+        <span class="block text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary animate-reveal">
+          Journal & Musings
+        </span>
+      </div>
+      <h1 class="text-6xl md:text-8xl lg:text-9xl font-serif text-brand-dark tracking-tighter leading-none text-balance animate-reveal" style="animation-delay: 200ms;">
+        {{ .Title }}
+      </h1>
+      <p class="text-lg md:text-xl text-brand-dark/60 max-w-2xl animate-reveal leading-relaxed" style="animation-delay: 400ms;">
+        {{ .Params.description | default "Thoughts on photography, technology, and the subtle art of capturing moments." }}
+      </p>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+      {{ range $i, $e := (.Paginator 6).Pages }}
+      {{ $delay := add 600 (mul $i 150) }}
+      <article class="blog-post-card group opacity-0 translate-y-12 transition-all duration-1000 ease-out" 
+               data-delay="{{ $delay }}">
+        {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
+          {{ $resized := .Fill "1200x800 webp q90" }}
+          <a href="{{ .Permalink }}" class="block relative overflow-hidden aspect-[16/10] rounded-2xl bg-gray-100 mb-8 overflow-hidden group">
+            <img src="{{ $resized.RelPermalink | safeURL }}" 
+                 alt="{{ $e.Title }}" 
+                 loading="lazy" 
+                 class="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105">
+            <div class="absolute inset-0 bg-brand-dark/5 group-hover:bg-transparent transition-colors duration-700"></div>
+          </a>
+        {{ else }}
+          <!-- Fallback if no featured image -->
+           <a href="{{ .Permalink }}" class="block relative overflow-hidden aspect-[16/10] rounded-2xl bg-brand-dark/5 mb-8 flex items-center justify-center group overflow-hidden">
+              <span class="text-brand-dark/10 font-serif italic text-4xl group-hover:scale-110 transition-transform duration-700">{{ $e.Title }}</span>
+           </a>
+        {{ end }}
+
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-brand-primary">
+              {{ .PublishDate.Format "02 Jan 2006" }}
+            </span>
+            <span class="h-[1px] w-6 bg-brand-dark/10"></span>
+          </div>
+          
+          <h3 class="text-3xl md:text-5xl font-serif text-brand-dark tracking-tighter leading-[1.1] group-hover:text-brand-primary transition-colors duration-500 text-balance">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h3>
+
+          <div class="pt-6 flex">
+            <a href="{{ .Permalink }}" class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-dark/40 group-hover:text-brand-primary group-hover:tracking-[0.5em] transition-all duration-500 flex items-center gap-4">
+              Continue Reading
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="translate-x-0 group-hover:translate-x-2 transition-transform duration-500"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-32 pt-20 border-t border-brand-dark/5">
+      {{ partial "pagination.html" . }}
+    </div>
+  </div>
+</section>
+
+{{ partial "call-to-action.html" . }}
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains('blog-post-card')) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.remove('opacity-0', 'translate-y-12');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+          }, delay);
+        }
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.blog-post-card').forEach(card => observer.observe(card));
+</script>
+
+{{ end }}

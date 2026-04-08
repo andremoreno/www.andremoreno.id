@@ -1,0 +1,67 @@
+{{ with .Site.Params.banner }}
+  {{ if .enable }}
+  <section class="relative min-h-[90vh] md:h-screen flex items-center justify-center overflow-hidden bg-brand-light">
+    <!-- Sophisticated Background Reveal -->
+    <div class="absolute inset-0 z-0 mask-reveal">
+      <img src="{{ .background_image | safeURL | absURL }}" 
+           alt="{{ site.Title }} - Photography" 
+           class="w-full h-full object-cover animate-scale opacity-70 contrast-[1.1] brightness-[0.7]"
+           fetchpriority="high"
+           decoding="async">
+      <!-- Deep Visibility Overlays -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-brand-light"></div>
+      <div class="absolute inset-0 bg-black/10"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-7xl px-8 flex flex-col items-center text-center">
+      <!-- Animated Brand Signal -->
+      <div class="mb-12 md:mb-16 overflow-hidden">
+        <span class="block text-xs md:text-sm font-bold uppercase tracking-[0.6em] text-brand-primary animate-tracking drop-shadow-lg">
+          ANDRE MORENO &nbsp; // &nbsp; STORYTELLER
+        </span>
+      </div>
+
+      <!-- Main Headline with Reveal -->
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white tracking-tighter leading-[1.1] animate-reveal mb-12 text-balance max-w-4xl drop-shadow-[0_10px_50px_rgba(0,0,0,0.3)]">
+        It's Time To Write <br>
+        <span class="italic text-brand-primary drop-shadow-[0_10px_30px_rgba(225,29,72,0.4)]">A New Story!</span>
+      </h1>
+
+      <div class="opacity-0 animate-reveal" style="animation-delay: 600ms">
+
+        <!-- Premium CTA Group -->
+        <div class="flex items-center justify-center pt-8">
+          <div class="magnetic-wrap">
+            <a href="{{ .primary_button_url | absURL }}" 
+               class="px-14 py-5 bg-brand-dark hover:bg-brand-primary !text-white text-[11px] font-bold uppercase tracking-[0.3em] rounded-full shadow-[0_20px_50px_rgba(15,23,42,0.2)] hover:shadow-[0_20px_50px_rgba(225,29,72,0.3)] transition-all duration-500 transform hover:-translate-y-2">
+              {{ .primary_button }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Assist -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 opacity-40">
+      <span class="text-[9px] font-bold uppercase tracking-[0.5em] vertical-text text-brand-dark">SCROLL</span>
+      <div class="w-[1.5px] h-20 bg-gradient-to-b from-brand-dark to-transparent relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-primary h-1/2 animate-bounce-slow"></div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .vertical-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(-100%); }
+      50% { transform: translateY(200%); }
+    }
+    .animate-bounce-slow {
+      animation: bounce-slow 2.5s infinite cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  </style>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,35 @@
+{{- with $.Params.images -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ index . 0 | absURL }}">
+{{ else -}}
+{{- $images := $.Resources.ByType "image" -}}
+{{- $featured := $images.GetMatch "images01.jpg" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*feat*,*thumbnail*}" }}{{ end -}}
+{{- with $featured -}}
+{{ $resized := .Fill "1200x630" }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ $resized.Permalink }}">
+{{- else -}}
+{{- with $.Site.Params.images -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ index . 0 | absURL }}">
+{{ else -}}
+<meta name="twitter:card" content="summary">
+{{- end -}}
+{{- end -}}
+{{- end }}
+<meta name="twitter:title" content="{{ .Title }}">
+{{- $desc := "" -}}
+{{- if .Description -}}{{- $desc = .Description -}}
+{{- else if .IsPage -}}{{- $desc = .Summary | plainify -}}
+{{- else if .Site.Params.description -}}{{- $desc = .Site.Params.description -}}
+{{- end -}}
+{{- if and $desc (lt (len $desc) 100) -}}
+  {{- $desc = printf "%s. Andre Moreno is a photographer based in Jakarta specializing in wedding, documentary, and candid photography." $desc -}}
+{{- end -}}
+<meta name="twitter:description" content="{{ $desc | truncate 160 }}">
+{{- $twitter := .Params.Social.twitter | default .Site.Params.social.twitter -}}
+{{ with $twitter -}}
+<meta name="twitter:site" content="@{{ . }}">
+<meta name="twitter:creator" content="@{{ . }}">
+{{ end -}}

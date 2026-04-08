@@ -1,0 +1,86 @@
+{{ define "main" }}
+
+<section class="py-40 bg-white">
+  <div class="container mx-auto px-6 lg:px-12">
+    <!-- Header -->
+    <div class="max-w-4xl mx-auto text-center mb-32 space-y-6">
+      <h1 class="text-5xl md:text-8xl font-bold text-gray-950 tracking-tighter italic font-serif leading-none italic">
+        {{ .Title }}
+      </h1>
+      <p class="text-red-600 uppercase tracking-[0.4em] text-[10px] font-black italic">
+        {{ .Params.stitle }}
+      </p>
+    </div>
+
+    <!-- Gallery Container -->
+    <div class="gallery w-full mx-auto" 
+         id="gallery" 
+         style="visibility: hidden; height: 1px; overflow: hidden;" 
+         itemscope 
+         itemtype="http://schema.org/ImageGallery">
+      <meta itemprop="url" content="{{ .Permalink }}">
+      {{ with site.Params.Owner.Name }}
+        <span itemprop="creator" itemscope itemtype="https://schema.org/Person">
+          <meta itemprop="name" content="{{ . }}">
+        </span>
+      {{ end }}
+
+      {{ range sort ((.Page.Resources.ByType "image").Match "*") "Meta.Date" "desc" }}
+        {{ $small := .Filter (slice images.AutoOrient (images.Process "fit 800x800")) }}
+        {{ $full := .Filter (slice images.AutoOrient (images.Process "fit 2400x2400")) }}
+
+        {{ with site.Params.watermark }}
+          {{ $watermark := resources.Get .image }}
+          {{ if $watermark }}
+            {{ $maxWidth := div $full.Width 6 }}
+            {{ $watermark = cond (gt $watermark.Width $maxWidth) ($watermark.Resize (printf "%dx" $maxWidth)) $watermark }}
+            {{ $padding := 40 }}
+            {{ $x := cond (eq (.posx | default "right") "center") (sub (div $full.Width 2) (div $watermark.Width 2)) 
+                          (cond (eq (.posx | default "right") "right") (sub $full.Width (add $watermark.Width $padding)) $padding) }}
+            {{ $y := cond (eq (.posy | default "bottom") "center") (sub (div $full.Height 2) (div $watermark.Height 2)) 
+                          (cond (eq (.posy | default "bottom") "bottom") (sub $full.Height (add $watermark.Height $padding)) $padding) }}
+            {{ $full = $full.Filter (images.Overlay $watermark $x $y) }}
+          {{ end }}
+        {{ end }}
+
+        {{ $color := index $small.Colors 0 | default "transparent" }}
+        
+        <figure class="gallery-item group relative overflow-hidden rounded-2xl bg-gray-900 shadow-2xl transition-all hover:scale-[1.02] duration-500" 
+                itemprop="associatedMedia" 
+                itemscope 
+                itemtype="http://schema.org/ImageObject">
+          <a class="block w-full h-full aspect-auto" 
+             href="{{ $full.RelPermalink }}" 
+             data-pswp-src="{{ $full.RelPermalink }}" 
+             data-pswp-width="{{ $full.Width }}" 
+             data-pswp-height="{{ $full.Height }}" 
+             itemprop="contentUrl">
+            <img style="background-color: {{ $color }}; opacity: 0;" 
+                 class="lazyload w-full h-full object-cover transition-opacity duration-700" 
+                 onload="this.style.opacity='1'"
+                 width="{{ $small.Width }}" 
+                 height="{{ $small.Height }}" 
+                 data-src="{{ $small.RelPermalink }}" 
+                 alt="{{ .Meta.Exif.Make | default "" }} {{ .Meta.Exif.Model | default "" }} {{ .Meta.Exif.ImageDescription | default "" }}" 
+                 itemprop="thumbnailUrl">
+            <!-- Overlay on hover -->
+            <div class="absolute inset-0 bg-gray-950/20 group-hover:bg-gray-950/0 transition-colors duration-500"></div>
+          </a>
+          <meta itemprop="width" content="{{ $small.Width }}">
+          <meta itemprop="height" content="{{ $small.Height }}">
+          <meta itemprop="caption" content="{{ .Meta.Exif.ImageDescription | default "" }}">
+        </figure>
+      {{ end }}
+    </div>
+
+    <!-- Thanks Section -->
+    <div class="mt-32 pt-20 border-t border-white/5">
+      {{ partialCached "thanks.html" . }}
+    </div>
+
+  </div>
+</section>
+
+{{ partial "call-to-action.html" . }}
+
+{{ end }}

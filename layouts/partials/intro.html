@@ -1,0 +1,44 @@
+{{ with .Site.Data.intro }}
+  {{ if .enable }}
+  <section class="py-32 md:py-48 bg-brand-light overflow-hidden" id="intro">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-24">
+      
+      <!-- Premium Typography Reveal -->
+      <div class="flex flex-col items-start gap-12 max-w-2xl group cursor-default">
+        <div class="overflow-hidden">
+          <span class="block text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary animate-reveal">
+            OUR VISION
+          </span>
+        </div>
+        <h2 class="text-6xl md:text-8xl font-serif text-brand-dark tracking-tighter leading-[0.9] italic opacity-0 transition-transform duration-1000 group-hover:scale-105" id="intro-heading">
+          {{ .heading }}
+        </h2>
+        <div class="w-32 h-[2px] bg-brand-primary/20 group-hover:bg-brand-primary group-hover:w-48 transition-all duration-1000 ease-in-out"></div>
+      </div>
+
+      <!-- Supporting content -->
+      <div class="max-w-2xl text-xl md:text-3xl text-gray-400 font-serif italic border-l border-brand-dark/5 pl-12 md:pl-20 py-8 opacity-0 translate-x-10 transition-all duration-1000" id="intro-content">
+        {{ .content | safeHTML }}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const introObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.id === 'intro-heading') {
+            entry.target.classList.add('animate-reveal');
+          } else if (entry.target.id === 'intro-content') {
+            entry.target.classList.remove('opacity-0', 'translate-x-10');
+            entry.target.classList.add('opacity-100', 'translate-x-0');
+          }
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.getElementById('intro-heading') && introObserver.observe(document.getElementById('intro-heading'));
+    document.getElementById('intro-content') && introObserver.observe(document.getElementById('intro-content'));
+  </script>
+  {{ end }}
+{{ end }}

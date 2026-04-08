@@ -1,0 +1,44 @@
+{{ with .Site.Params.call_to_action }}
+  {{ if .enable }}
+  <section class="relative py-48 md:py-80 overflow-hidden bg-brand-dark" id="cta">
+    <!-- Sophisticated Dark Atmosphere -->
+    <div class="absolute inset-0 z-0">
+      <img src="{{ .background_image | safeURL | absURL }}" 
+           alt="Wedding Atmosphere" 
+           class="w-full h-full object-cover opacity-20 grayscale transition-transform duration-[10s] scale-110 hover:scale-100 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark"></div>
+    </div>
+
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 text-center">
+      <div class="max-w-6xl mx-auto flex flex-col items-center space-y-24 md:space-y-40">
+        
+        <div class="space-y-10 group cursor-default">
+          <span class="block text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary opacity-0 translate-y-10 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100">
+            READY TO START?
+          </span>
+          <h2 class="text-7xl md:text-[13rem] lg:text-[15rem] font-serif italic text-white tracking-tighter leading-none italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-700 hover:scale-105">
+            {{ .title }}
+          </h2>
+        </div>
+
+        <!-- Premium Interactive Actions -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+          <div class="magnetic-wrap">
+            <a href="{{ .primary_button_url | absURL }}" 
+               class="group relative px-16 py-7 md:px-24 md:py-9 bg-brand-primary text-white text-[11px] md:text-[13px] font-bold uppercase tracking-[0.5em] rounded-full shadow-[0_30px_60px_rgba(225,29,72,0.3)] transition-all duration-700 hover:scale-110 overflow-hidden">
+              <span class="relative z-10">{{ .primary_button }}</span>
+              <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+            </a>
+          </div>
+          
+          <a href="{{ .secondary_button_url | absURL }}" 
+             class="group flex items-center gap-6 text-[11px] md:text-[13px] font-bold text-white/40 hover:text-white transition-all duration-700 uppercase tracking-[0.6em]">
+            {{ .secondary_button }}
+            <span class="w-12 h-[1px] bg-white/20 group-hover:w-20 group-hover:bg-brand-primary transition-all duration-700 ease-out"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}

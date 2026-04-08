@@ -1,0 +1,80 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.160.0"
+  GO_VERSION = "1.26.1"
+  HUGO_ENABLEGITINFO = "true"
+  HUGO_ENV = "production"
+  TZ = "Asia/Jakarta"
+
+[dev]
+  command = "hugo server"
+  framework = "hugo"
+  targetPort = 1313
+
+[deploy]
+  command = "netlify deploy --prod --dir=public"
+
+[[redirects]]
+  from = "https://andremoreno.netlify.app/*"
+  to = "https://www.andremoreno.id/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  # Serve a full size version
+  from = "/static/*"
+  to = "/.netlify/images?url=/:splat"
+  status = 200
+
+[[redirects]]
+  # Serve a placeholder version
+  from = "/thumbs/*"
+  to = "/.netlify/images?url=/:splat&fit=contain&w=50&h=50"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+
+[[headers]]
+  for = "/fonts/*"
+    [headers.values]
+     "Cache-Control" = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/scss/*"
+    [headers.values]
+     "Cache-Control" = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/js/*"
+    [headers.values]
+     "Cache-Control" = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/images/*"
+    [headers.values]
+     "Cache-Control" = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+
+[[headers]]
+  for = "/stories/*.jpg"
+    [headers.values]
+     "Cache-Control" = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+
+[[plugins]]
+  package = "netlify-plugin-hugo-cache-resources"
+    [plugins.inputs]
+    # If it should show more verbose logs (optional, default = true)
+    debug = false

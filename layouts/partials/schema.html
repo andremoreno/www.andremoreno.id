@@ -1,0 +1,73 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "{{ if .IsHome }}@type{{ else }}@type{{ end }}": "{{ if .IsHome }}Photographer{{ else if eq .Section "stories" }}BlogPosting{{ else }}ProfessionalService{{ end }}",
+  "name": "{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+  "image": "{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ .Site.Params.logo | absURL }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jakarta",
+    "addressRegion": "DKI Jakarta",
+    "addressCountry": "ID"
+  },
+  "sameAs": [
+    {{- range $i, $e := .Site.Params.footer.social.link -}}
+      {{ if $i }}, {{ end }}"{{ $e.url }}"
+    {{- end -}}
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Andre Moreno",
+    "logo": "{{ .Site.Params.logo | absURL }}"
+  }
+  {{ if eq .Section "stories" }}
+  ,"author": {
+    "@type": "Person",
+    "name": "Andre Moreno"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Andre Moreno Photography",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.Params.logo | absURL }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+  {{ end }}
+}
+</script>
+
+{{ if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "{{ .Site.BaseURL }}"
+  },
+  {{ if .Section }}
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "{{ .Section | humanize }}",
+    "item": "{{ .Site.BaseURL }}{{ .Section }}/"
+  },
+  {{ end }}
+  {
+    "@type": "ListItem",
+    "position": {{ if .Section }}3{{ else }}2{{ end }},
+    "name": "{{ .Title }}",
+    "item": "{{ .Permalink }}"
+  }]
+}
+</script>
+{{ end }}

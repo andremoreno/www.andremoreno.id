@@ -1,0 +1,110 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="relative pt-24 pb-16 md:pt-40 md:pb-24 bg-brand-light overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+    <div class="max-w-4xl">
+      <div class="overflow-hidden mb-8">
+        <span class="block text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary animate-reveal">
+          STORIES ARCHIVE
+        </span>
+      </div>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-brand-dark tracking-[-0.05em] leading-[0.9] text-balance opacity-0 animate-reveal" id="stories-title">
+        {{ .Params.stitle | safeHTML }}
+      </h1>
+      
+      <div class="mt-20 flex flex-col md:flex-row md:items-center gap-12 opacity-0 animate-reveal" style="animation-delay: 500ms;">
+        <div class="h-[1px] bg-brand-dark/20 w-32 hidden md:block"></div>
+        <p class="text-xs md:text-sm font-medium tracking-widest text-brand-dark/40 uppercase leading-loose max-w-xl">
+          {{ .Description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dramatic Decorative Overlay -->
+  <div class="absolute -right-40 top-1/2 -translate-y-1/2 opacity-[0.02] select-none pointer-events-none rotate-90 origin-center hidden lg:block">
+    <span class="text-[30vw] font-serif italic whitespace-nowrap leading-none tracking-tighter">Photography</span>
+  </div>
+</section>
+
+<!-- Stories Grid -->
+<section class="pb-16 md:pb-24 bg-brand-light" id="stories-grid">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
+      {{ range $index, $element := .Paginator.Pages }}
+      {{ $href := .Permalink }}
+      {{ with .Params.relPermalinkOverride }}{{ $href = . }}{{ end }}
+      {{ $delay := mod (mul $index 150) 450 }}
+      
+      <article class="story-archive-card group opacity-0 translate-y-16 transition-all duration-1000 ease-out" 
+               data-delay="{{ $delay }}">
+        {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
+          {{ $resized := .Fill "1000x1000 webp q85" }}
+          <a href="{{ $href }}" class="block relative overflow-hidden aspect-square rounded-3xl md:rounded-[3rem] bg-gray-200 group">
+              <img src="{{ $resized.RelPermalink | safeURL }}"
+                   alt="{{ $element.Title }}" 
+                   loading="lazy"
+                   class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-110">
+              
+              <!-- Refined Information Overlay -->
+              <div class="absolute inset-x-0 bottom-0 p-8 md:p-12 bg-gradient-to-t from-brand-dark/95 via-brand-dark/40 to-transparent flex flex-col justify-end">
+                <div class="space-y-4 translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
+                  {{ if $element.Params.tags }}
+                  <span class="block text-[8px] font-bold uppercase tracking-[0.4em] text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      {{ index $element.Params.tags 0 }}
+                  </span>
+                  {{ end }}
+                  <h3 class="text-2xl md:text-3xl text-white font-serif italic tracking-tight leading-tight text-balance">
+                      {{ $element.Title }}
+                  </h3>
+                  <div class="pt-6 flex items-center gap-4 text-[9px] font-bold uppercase tracking-[0.3em] text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-150">
+                      <span class="w-8 h-[1px] bg-white/20 group-hover:w-16 group-hover:bg-brand-primary transition-all duration-700"></span>
+                      Explore
+                  </div>
+                </div>
+              </div>
+          </a>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-16 md:mt-24 border-t border-brand-dark/5 pt-12 md:pt-16 flex justify-center">
+      {{ partial "pagination.html" . }}
+    </div>
+
+  </div>
+</section>
+
+{{ partial "call-to-action.html" . }}
+
+<script>
+  // Advanced Intersection Observer for Story Cards
+  document.addEventListener('DOMContentLoaded', () => {
+    const cardOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.remove('opacity-0', 'translate-y-16');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+          }, delay);
+          // Unobserve after play
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, cardOptions);
+
+    document.querySelectorAll('.story-archive-card').forEach(card => cardObserver.observe(card));
+  });
+</script>
+
+{{ end }}

@@ -1,0 +1,184 @@
+{{ $isHome := .IsHome }}
+{{ $headerTheme := "light" }}
+{{ if $isHome }}{{ $headerTheme = "dark" }}{{ end }}
+
+<header
+  class="fixed top-0 left-0 w-full z-[100] transition-all duration-700 {{ if $isHome }}bg-transparent{{ else }}bg-transparent header-on-light{{ end }}"
+  id="main-header" data-theme="{{ $headerTheme }}">
+  <div
+    class="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-24 md:h-32 transition-all duration-700"
+    id="nav-inner">
+
+    <a href="{{ site.Home.Permalink }}" class="shrink-0 flex items-center group relative">
+      <img src="{{ "images/logo-am-head.png" | absURL }}" alt="{{ site.Title }}"
+        class="h-10 w-20 object-contain transition-all duration-500 group-hover:scale-110 active:scale-95 relative z-[301]"
+        id="header-logo" {{ if not $isHome }}style="filter: none;" {{ end }}>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center space-x-10 xl:space-x-14 ml-auto" id="desktop-nav">
+      {{ range (.Site.Menus.nav) }}
+      {{ $isLast := eq .Name "Get in touch" }}
+      {{ if $isLast }}
+      <div class="magnetic-wrap">
+        <a href="{{ .URL | absURL }}"
+          class="px-10 py-4 bg-brand-dark hover:bg-brand-primary !text-white text-[11px] font-bold uppercase tracking-[0.3em] rounded-full transition-all duration-500 hover:shadow-[0_20px_50px_rgba(225,29,72,0.3)] transform hover:-translate-y-1">
+          {{ .Name }}
+        </a>
+      </div>
+      {{ else }}
+      <a href="{{ .URL | absURL }}" class="group relative py-2 nav-link">
+        <span
+          class="text-[11px] font-bold {{ if $isHome }}text-white{{ else }}text-gray-500 hover:text-brand-dark{{ end }} transition-colors tracking-[0.25em] uppercase">{{
+          .Name }}</span>
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-500 cubic-bezier(0.19, 1, 0.22, 1) group-hover:w-full"></span>
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+
+    <!-- Mobile Button -->
+    <button type="button"
+      class="lg:hidden p-4 {{ if $isHome }}text-white{{ else }}text-brand-dark{{ end }} group relative z-[301] transition-all duration-500 flex items-center justify-center rounded-full active:scale-90"
+      id="mobile-menu-button" aria-label="Toggle Menu">
+      <div class="relative w-8 h-5 flex flex-col justify-between items-end overflow-visible">
+        <span class="block w-8 h-[1.5px] bg-current transition-all duration-500 ease-out origin-right group-[.is-active]:-rotate-45 group-[.is-active]:-translate-x-1 group-[.is-active]:w-9"></span>
+        <span class="block w-5 h-[1.5px] bg-current transition-all duration-300 ease-out group-[.is-active]:opacity-0 group-[.is-active]:translate-x-4"></span>
+        <span class="block w-8 h-[1.5px] bg-current transition-all duration-500 ease-out origin-right group-[.is-active]:rotate-45 group-[.is-active]:-translate-x-1 group-[.is-active]:w-9"></span>
+      </div>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Overlay (Pindah Ke Luar Header) -->
+<div id="mobile-menu"
+  class="fixed inset-0 bg-brand-light z-[300] opacity-0 pointer-events-none transition-all duration-700 ease-out flex flex-col items-center justify-center translate-x-full">
+  
+  <div class="mb-20 opacity-0 translate-y-10 transition-all duration-700" id="mobile-logo-wrap">
+    <img src="{{ "images/logo-am-head.png" | absURL }}" alt="{{ site.Title }}" class="h-16 w-auto">
+  </div>
+
+  <nav class="flex flex-col items-center gap-10">
+    {{ range .Site.Menus.nav }}
+    <a href="{{ .URL | absURL }}"
+      class="mobile-nav-link text-5xl md:text-7xl font-serif italic text-brand-dark hover:text-brand-primary transition-all duration-500 transform hover:scale-105 tracking-tighter opacity-0 translate-y-10">{{
+      .Name }}</a>
+    {{ end }}
+  </nav>
+</div>
+
+<script>
+  const header = document.getElementById('main-header');
+  const navInner = document.getElementById('nav-inner');
+  const mobileMenuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  const headerTheme = header.dataset.theme;
+
+  window.addEventListener('scroll', () => {
+    const navLinks = document.querySelectorAll('.nav-link span');
+    const headerLogo = document.getElementById('header-logo');
+
+    if (window.scrollY > 50) {
+      header.classList.add('glass', 'shadow-2xl', 'shadow-black/5');
+      header.classList.remove('bg-transparent');
+      navInner.classList.replace('h-32', 'h-20');
+      
+      if (!mobileMenuBtn.classList.contains('is-active')) {
+        mobileMenuBtn.classList.replace('text-white', 'text-brand-dark');
+      }
+      
+      if (headerLogo) headerLogo.style.filter = 'none';
+      navLinks.forEach(link => {
+        link.classList.remove('text-white');
+        link.classList.add('text-gray-500', 'hover:text-brand-dark');
+      });
+    } else {
+      header.classList.remove('glass', 'shadow-2xl', 'shadow-black/5');
+      header.classList.add('bg-transparent');
+      navInner.classList.replace('h-20', 'h-32');
+
+      if (headerTheme === 'dark') { // Home page/Dark Hero context
+        if (!mobileMenuBtn.classList.contains('is-active')) {
+          mobileMenuBtn.classList.add('text-white');
+          mobileMenuBtn.classList.remove('text-brand-dark');
+          if (headerLogo) headerLogo.style.filter = 'brightness(0) invert(1)';
+        }
+        navLinks.forEach(link => {
+          link.classList.remove('text-gray-500', 'hover:text-brand-dark');
+          link.classList.add('text-white');
+        });
+      } else { // Light context
+        mobileMenuBtn.classList.add('text-brand-dark');
+        mobileMenuBtn.classList.remove('text-white');
+        if (headerLogo) headerLogo.style.filter = 'none';
+        navLinks.forEach(link => {
+          link.classList.remove('text-white');
+          link.classList.add('text-gray-500', 'hover:text-brand-dark');
+        });
+      }
+    }
+  });
+
+  // Set initial state
+  window.dispatchEvent(new Event('scroll'));
+
+  function toggleMenu() {
+    const isOpen = mobileMenuBtn.classList.toggle('is-active');
+    const headerLogo = document.getElementById('header-logo');
+    
+    if (isOpen) {
+      mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
+      mobileMenu.classList.add('translate-x-0', 'opacity-100');
+      
+      // Keep controls visible above overlay
+      header.classList.add('!z-[301]');
+      mobileMenuBtn.classList.add('!text-brand-dark');
+      if (headerLogo) headerLogo.style.filter = 'none';
+
+      document.body.style.overflow = 'hidden';
+
+      mobileLinks.forEach((link, i) => {
+        setTimeout(() => {
+          link.classList.add('animate-reveal');
+          link.classList.remove('opacity-0', 'translate-y-10');
+        }, 300 + (i * 100));
+      });
+
+      const mobileLogo = document.getElementById('mobile-logo-wrap');
+      setTimeout(() => {
+        mobileLogo.classList.add('animate-reveal');
+        mobileLogo.classList.remove('opacity-0', 'translate-y-10');
+      }, 100);
+    } else {
+      header.classList.remove('!z-[301]');
+      mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+      mobileMenu.classList.remove('translate-x-0', 'opacity-100');
+      document.body.style.overflow = '';
+      
+      // Trigger scroll logic to restore correct button color
+      window.dispatchEvent(new Event('scroll'));
+
+      mobileLinks.forEach(link => {
+        link.classList.remove('animate-reveal');
+        link.classList.add('opacity-0', 'translate-y-10');
+      });
+    }
+  }
+
+  mobileMenuBtn?.addEventListener('click', toggleMenu);
+
+  // Magnetic Effect
+  document.querySelectorAll('.magnetic-wrap').forEach(wrap => {
+    wrap.addEventListener('mousemove', (e) => {
+      const rect = wrap.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      wrap.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    wrap.addEventListener('mouseleave', () => {
+      wrap.style.transform = `translate(0, 0)`;
+    });
+  });
+</script>

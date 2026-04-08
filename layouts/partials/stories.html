@@ -1,0 +1,104 @@
+{{ with .Site.Params.stories }}
+  {{ if .enable }}
+    <section class="relative pt-20 pb-20 md:pt-32 md:pb-32 bg-brand-light" id="stories">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+        
+        <div class="flex flex-col lg:flex-row items-end justify-between mb-20 md:mb-32 gap-12">
+          <div class="max-w-3xl space-y-8">
+            <div class="overflow-hidden">
+              <span class="block text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary animate-reveal">
+                {{ .subtitle }}
+              </span>
+            </div>
+            <h2 class="text-6xl md:text-8xl lg:text-9xl font-serif text-brand-dark tracking-tighter leading-none text-balance opacity-0" id="stories-title">
+              {{ .title }}
+            </h2>
+          </div>
+          
+          <div class="w-full lg:w-auto overflow-hidden">
+            <div class="h-[1px] bg-brand-dark/10 w-full lg:w-64 animate-line"></div>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20">
+          {{ range $i, $e := first 4 (where $.Site.RegularPages "Params.tags" "intersect" (slice "Featured")) }}
+            {{ $href := .Permalink }}
+            {{ with .Params.relPermalinkOverride }}{{ $href = . }}{{ end }}
+            {{ $delay := add 200 (mul $i 200) }}
+            
+            <article class="story-card group relative opacity-0 translate-y-20 transition-all duration-1000 ease-out" 
+                     data-delay="{{ $delay }}">
+              {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
+                {{ $resized := .Fill "1200x1500 webp q90" }}
+                <a href="{{ $href }}" class="block relative overflow-hidden aspect-[4/5] rounded-2xl md:rounded-[2rem] bg-gray-100 group">
+                    <img src="{{ $resized.RelPermalink | safeURL }}"
+                         alt="{{ $e.Title }}" 
+                         loading="lazy"
+                         class="w-full h-full object-cover transition-transform duration-[2.5s] ease-out group-hover:scale-110 group-hover:rotate-1">
+                    
+                    <!-- Sophisticated Hover Overlay -->
+                    <div class="absolute inset-x-0 bottom-0 p-8 md:p-12 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent flex flex-col justify-end translate-y-0 md:translate-y-6 md:group-hover:translate-y-0 transition-transform duration-700">
+                        <div class="space-y-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                            {{ if $e.Params.tags }}
+                            <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-brand-primary">
+                                {{ index $e.Params.tags 0 }}
+                            </span>
+                            {{ end }}
+                            <h3 class="text-4xl md:text-5xl text-white font-serif italic tracking-tight leading-none">
+                                {{ $e.Title }}
+                            </h3>
+                            <div class="pt-6 flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] text-white/70">
+                                <span class="w-8 h-[1px] bg-white/30 group-hover:w-16 group-hover:bg-brand-primary transition-all duration-700"></span>
+                                Explore Story
+                            </div>
+                        </div>
+                    </div>
+                </a>
+              {{ end }}
+            </article>
+          {{ end }}
+        </div>
+
+      </div>
+
+      <!-- Professional Bridging Button -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20 opacity-0" id="archive-btn">
+        <div class="magnetic-wrap">
+          <a href="/stories/" class="px-8 md:px-14 py-6 md:py-7 bg-white border border-brand-dark/5 hover:border-brand-primary hover:text-white text-slate-900 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.3em] md:tracking-[0.4em] whitespace-nowrap rounded-full transition-all duration-700 shadow-[0_15px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(225,29,72,0.3)]">
+              See More Stories
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Scroll Reveal Logic
+      const observerOptions = {
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.id === 'stories-title') {
+              entry.target.classList.add('animate-reveal');
+            } else if (entry.target.classList.contains('story-card')) {
+              const delay = entry.target.dataset.delay;
+              setTimeout(() => {
+                entry.target.classList.remove('opacity-0', 'translate-y-20');
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+              }, delay);
+            } else if (entry.target.id === 'archive-btn') {
+              entry.target.classList.add('animate-reveal');
+            }
+          }
+        });
+      }, observerOptions);
+
+      document.getElementById('stories-title') && observer.observe(document.getElementById('stories-title'));
+      document.querySelectorAll('.story-card').forEach(card => observer.observe(card));
+      document.getElementById('archive-btn') && observer.observe(document.getElementById('archive-btn'));
+    </script>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,109 @@
+{{ define "main" }}
+
+<!-- Story Header -->
+<header class="relative pt-32 pb-20 md:pt-60 md:pb-40 bg-brand-light overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 text-center md:text-left">
+    <div class="max-w-5xl space-y-12">
+      <div class="flex flex-col md:flex-row items-center md:items-center gap-6 overflow-hidden">
+        {{ if .Params.tags }}
+        <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary animate-reveal">
+          {{ index .Params.tags 0 }}
+        </span>
+        {{ end }}
+        <div class="h-[1px] bg-brand-dark/10 w-24 animate-line hidden md:block"></div>
+        <time class="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-brand-dark/30 animate-reveal" style="animation-delay: 200ms;">
+          {{ .Date.Format "January 02, 2006" }}
+        </time>
+      </div>
+      
+      <h1 class="text-6xl md:text-8xl lg:text-9xl font-serif text-brand-dark tracking-[-0.05em] leading-[0.85] opacity-0 animate-reveal" id="story-title">
+        {{ .Title }}
+      </h1>
+      
+      <div class="pt-12 opacity-0 animate-reveal" style="animation-delay: 600ms;">
+        <p class="text-base md:text-lg text-brand-dark/50 max-w-2xl leading-relaxed italic font-serif mx-auto md:mx-0">
+          {{ .Description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subtle Scroll Hint -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-0 animate-reveal" style="animation-delay: 1s;">
+    <span class="text-[8px] font-bold uppercase tracking-[0.4em] text-brand-dark/20 rotate-90 origin-center mb-8">Scroll</span>
+    <div class="w-[1px] h-20 bg-gradient-to-b from-brand-dark/20 to-transparent"></div>
+  </div>
+</header>
+
+<!-- Story Content & Gallery -->
+<article class="bg-brand-light">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+    
+    <!-- Narrative Text -->
+    {{ if .Content }}
+    <div class="w-full mb-32 md:mb-52 transition-all duration-1000 ease-out" id="story-content-section">
+      <div class="story-content drop-cap text-xl md:text-2xl font-serif">
+         {{ .Content }}
+      </div>
+    </div>
+    {{ end }}
+
+    <!-- Closing Note -->
+    <div class="mt-40 md:mt-60 border-t border-brand-dark/5">
+      {{ partialCached "thanks.html" . }}
+    </div>
+
+    <!-- Navigation -->
+    <nav class="mt-20 md:mt-40 pb-32 border-t border-brand-dark/10 pt-24 md:pt-40">
+      <div class="flex flex-col md:flex-row justify-between items-stretch gap-12 md:gap-20">
+        
+        {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" class="group flex-1 flex flex-col md:flex-row items-center md:items-center gap-8 p-12 md:p-16 bg-white/40 hover:bg-white rounded-[2rem] md:rounded-[4rem] border border-brand-dark/5 transition-all duration-1000 ease-out hover:shadow-[0_40px_100px_rgba(0,0,0,0.05)]">
+          <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border border-brand-dark/10 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-700">
+            <span class="text-brand-dark/30 group-hover:text-white transition-colors text-xl md:text-3xl">←</span>
+          </div>
+          <div class="flex flex-col items-center md:items-start space-y-4">
+            <span class="text-[9px] font-bold uppercase tracking-[0.5em] text-brand-dark/30 group-hover:text-brand-primary transition-all duration-500">Previous Story</span>
+            <span class="text-3xl md:text-5xl font-serif italic text-brand-dark group-hover:translate-x-2 transition-transform duration-700">{{ .Title }}</span>
+          </div>
+        </a>
+        {{ end }}
+
+        {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" class="group flex-1 flex flex-col md:flex-row-reverse items-center md:items-center gap-8 p-12 md:p-16 bg-white/40 hover:bg-white rounded-[2rem] md:rounded-[4rem] border border-brand-dark/5 transition-all duration-1000 ease-out hover:shadow-[0_40px_100px_rgba(0,0,0,0.05)]">
+          <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border border-brand-dark/10 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-700">
+            <span class="text-brand-dark/30 group-hover:text-white transition-colors text-xl md:text-3xl">→</span>
+          </div>
+          <div class="flex flex-col items-center md:items-end space-y-4">
+            <span class="text-[9px] font-bold uppercase tracking-[0.5em] text-brand-dark/30 group-hover:text-brand-primary transition-all duration-500">Next Story</span>
+            <span class="text-3xl md:text-5xl font-serif italic text-brand-dark group-hover:-translate-x-2 transition-transform duration-700 text-right">{{ .Title }}</span>
+          </div>
+        </a>
+        {{ end }}
+
+      </div>
+    </nav>
+  </div>
+</article>
+
+{{ partialCached "call-to-action.html" . }}
+
+<script>
+  // Simple Reveal Animation for Content
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = { threshold: 0.1 };
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-reveal');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const content = document.getElementById('story-content-section');
+    if (content) revealObserver.observe(content);
+  });
+</script>
+
+{{ end }}

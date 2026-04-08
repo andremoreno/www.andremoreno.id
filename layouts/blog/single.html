@@ -1,0 +1,80 @@
+{{ define "main" }}
+
+<article class="relative pt-32 pb-20 md:pt-48 md:pb-40 bg-brand-light">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+    
+    <!-- Blog Header -->
+    <header class="max-w-4xl mx-auto text-center space-y-12 mb-20 md:mb-32">
+      <div class="overflow-hidden">
+        <div class="flex items-center justify-center gap-6 animate-reveal">
+          <span class="h-[1px] w-12 bg-brand-primary/30"></span>
+          <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary">
+            {{ .PublishDate.Format "January 02, 2006" }}
+          </span>
+          <span class="h-[1px] w-12 bg-brand-primary/30"></span>
+        </div>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-brand-dark tracking-tighter leading-none text-balance animate-reveal" style="animation-delay: 200ms;">
+        {{ .Title }}
+      </h1>
+
+      {{ with .Params.author }}
+      <div class="animate-reveal" style="animation-delay: 400ms;">
+        <span class="text-[10px] uppercase font-bold tracking-[0.4em] text-brand-dark/40 italic">Written by {{ . }}</span>
+      </div>
+      {{ end }}
+    </header>
+
+    <!-- Content Area -->
+    <div class="max-w-3xl mx-auto">
+      <div class="story-content prose prose-lg md:prose-xl prose-brand-dark max-w-none text-brand-dark/80 leading-relaxed font-sans first-letter:float-left first-letter:text-7xl first-letter:md:text-8xl first-letter:font-serif first-letter:font-black first-letter:mr-4 first-letter:mt-2 first-letter:text-brand-primary first-letter:leading-[0.7]">
+        {{ .Content }}
+      </div>
+
+      <!-- Interaction / Thanks Section -->
+      <div class="mt-32 pt-20 border-t border-brand-dark/5">
+        {{ partialCached "thanks.html" . }}
+      </div>
+
+      <!-- Navigation -->
+      <nav class="mt-20 flex flex-col md:flex-row items-center justify-between gap-12 pt-12">
+        {{ if .NextInSection }}
+        <a href="{{ .NextInSection.Permalink }}" class="group flex flex-col items-start gap-4 max-w-[280px]">
+          <span class="text-[9px] uppercase font-black tracking-[0.6em] text-brand-dark/30 group-hover:text-brand-primary transition-colors">Previous</span>
+          <span class="text-xl md:text-2xl font-serif italic text-brand-dark group-hover:text-brand-primary transition-colors leading-tight">
+            {{ .NextInSection.Title }}
+          </span>
+          <div class="flex items-center gap-4 pt-2">
+             <span class="h-[1px] w-8 bg-brand-dark/10 group-hover:w-16 group-hover:bg-brand-primary transition-all duration-700"></span>
+             <span class="text-[9px] uppercase font-bold tracking-[0.2em] text-brand-dark/40">Read Prev</span>
+          </div>
+        </a>
+        {{ else }}
+        <div></div>
+        {{ end }}
+
+        <div class="hidden md:block h-24 w-[1px] bg-brand-dark/5"></div>
+
+        {{ if .PrevInSection }}
+        <a href="{{ .PrevInSection.Permalink }}" class="group flex flex-col items-end gap-4 text-right max-w-[280px]">
+          <span class="text-[9px] uppercase font-black tracking-[0.6em] text-brand-dark/30 group-hover:text-brand-primary transition-colors">Next Up</span>
+          <span class="text-xl md:text-2xl font-serif italic text-brand-dark group-hover:text-brand-primary transition-colors leading-tight">
+            {{ .PrevInSection.Title }}
+          </span>
+          <div class="flex items-center justify-end gap-4 pt-2">
+             <span class="text-[9px] uppercase font-bold tracking-[0.2em] text-brand-dark/40">Read Next</span>
+             <span class="h-[1px] w-8 bg-brand-dark/10 group-hover:w-16 group-hover:bg-brand-primary transition-all duration-700"></span>
+          </div>
+        </a>
+        {{ else }}
+        <div></div>
+        {{ end }}
+      </nav>
+    </div>
+  </div>
+</article>
+
+{{ partial "call-to-action.html" . }}
+
+{{ end }}

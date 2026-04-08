@@ -1,0 +1,209 @@
+baseURL       = "https://www.andremoreno.id"
+languageCode  = "id-id"
+title         = "Andre Moreno"
+relativeURLs  = true
+#disableHugoGeneratorInject = true
+enableRobotsTXT = true
+summarylength = 60
+timeout       = "300s"
+
+[pagination]
+  disableAliases = false
+  pagerSize = 6
+  path = "page"
+
+[taxonomies]
+  tag = 'tags'
+
+# Site Menus
+[menu]
+  # Navbar Menus
+  [[menu.nav]]
+    name    = "Home"
+    url     = "/"
+    weight  = 1
+  [[menu.nav]]
+    name    = "Stories"
+    url     = "stories/"
+    weight  = 2
+  [[menu.nav]]
+    name    = "Blog"
+    url     = "blog/"
+    weight  = 3
+#  [[menu.nav]]
+#    name    = "Gallery"
+#    url     = "gallery/"
+#    weight  = 4
+#  [[menu.nav]]
+#    name    = "Store"
+#    url     = "store/"
+#    weight  = 5
+  [[menu.nav]]
+    name    = "About Me"
+    url     = "about/"
+    weight  = 6  
+  [[menu.nav]]
+    name    = "Get in touch"
+    url     = "contact/"
+    weight  = 7
+
+# Site Params
+[params]
+  # Meta data
+  description = "Hey, Andre here! Your friendly wedding storyteller and memory keeper. I’m the guy who will capture the love, laughter, and all those unforgettable moments in a candid, documentary style. Let’s connect and create stories you’ll cherish for a lifetime!"
+  author = "Andre Moreno"
+  authors = "Andre Moreno"
+  logo = "images/logo-am-header.png"
+  dateFormat = "11 JAN 2019"
+  subtitle = "Affordable photographer in Jakarta"
+  repo = "https://github.com/andremoreno/www.andremoreno.id"
+  twitter = "Writelonger"
+  github_org = "https://github.com/andremoreno"
+  blog = "https://dre.web.id/blog"
+
+
+
+  [params.owner]
+    name = "Andre Moreno"
+
+  [params.watermark]
+    image = "images/am-wm.png" # relative to /assets
+    posx  = "right"                    # one of "left", "center", "right"
+    posy  = "bottom"                  # one of "top", "center", "bottom"
+
+  # Contact Form
+  [params.contactForm]
+    placeholder_your_name         = "Your Name"
+    placeholder_first_name        = "First Name"
+    placeholder_last_name         = "Last Name"
+    placeholder_email             = "Email"
+    placeholder_phone             = "Phone"
+    placeholder_project_type      = "Project Type"
+    placeholder_about_the_project = "Tell me everything about you! The more I know you, the better I can capture you and your story."
+    send_message                  = "Send via WhatsApp"
+
+  # Navbar Action Button
+  [params.navAction]
+    status  = true
+    name    = "Get in touch"
+    url     = "contact/"
+
+
+  # 404 Pages
+  [params.notFound]
+    title   = "404: Page Not Found"
+    heading = "Whatever you're looking for doesn't seem to exist. Which begs the question: How certain are you that what you're looking for is actually what you need?"
+
+
+  # Thank You Pages
+  [params.thankYou]
+    title   = "Thanks for reaching out!"
+    heading = """I read every message and typically respond within 48 hours if a reply is required. Want to stay in touch? Follow me on [Instagram](https://www.instagram.com/andremoreno)!"""
+
+  
+
+  # Banner Section
+  [params.banner]
+    enable                = true
+    background_image      = "/images/hero-main-bg12.webp"
+    primary_button        = "View Story"
+    primary_button_url    = "/stories/devin-uli/"
+    secondary_button      = "Get In Touch"
+    secondary_button_url  = "contact"
+
+  [params.stories]
+    enable    = true
+    title     = "Featured Stories"
+    subtitle  = "A GREAT STORY IS IMPOSSIBLE TO FORGET"
+
+  [params.call_to_action]
+    enable              = false
+    background_image    = "/images/cta-bg.webp"
+    title               = "GET IN TOUCH"
+    primary_button      = "Send Me Message"
+    primary_button_url  = "contact/"
+    secondary_button    = "Not Convinced ?"
+    secondary_button_url = "stories/"
+
+  [params.footer]
+      # Footer Sitemap
+      [params.footer.sitemap]
+        title   = "Sitemap"
+        [[params.footer.sitemap.link]]
+          name = "Martupol"
+          url  = "tags/martupol/"
+        [[params.footer.sitemap.link]]
+          name = "Prewedding"
+          url  = "tags/prewedding/"
+        [[params.footer.sitemap.link]]
+          name = "Random Gallery"
+          url  = "random/"
+      # Footer Social Media
+      [params.footer.social]
+        title   = "Social Media"
+        [[params.footer.social.link]]
+          name = "Instagram"
+          url  = "https://dre.web.id/ig"
+        [[params.footer.social.link]]
+          name = "Github"
+          url  = "https://dre.web.id/gh"
+        [[params.footer.social.link]]
+          name = "X"
+          url  = "https://dre.web.id/x"
+      # Footer Social Media
+      [params.footer.service]
+        title   = "More"
+	[[params.footer.service.link]]
+          name = "Natal Renaps"
+          url  = "https://renaps.andremoreno.id"
+        [[params.footer.service.link]]
+          name = "Bulan Musik"
+          url  = "https://bulanmusik.andremoreno.id"
+        [[params.footer.service.link]]
+          name = "</source>"
+          url  = "https://github.com/andremoreno/www.andremoreno.id"
+      # Footer Service
+
+  [params.social]
+    facebook_profile_id = "andreas.rikardo"
+    facebook_admin = "1059136786"
+    facebook_app_id = "116794761711713"
+    twitter = "Writelonger"
+
+
+[related]
+  includeNewer = true
+  threshold = 40
+  toLower = false
+
+  [[related.indices]]
+    name = "title"
+    weight = 50
+
+  [[related.indices]]
+    name = "description"
+    weight = 50
+
+  [[related.indices]]
+    name = "categories"
+    weight = 50
+
+[imaging]
+  resamplefilter = 'CatmullRom'
+
+
+[services]
+  [services.disqus]
+    shortname = 'andremoreno'
+
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.123.8"
+
+
+[markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xhtml = true

@@ -1,0 +1,177 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "layouts/**/*.html";
+@source "content/**/*.md";
+@source "content/**/*.html";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-primary: #e11d48; /* Sophisticated red */
+  --color-brand-dark: #0f172a;
+  --color-brand-light: #f8fafc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-brand-light text-brand-dark antialiased selection:bg-brand-primary selection:text-white;
+  }
+  
+  a {
+    @apply no-underline hover:text-brand-primary transition-colors;
+  }
+  
+  /* Story Narrative Typography */
+  .story-content p {
+    @apply mb-10 last:mb-0 leading-[1.8] text-brand-dark/80 max-w-4xl mx-auto md:mx-0;
+  }
+  
+  .story-content h2 {
+    @apply text-3xl md:text-5xl font-serif text-brand-dark mt-24 mb-10 font-medium tracking-tight;
+  }
+
+  .story-content h3 {
+    @apply text-2xl md:text-3xl font-serif text-brand-dark mt-16 mb-6 font-medium;
+  }
+
+  .story-content blockquote {
+    @apply border-l-2 border-brand-primary/30 pl-10 my-20 italic text-2xl md:text-3xl text-brand-dark/60 font-serif leading-relaxed;
+  }
+
+  .story-content ul, .story-content ol {
+    @apply my-10 space-y-4 text-brand-dark/80 list-disc ml-6;
+  }
+
+  /* 1. Base image style for all story content images */
+  .story-content img {
+    @apply rounded-[2rem] w-full transition-all duration-700;
+  }
+
+  /* 2. Style specifically for standalone narrative images (not in a gallery) */
+  /* These are usually direct children of .story-content or inside a <p> tags from Markdown */
+  .story-content > p img,
+  .story-content > img {
+    @apply my-24 shadow-2xl shadow-brand-dark/5 object-cover;
+  }
+
+  /* 3. Gallery-specific overrides */
+  /* Gallery items are calculated by JS, so they must have 0 margins and fill their boxes */
+  .gallery-item img {
+    @apply m-0 shadow-none h-full w-full object-cover rounded-2xl;
+  }
+
+  .story-content a {
+    @apply text-brand-primary border-b border-brand-primary/10 hover:border-brand-primary transition-all pb-0.5;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-reveal {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  .drop-cap::first-letter {
+    @apply text-7xl md:text-8xl font-serif font-black float-left mr-4 mt-2 text-brand-primary leading-[0.7];
+  }
+}
+
+/* Custom Keyframes */
+@keyframes reveal-up {
+  0% { transform: translateY(60px); opacity: 0; filter: blur(10px); }
+  100% { transform: translateY(0); opacity: 1; filter: blur(0); }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(1.1); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes tracking-in {
+  0% { letter-spacing: -0.5em; opacity: 0; }
+  100% { letter-spacing: 0.1em; opacity: 1; }
+}
+
+@keyframes line-reveal {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.animate-reveal {
+  animation: reveal-up 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-scale {
+  animation: scale-in 2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-tracking {
+  animation: tracking-in 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-line {
+  animation: line-reveal 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Magnetic Button Utility */
+.magnetic-wrap {
+  display: inline-block;
+  transition: transform 0.3s ease-out;
+}
+
+/* Form Styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-brand-dark) !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Validation Feedback */
+form.was-validated input:invalid,
+form.was-validated textarea:invalid {
+  @apply border-red-400/50;
+}
+
+form.was-validated input:valid,
+form.was-validated textarea:valid {
+  @apply border-green-400/50;
+}
+
+form.was-validated input:invalid ~ label,
+form.was-validated textarea:invalid ~ label {
+  @apply text-red-500/50;
+}
+
+/* Modern Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-dark/20 rounded-full border-4 border-transparent bg-clip-padding hover:bg-brand-dark/40 transition-colors;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.2) transparent;
+}
+
