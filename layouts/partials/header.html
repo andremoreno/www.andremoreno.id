@@ -135,7 +135,10 @@
       // Keep controls visible above overlay
       header.classList.add('!z-[301]');
       mobileMenuBtn.classList.add('!text-brand-dark');
-      if (headerLogo) headerLogo.style.filter = 'none';
+      if (headerLogo) {
+        headerLogo.style.filter = 'none';
+        headerLogo.classList.add('opacity-0', 'pointer-events-none');
+      }
 
       document.body.style.overflow = 'hidden';
 
@@ -153,6 +156,11 @@
       }, 100);
     } else {
       header.classList.remove('!z-[301]');
+      mobileMenuBtn.classList.remove('!text-brand-dark');
+      const headerLogo = document.getElementById('header-logo');
+      if (headerLogo) {
+        headerLogo.classList.remove('opacity-0', 'pointer-events-none');
+      }
       mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
       mobileMenu.classList.remove('translate-x-0', 'opacity-100');
       document.body.style.overflow = '';
@@ -164,6 +172,12 @@
         link.classList.remove('animate-reveal');
         link.classList.add('opacity-0', 'translate-y-10');
       });
+
+      const mobileLogo = document.getElementById('mobile-logo-wrap');
+      if (mobileLogo) {
+        mobileLogo.classList.remove('animate-reveal');
+        mobileLogo.classList.add('opacity-0', 'translate-y-10');
+      }
     }
   }
 
