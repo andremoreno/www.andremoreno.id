@@ -4,12 +4,12 @@
     
     <!-- Prev Button -->
     {{ if $pag.HasPrev }}
-    <a href="{{ $pag.Prev.URL }}" class="group w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/10 text-brand-dark/40 hover:border-brand-primary hover:bg-brand-primary transition-all duration-500" aria-label="Previous Page">
-        <span class="group-hover:text-white transition-colors duration-500 text-base">←</span>
+    <a href="{{ $pag.Prev.URL }}" class="group w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/10 text-brand-dark/40 hover:border-brand-primary hover:bg-brand-primary transition-all duration-500 leading-none" aria-label="Previous Page">
+        <span class="group-hover:text-white transition-colors duration-500 text-base leading-none">←</span>
     </a>
     {{ else }}
-    <span class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/5 text-brand-dark/10 cursor-not-allowed opacity-30">
-        <span class="text-base">←</span>
+    <span class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/5 text-brand-dark/10 cursor-not-allowed opacity-30 leading-none">
+        <span class="text-base leading-none">←</span>
     </span>
     {{ end }}
 
@@ -25,29 +25,29 @@
             {{/* Smart Logic: Show current, 1st, last, and ±1 surrounding current */}}
             {{ if or $isFirst $isLast $isCurrent (lt $diff 2) }}
                 {{ if $isCurrent }}
-                <span class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-brand-dark text-white shadow-xl shadow-brand-dark/20 text-[10px] md:text-sm">
+                <span class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-brand-dark text-white shadow-xl shadow-brand-dark/20 text-[10px] md:text-sm leading-none tracking-normal">
                     {{ .PageNumber }}
                 </span>
                 {{ else }}
-                <a href="{{ .URL }}" class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/5 text-brand-dark/50 hover:text-brand-primary hover:border-brand-primary transition-all duration-500 text-[10px] md:text-sm">
+                <a href="{{ .URL }}" class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/5 text-brand-dark/50 hover:text-brand-primary hover:border-brand-primary transition-all duration-500 text-[10px] md:text-sm leading-none tracking-normal">
                     {{ .PageNumber }}
                 </a>
                 {{ end }}
             {{ else if or (eq $diff 2) }}
                 {{/* Show ellipsis if distance is exactly 2 */}}
-                <span class="px-1 text-brand-dark/10 text-[8px] md:text-xs">•••</span>
+                <span class="px-1 text-brand-dark/10 text-[8px] md:text-xs leading-none">•••</span>
             {{ end }}
         {{ end }}
     </div>
 
     <!-- Next Button -->
     {{ if $pag.HasNext }}
-    <a href="{{ $pag.Next.URL }}" class="group w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/10 text-brand-dark/40 hover:border-brand-primary hover:bg-brand-primary transition-all duration-500" aria-label="Next Page">
-        <span class="group-hover:text-white transition-colors duration-500 text-base">→</span>
+    <a href="{{ $pag.Next.URL }}" class="group w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/10 text-brand-dark/40 hover:border-brand-primary hover:bg-brand-primary transition-all duration-500 leading-none" aria-label="Next Page">
+        <span class="group-hover:text-white transition-colors duration-500 text-base leading-none">→</span>
     </a>
     {{ else }}
-    <span class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/5 text-brand-dark/10 cursor-not-allowed opacity-30">
-        <span class="text-base text-xl">→</span>
+    <span class="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-full border border-brand-dark/5 text-brand-dark/10 cursor-not-allowed opacity-30 leading-none">
+        <span class="text-base text-xl leading-none">→</span>
     </span>
     {{ end }}
 
