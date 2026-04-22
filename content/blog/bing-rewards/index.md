@@ -3,7 +3,6 @@ title: "Cara Dapat Gift Card Gratis Lewat Bing Rewards di Indonesia"
 date: 2026-04-08T07:11:00+07:00
 draft: false
 description: "Panduan lengkap cara mengumpulkan poin dan redeem gift card lewat Bing Rewards atau Microsoft Rewards di Indonesia, termasuk daftar hadiah yang tersedia dan tips cepat kumpul poin."
-tags: ["Bing Rewards", "Microsoft Rewards", "Gift Card", "Bing", "Tutorial", "Indonesia"]
 categories: ["Teknologi", "Tips Online"]
 author: "Andre Moreno"
 ---

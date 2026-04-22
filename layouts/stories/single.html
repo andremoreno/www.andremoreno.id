@@ -59,7 +59,7 @@
         
         {{ with .NextInSection }}
         <a href="{{ .Permalink }}" class="group flex-1 flex flex-col md:flex-row items-center md:items-center gap-8 p-12 md:p-16 bg-white/40 hover:bg-white rounded-[2rem] md:rounded-[4rem] border border-brand-dark/5 transition-all duration-1000 ease-out hover:shadow-[0_40px_100px_rgba(0,0,0,0.05)]">
-          <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border border-brand-dark/10 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-700">
+          <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border border-brand-dark/10 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-700 shrink-0">
             <span class="text-brand-dark/30 group-hover:text-white transition-colors text-xl md:text-3xl">←</span>
           </div>
           <div class="flex flex-col items-center md:items-start space-y-4">
@@ -71,7 +71,7 @@
 
         {{ with .PrevInSection }}
         <a href="{{ .Permalink }}" class="group flex-1 flex flex-col md:flex-row-reverse items-center md:items-center gap-8 p-12 md:p-16 bg-white/40 hover:bg-white rounded-[2rem] md:rounded-[4rem] border border-brand-dark/5 transition-all duration-1000 ease-out hover:shadow-[0_40px_100px_rgba(0,0,0,0.05)]">
-          <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border border-brand-dark/10 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-700">
+          <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border border-brand-dark/10 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-700 shrink-0">
             <span class="text-brand-dark/30 group-hover:text-white transition-colors text-xl md:text-3xl">→</span>
           </div>
           <div class="flex flex-col items-center md:items-end space-y-4">

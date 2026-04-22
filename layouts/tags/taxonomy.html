@@ -1,57 +1,81 @@
 {{ define "main" }}
 
-<section class="site-story-header">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-8">
-        <div class="site-story-header-content">
-          <h1>{{ .Title }}</h1>
-        </div>
+<section class="relative pt-32 pb-16 md:pt-48 md:pb-32 bg-brand-light">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+    <div class="max-w-4xl space-y-8 mb-20 md:mb-32">
+      <div class="overflow-hidden">
+        <span class="block text-[10px] md:text-xs font-bold uppercase tracking-[0.6em] text-brand-primary animate-reveal">
+          Exploration
+        </span>
       </div>
-      <div class="col-lg-4">
-
-      </div>
+      <h1 class="text-6xl md:text-8xl lg:text-9xl font-serif text-brand-dark tracking-tighter leading-none text-balance animate-reveal" style="animation-delay: 200ms;">
+        {{ .Title }}
+      </h1>
+      <p class="text-lg md:text-xl text-brand-dark/60 max-w-2xl animate-reveal leading-relaxed" style="animation-delay: 400ms;">
+        Archive and collections, organized by curated topics and visual themes.
+      </p>
     </div>
-  </div>
-</section>
 
+    <!-- Clean Tag Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
+      {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+        {{ $tagCount := len $taxonomy.Pages }}
+        {{ if gt $tagCount 0 }}
+          <div class="animate-reveal opacity-0" style="animation-delay: {{ add 600 (mul (index (seq 0 10) (mod (len $name) 10)) 80) }}ms;">
+            <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" 
+               class="group relative block aspect-square rounded-[3rem] overflow-hidden bg-white border border-brand-dark/5 transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/5 hover:-translate-y-2">
+              
+              <!-- Subtle Image Peek -->
+              {{ range first 1 $taxonomy.Pages }}
+                {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
+                  {{ $resized := .Fill "600x600 webp q40" }}
+                  <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110 opacity-[0.15] grayscale group-hover:grayscale-0" 
+                       style="background-image: url('{{ $resized.RelPermalink }}');"></div>
+                {{ end }}
+              {{ end }}
 
-<section class="site-story" id="stories">
-  <div class="container">
-    <div class="row">
-      
-	  <div class="container tagcloud">
-	  <ul class="list-group">
-    {{ if ne (len $.Site.Taxonomies.tags) 0 }}
-      {{ $largestFontSize := 3 }}
-      {{ $smallestFontSize := 1.0 }}
-      {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
-      {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
-      {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
-      {{ $spread := sub $max $min }}
-      {{ $fontStep := div $fontSpread $spread }}
-        {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
-		  {{ if not (in $name "featured") }}
-          {{ $tagCount := len $taxonomy.Pages }}
-          {{ $currentFontSize := (add $smallestFontSize (mul (sub $tagCount $min) $fontStep) ) }}
-          {{ $weigth := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
-          {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
-            <li class="list-group-item list-group-item-action"><a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" 
-            class="tagcloud-item" style="font-size: {{ $currentFontSize }}rem;">
-              {{ $name }} <sup>{{ $tagCount }}</sup>
-            </a></li>
-        {{ end }}{{ end }}
-    {{ end }}
-	</ul></div>
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-white/10 group-hover:from-white/40 transition-all duration-700"></div>
 
-
+              <!-- Content -->
+              <div class="absolute inset-0 p-10 flex flex-col justify-between z-10">
+                <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-primary">
+                    {{ $tagCount }} {{ if eq $tagCount 1 }}Entry{{ else }}Entries{{ end }}
+                </span>
+                
+                <h3 class="text-3xl font-serif text-brand-dark group-hover:text-brand-primary transition-colors duration-500 capitalize tracking-tight leading-tight">
+                    {{ $name }}
+                </h3>
+              </div>
+            </a>
+          </div>
+        {{ end }}
+      {{ end }}
     </div>
   </div>
 </section>
 
 {{ partial "call-to-action.html" . }}
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0');
+          entry.target.classList.add('opacity-100');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-reveal').forEach(el => observer.observe(el));
+  });
+</script>
+
 {{ end }}
+
+
+
 
 
 
