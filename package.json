@@ -4,6 +4,12 @@
   "description": ":)",
   "main": "index.js",
   "scripts": {
+    "dev:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/dist.css --watch",
+    "dev:hugo": "hugo server",
+    "dev": "npm-run-all --parallel dev:css dev:hugo",
+    "build:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/dist.css --minify",
+    "build:hugo": "hugo --gc --minify",
+    "build": "npm run build:css && npm run build:hugo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +32,10 @@
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
     "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "lightningcss-win32-x64-msvc": "^1.33.0",
+    "npm-run-all": "^4.1.5"
   }
 }

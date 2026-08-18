@@ -1,5 +1,5 @@
 baseURL       = "https://andremoreno.web.id"
-languageCode  = "id-id"
+locale  = "id-id"
 title         = "Andre Moreno"
 relativeURLs  = true
 #disableHugoGeneratorInject = true

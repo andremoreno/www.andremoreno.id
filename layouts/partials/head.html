@@ -45,7 +45,7 @@
   {{ partialCached "critical.html" . }}
 
   {{ "<!-- Tailwind CSS -->" | safeHTML }}
-  {{ $tailwind := resources.Get "css/main.css" | postCSS | minify | resources.Fingerprint }}
+  {{ $tailwind := resources.Get "css/dist.css" | minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $tailwind.Permalink }}" integrity="{{ $tailwind.Data.Integrity }}">
 
   {{/* Lightbox CSS */}}

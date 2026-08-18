@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && hugo --gc --minify"
+  command = "npm run build"
   publish = "public"
 
 [build.environment]
@@ -11,7 +11,7 @@
   TZ = "Asia/Jakarta"
 
 [dev]
-  command = "hugo server"
+  command = "npm run dev"
   framework = "hugo"
   targetPort = 1313
 
