@@ -3,9 +3,9 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.162.1"
+  HUGO_VERSION = "0.165.0"
   NODE_VERSION = "24"
-  GO_VERSION = "1.26.3"
+  GO_VERSION = "1.26.6"
   HUGO_ENABLEGITINFO = "true"
   HUGO_ENV = "production"
   TZ = "Asia/Jakarta"
@@ -20,7 +20,7 @@
 
 [[redirects]]
   from = "https://andremoreno.netlify.app/*"
-  to = "https://www.andremoreno.id/:splat"
+  to = "https://andremoreno.web.id/:splat"
   status = 301
   force = true
 
