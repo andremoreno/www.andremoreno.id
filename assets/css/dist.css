@@ -1035,6 +1035,12 @@
   .table {
     display: table;
   }
+  .aspect-\[1\/1\] {
+    aspect-ratio: 1/1;
+  }
+  .aspect-\[2\/3\] {
+    aspect-ratio: 2/3;
+  }
   .aspect-\[4\/5\] {
     aspect-ratio: 4/5;
   }

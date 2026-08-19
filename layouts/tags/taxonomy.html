@@ -28,7 +28,7 @@
               <!-- Subtle Image Peek -->
               {{ range first 1 $taxonomy.Pages }}
                 {{ with (.Resources.ByType "image").GetMatch "*feat.jpg" }}
-                  {{ $resized := .Fill "600x600 webp q40" }}
+                  {{ $resized := .Fit "600x600 webp q40" }}
                   <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110 opacity-[0.15] grayscale group-hover:grayscale-0" 
                        style="background-image: url('{{ $resized.RelPermalink }}');"></div>
                 {{ end }}

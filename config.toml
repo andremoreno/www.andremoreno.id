@@ -170,6 +170,10 @@ timeout       = "300s"
     facebook_app_id = "116794761711713"
     twitter = "Writelonger"
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 
 [related]
   includeNewer = true
