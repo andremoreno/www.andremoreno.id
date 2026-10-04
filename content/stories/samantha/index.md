@@ -1,3 +1,4 @@
+---
 title: "Samantha + Partner: Martupol"
 date: 2021-10-16
 description: "Janji suci di tengah tatanan baru. Mengabadikan Martupol Samantha di HKBP Rawamangun tahun 2021 adalah sebuah catatan tentang keteguhan komitmen yang melampaui tantangan zaman, dalam balutan tradisi Batak yang penuh doa dan restu."

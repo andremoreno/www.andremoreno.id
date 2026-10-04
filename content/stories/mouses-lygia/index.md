@@ -1,3 +1,4 @@
+---
 title: "Mouses + Lygia"
 date: 2019-10-05
 description: "Kedalaman janji dalam cahaya hening. Momen Martupol Mouses dan Lygia di HKBP Rawamangun adalah sebuah perayaan tentang kesungguhan, di mana tradisi Batak dan kekhusyukan ibadah menyatu dalam bingkai yang puitis."

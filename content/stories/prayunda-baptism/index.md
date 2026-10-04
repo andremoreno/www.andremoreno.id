@@ -1,3 +1,4 @@
+---
 title: "Prayunda Baptism"
 date: 2018-03-04
 description: "Langkah pertama dalam dekapan iman. Mengabadikan baptisan kudus Prayunda di HKBP Rawamangun adalah sebuah kehormatan untuk mendokumentasikan momen janji suci dan kehangatan keluarga yang penuh syukur."

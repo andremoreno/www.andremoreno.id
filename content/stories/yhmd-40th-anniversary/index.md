@@ -1,3 +1,4 @@
+---
 title: "YHMD 40th Anniversary"
 date: 2024-05-04
 description: "Empat dekade dalam pengabdian dan iman. Merayakan hari jadi ke-40 Yayasan Harapan Masa Depan (YHMD) di Hotel Lumire adalah sebuah penghormatan terhadap sebuah legasi yang dibangun di atas fondasi kepercayaan dan kebersamaan yang kokoh."

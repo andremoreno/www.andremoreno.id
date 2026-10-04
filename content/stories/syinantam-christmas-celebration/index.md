@@ -1,3 +1,4 @@
+---
 title: "Syinantam Christmas Celebration"
 date: 2014-12-15
 description: "Keceriaan natal dalam tawa kanak-kanak. Mengabadikan perayaan Natal TK Syinantam tahun 2014 adalah sebuah perjalanan menangkap kepolosan dan kegembiraan murni saat anak-anak merayakan kasih dalam kebersamaan yang hangat."

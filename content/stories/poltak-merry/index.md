@@ -1,3 +1,4 @@
+---
 title: "Poltak + Merry"
 date: 2012-09-23
 description: "Sebuah perjalanan cinta yang berakar pada tradisi. Pernikahan Poltak & Merry pada tahun 2012 menjadi perayaan yang indah tentang restu orang tua, kemegahan adat Batak, dan janji suci yang mengikat dua hati."

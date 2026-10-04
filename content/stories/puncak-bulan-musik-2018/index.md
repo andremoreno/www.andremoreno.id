@@ -1,3 +1,4 @@
+---
 title: "Puncak Bulan Musik HKBP Rawamangun 2018"
 date: 2018-09-30
 description: "Simfoni syukur dalam balutan harmoni. Puncak Bulan Musik 2018 HKBP Rawamangun menjadi perayaan megah di mana seni suara dan instrumen menyatu untuk memuliakan Tuhan dalam sebuah kebersamaan yang tak terlupakan."
